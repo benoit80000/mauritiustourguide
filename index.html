@@ -1,0 +1,1886 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mauritius Tour Guide — Saizad, Guide Local Officiel</title>
+<meta name="description" content="Guide local francophone à l'île Maurice: excursions privées, snorkeling, dauphins, Port-Louis street food et circuits sur mesure avec Saizad.">
+<link rel="canonical" href="https://www.mauritiustourguide.com/">
+<meta property="og:title" content="Mauritius Tour Guide — Saizad, Guide Local Officiel">
+<meta property="og:description" content="Excursions authentiques à l'île Maurice avec guide local certifié. Réservation rapide sur WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.mauritiustourguide.com/">
+<meta property="og:image" content="https://www.mauritiustourguide.com/assets/photos/excursion-1.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Mauritius Tour Guide",
+  "description": "Excursions privees a l'ile Maurice avec guide local.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Royal Road",
+    "addressLocality": "Chemin Grenier",
+    "postalCode": "60408",
+    "addressCountry": "MU"
+  },
+  "telephone": "+23057652767",
+  "url": "https://www.mauritiustourguide.com/",
+  "sameAs": [
+    "https://www.instagram.com/mauritiustourguide/",
+    "https://www.facebook.com/localmauritius"
+  ],
+  "areaServed": "Mauritius",
+  "availableLanguage": ["fr", "en", "mfe"],
+  "priceRange": "$$"
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocean: #0a3d4e;
+    --lagoon: #1a8fa0;
+    --turquoise: #40c9c1;
+    --sand: #f5ede0;
+    --coral: #e8735a;
+    --gold: #c9a96e;
+    --white: #fdfaf6;
+    --dark: #0d1f26;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    outline: 2px solid var(--turquoise);
+    outline-offset: 2px;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(10, 61, 78, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(64, 201, 193, 0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.08em;
+  }
+
+  .nav-logo span { color: var(--turquoise); font-style: italic; }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(253, 250, 246, 0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--turquoise); }
+
+  .nav-cta {
+    background: var(--coral);
+    color: var(--white) !important;
+    padding: 10px 22px;
+    border-radius: 2px;
+    opacity: 1 !important;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: var(--ocean);
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse at 30% 60%, rgba(26, 143, 160, 0.35) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(64, 201, 193, 0.2) 0%, transparent 50%),
+      linear-gradient(160deg, #0a3d4e 0%, #051520 100%);
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(64,201,193,0.08) 1px, transparent 0);
+    background-size: 48px 48px;
+  }
+
+  .wave-decoration {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 160px;
+    overflow: hidden;
+  }
+
+  .wave-decoration svg {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    animation: wave 8s linear infinite;
+  }
+
+  @keyframes wave {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 12%;
+    max-width: 760px;
+  }
+
+  .hero-media {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: min(32vw, 430px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 8px solid rgba(255,255,255,0.9);
+    box-shadow: 0 24px 56px rgba(2, 14, 22, 0.55);
+    z-index: 1;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.75s forwards;
+  }
+
+  .hero-media picture,
+  .hero-media img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .hero-media img {
+    object-fit: contain;
+    object-position: center;
+    background: #f3f3f3;
+  }
+
+  .hero-media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: none;
+  }
+
+  .hero-media-tag {
+    position: absolute;
+    left: 50%;
+    bottom: -38px;
+    transform: translateX(-50%);
+    z-index: 2;
+    background: rgba(10,61,78,0.92);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--white);
+    font-size: 0.66rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--turquoise);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.3s forwards;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--turquoise);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 7vw, 6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.5s forwards;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--turquoise);
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(253,250,246,0.7);
+    max-width: 520px;
+    margin-bottom: 44px;
+    font-weight: 300;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.7s forwards;
+  }
+
+  .hero-btns {
+    display: flex;
+    gap: 16px;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.9s forwards;
+  }
+
+  .btn-primary {
+    background: var(--coral);
+    color: var(--white);
+    padding: 16px 36px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover { background: #d4604a; transform: translateY(-2px); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--white);
+    padding: 16px 36px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover { border-color: var(--turquoise); color: var(--turquoise); }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 180px;
+    right: 4%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.4);
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0;
+    animation: fadeUp 1s 1.2s forwards;
+  }
+
+  .scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--turquoise), transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollLine {
+    0%, 100% { opacity: 1; transform: scaleY(1); }
+    50% { opacity: 0.4; transform: scaleY(0.6); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    background: var(--ocean);
+    padding: 28px 8%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    border-bottom: 1px solid rgba(64,201,193,0.15);
+  }
+
+  .stat-item {
+    text-align: center;
+    color: var(--white);
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--turquoise);
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+
+  /* SECTION COMMONS */
+  section { padding: 100px 8%; }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 20px;
+  }
+
+  .section-tag::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--coral);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+    font-weight: 300;
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  /* ABOUT */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    background: var(--sand);
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-img-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: #0f2a33;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .about-img-frame::before {
+    content: '';
+    inset: 0;
+    position: absolute;
+    background: linear-gradient(to top, rgba(13,31,38,0.72) 0%, rgba(13,31,38,0.2) 45%, rgba(13,31,38,0.1) 100%);
+    z-index: 1;
+  }
+
+  .about-main-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .about-img-frame::after {
+    content: '';
+    width: 180px;
+    height: 180px;
+    position: absolute;
+    top: -70px;
+    right: -60px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(64,201,193,0.35) 0%, rgba(64,201,193,0) 72%);
+    z-index: 0;
+  }
+
+  .about-img-frame-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding: 0 16px 26px;
+    z-index: 2;
+  }
+
+  .guide-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: url('assets/photos/guide-facebook.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    border: 3px solid rgba(255,255,255,0.55);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+  }
+
+  .guide-name-tag {
+    background: rgba(253,250,246,0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 24px;
+    border-radius: 2px;
+    text-align: center;
+    color: white;
+  }
+
+  .guide-name-tag strong {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
+
+  .guide-name-tag span {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  .about-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: var(--coral);
+    color: white;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 8px 32px rgba(232,115,90,0.4);
+  }
+
+  .about-badge strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    display: block;
+    line-height: 1;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: #4a5a62;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .highlight-item {
+    padding: 20px;
+    background: white;
+    border-radius: 4px;
+    border-left: 3px solid var(--turquoise);
+  }
+
+  .highlight-icon { font-size: 1.5rem; margin-bottom: 8px; }
+
+  .highlight-item strong {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+    color: var(--ocean);
+  }
+
+  .highlight-item span {
+    font-size: 0.78rem;
+    color: #7a8a92;
+  }
+
+  /* EXCURSIONS */
+  .excursions { background: var(--white); }
+
+  .excursions-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+  }
+
+  .excursions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+
+  .excursion-card {
+    background: var(--white);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    cursor: pointer;
+  }
+
+  .excursion-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 60px rgba(10,61,78,0.15);
+  }
+
+  .card-thumb {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-thumb-media {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s ease;
+    display: block;
+  }
+
+  .card-thumb-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  .excursion-card:hover .card-thumb-media { transform: scale(1.08); }
+
+  .card-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--coral);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 2px;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .card-location {
+    position: absolute;
+    bottom: 14px;
+    right: 14px;
+    background: rgba(13,31,38,0.72);
+    color: white;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    border: 1px solid rgba(255,255,255,0.25);
+  }
+
+  .card-body { padding: 28px; }
+
+  .card-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.72rem;
+    color: var(--lagoon);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--ocean);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: #6a7a82;
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+
+  .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    color: var(--ocean);
+  }
+
+  .card-price small {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    color: #9aabb2;
+  }
+
+  .card-link {
+    color: var(--coral);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.3s;
+  }
+
+  .card-link:hover { gap: 12px; }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    background: var(--ocean);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .testimonials::before {
+    content: '"';
+    position: absolute;
+    top: -40px;
+    left: 8%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20rem;
+    color: rgba(64,201,193,0.06);
+    line-height: 1;
+  }
+
+  .testimonials .section-tag { color: var(--turquoise); }
+  .testimonials .section-tag::before { background: var(--turquoise); }
+  .testimonials h2 { color: var(--white); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 50px;
+  }
+
+  /* PROOF GALLERY */
+  .proof-gallery {
+    background: var(--white);
+  }
+
+  .proof-grid {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+
+  .proof-item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: #f0f0f0;
+    aspect-ratio: 4 / 5;
+  }
+
+  .proof-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .proof-source {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background: rgba(13,31,38,0.78);
+    color: white;
+    font-size: 0.64rem;
+    letter-spacing: 0.08em;
+    padding: 4px 8px;
+    text-transform: uppercase;
+  }
+
+  /* CREDIBILITY */
+  .trust-strip {
+    background: var(--sand);
+    border-top: 1px solid rgba(10,61,78,0.08);
+    border-bottom: 1px solid rgba(10,61,78,0.08);
+  }
+
+  .trust-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    margin-top: 26px;
+  }
+
+  .trust-item {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.06);
+    padding: 16px;
+    border-radius: 4px;
+    min-height: 92px;
+  }
+
+  .trust-item strong {
+    display: block;
+    font-size: 0.82rem;
+    color: var(--ocean);
+    margin-bottom: 6px;
+  }
+
+  .trust-item span {
+    font-size: 0.78rem;
+    color: #677880;
+    line-height: 1.5;
+  }
+
+  .testimonial-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(64,201,193,0.15);
+    border-radius: 4px;
+    padding: 32px;
+    position: relative;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s;
+  }
+
+  .testimonial-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(64,201,193,0.35);
+  }
+
+  .stars {
+    color: var(--gold);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: rgba(253,250,246,0.85);
+    margin-bottom: 24px;
+    font-weight: 300;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .author-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--lagoon);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .author-name {
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .author-origin {
+    color: rgba(255,255,255,0.4);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* SOCIAL */
+  .social-section {
+    background: var(--sand);
+    text-align: center;
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .social-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 40px 52px;
+    background: white;
+    border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.3s;
+    min-width: 200px;
+  }
+
+  .social-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(10,61,78,0.12);
+  }
+
+  .social-icon { font-size: 2.5rem; }
+
+  .social-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--ocean);
+  }
+
+  .social-handle {
+    font-size: 0.78rem;
+    color: var(--lagoon);
+    letter-spacing: 0.05em;
+  }
+
+  .fb-card .social-icon-circle {
+    width: 64px;
+    height: 64px;
+    background: #1877F2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+  }
+
+  .ig-card .social-icon-circle {
+    width: 64px;
+    height: 64px;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.8rem;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--dark);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .contact .section-tag { color: var(--turquoise); }
+  .contact .section-tag::before { background: var(--turquoise); }
+  .contact h2 { color: white; }
+  .contact p { color: rgba(255,255,255,0.5); font-size: 1rem; line-height: 1.8; font-weight: 300; }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+  .form-group label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 2px;
+    padding: 14px 16px;
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--turquoise);
+  }
+
+  .form-group select option { background: var(--dark); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    background: var(--coral);
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    align-self: flex-start;
+    transition: all 0.3s;
+  }
+
+  .form-submit:hover { background: #d4604a; transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: #060f14;
+    padding: 32px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 300;
+  }
+
+  .footer-logo span { color: var(--turquoise); font-style: italic; }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+  }
+
+  .wa-sticky {
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    z-index: 120;
+    background: #25D366;
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 999px;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.22);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ============================================
+     HAMBURGER MENU (mobile)
+  ============================================ */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.35s ease;
+  }
+
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,61,78,0.98);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+  }
+
+  .mobile-menu.open { display: flex; }
+
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.3s;
+  }
+
+  .mobile-menu a:hover { color: var(--turquoise); }
+
+  .mobile-menu .mobile-cta {
+    background: var(--coral);
+    color: white !important;
+    padding: 14px 40px;
+    border-radius: 2px;
+    font-size: 1rem !important;
+    font-family: 'DM Sans', sans-serif !important;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* ============================================
+     LARGE DESKTOP (1400px+)
+  ============================================ */
+  @media (min-width: 1400px) {
+    .excursions-grid { grid-template-columns: repeat(3, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(3, 1fr); }
+    section { padding: 110px 10%; }
+    .stats-bar { padding: 32px 10%; gap: 100px; }
+  }
+
+  /* ============================================
+     TABLET LANDSCAPE (1024px - 1199px)
+  ============================================ */
+  @media (max-width: 1199px) {
+    nav { padding: 18px 36px; }
+    section { padding: 90px 6%; }
+    .hero-content { padding: 0 8%; }
+    .excursions-grid { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .about { gap: 50px; }
+    .stats-bar { gap: 48px; padding: 28px 6%; }
+    .contact { gap: 50px; }
+  }
+
+  /* ============================================
+     TABLET PORTRAIT (768px - 1023px)
+  ============================================ */
+  @media (max-width: 1023px) {
+    nav { padding: 16px 28px; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    section { padding: 80px 5%; }
+    .hero-content { padding: 0 6%; max-width: 100%; }
+    .hero-media { display: none; }
+
+    .hero h1 { font-size: clamp(2.6rem, 6vw, 4rem); }
+    .hero p { font-size: 1rem; max-width: 100%; }
+    .hero-btns { flex-direction: column; gap: 12px; max-width: 280px; }
+    .btn-primary, .btn-secondary { text-align: center; padding: 14px 28px; }
+
+    .hero-scroll { display: none; }
+
+    .stats-bar {
+      padding: 24px 5%;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .stat-item { min-width: 120px; }
+    .stat-number { font-size: 2rem; }
+
+    .about { grid-template-columns: 1fr; gap: 40px; }
+    .about-visual { max-width: 400px; margin: 0 auto; }
+    .about-img-frame { aspect-ratio: 4/3; }
+    .about-badge { bottom: -16px; right: 0px; width: 88px; height: 88px; font-size: 0.6rem; }
+    .about-badge strong { font-size: 1.5rem; }
+    .about-highlights { grid-template-columns: repeat(2, 1fr); }
+
+    .excursions-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .excursions-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .proof-grid { grid-template-columns: repeat(3, 1fr); }
+    .trust-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .testimonials-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .social-links { gap: 16px; }
+    .social-card { padding: 28px 32px; min-width: 160px; }
+
+    .contact { grid-template-columns: 1fr; gap: 50px; }
+    .form-row { grid-template-columns: 1fr 1fr; }
+
+    footer { flex-direction: column; gap: 10px; text-align: center; padding: 28px 5%; }
+    .footer-copy { font-size: 0.68rem; }
+  }
+
+  /* ============================================
+     MOBILE LARGE (480px - 767px)
+  ============================================ */
+  @media (max-width: 767px) {
+    nav { padding: 14px 20px; }
+    .nav-logo { font-size: 1.2rem; }
+
+    section { padding: 64px 5%; }
+
+    .hero { min-height: 100svh; }
+    .hero-content { padding: 0 5%; padding-top: 80px; }
+    .hero-media { display: none; }
+    .hero h1 { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+    .hero p { font-size: 0.95rem; }
+    .hero-btns { flex-direction: column; max-width: 100%; }
+    .btn-primary, .btn-secondary { text-align: center; padding: 15px 24px; font-size: 0.8rem; width: 100%; }
+
+    .stats-bar {
+      padding: 20px 5%;
+      gap: 16px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+    .stat-item { padding: 12px; background: rgba(255,255,255,0.05); border-radius: 4px; }
+    .stat-number { font-size: 1.8rem; }
+    .stat-label { font-size: 0.65rem; }
+
+    h2 { font-size: clamp(1.8rem, 6vw, 2.4rem); }
+
+    .about { grid-template-columns: 1fr; gap: 32px; }
+    .about-visual { max-width: 100%; }
+    .about-img-frame { aspect-ratio: 16/9; }
+    .about-badge { width: 80px; height: 80px; font-size: 0.56rem; bottom: -12px; right: 12px; }
+    .about-badge strong { font-size: 1.3rem; }
+    .about-highlights { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .highlight-item { padding: 14px; }
+    .highlight-icon { font-size: 1.2rem; margin-bottom: 6px; }
+    .highlight-item strong { font-size: 0.8rem; }
+    .highlight-item span { font-size: 0.72rem; }
+
+    .excursions-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .excursions-grid { grid-template-columns: 1fr; gap: 20px; }
+    .card-thumb { height: 180px; }
+    .card-body { padding: 20px; }
+    .card-title { font-size: 1.3rem; }
+
+    .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
+    .testimonial-card { padding: 24px; }
+    .testimonial-text { font-size: 1rem; }
+
+    .social-links { flex-direction: column; align-items: center; gap: 16px; }
+    .social-card { width: 100%; max-width: 320px; flex-direction: row; padding: 20px 28px; gap: 20px; min-width: unset; }
+    .social-name { font-size: 1rem; }
+
+    .proof-grid { grid-template-columns: repeat(2, 1fr); }
+    .trust-grid { grid-template-columns: 1fr 1fr; }
+
+    .contact { grid-template-columns: 1fr; gap: 40px; padding: 64px 5%; }
+    .form-row { grid-template-columns: 1fr; }
+    .form-submit { width: 100%; text-align: center; }
+
+    footer { padding: 24px 5%; gap: 8px; }
+    .footer-copy { font-size: 0.65rem; line-height: 1.6; }
+    body { padding-bottom: 74px; }
+  }
+
+  /* ============================================
+     MOBILE SMALL (max 479px)
+  ============================================ */
+  @media (max-width: 479px) {
+    nav { padding: 12px 16px; }
+    .nav-logo { font-size: 1.05rem; }
+
+    section { padding: 56px 4%; }
+
+    .hero-content { padding: 0 4%; padding-top: 80px; }
+    .hero h1 { font-size: clamp(2rem, 10vw, 2.8rem); }
+    .hero-eyebrow { font-size: 0.65rem; }
+
+    .stats-bar { padding: 16px 4%; gap: 12px; }
+    .stat-number { font-size: 1.6rem; }
+
+    .about-highlights { grid-template-columns: 1fr; }
+
+    .card-thumb { height: 160px; }
+    .card-title { font-size: 1.2rem; }
+    .card-desc { font-size: 0.82rem; }
+
+    .testimonials-grid { gap: 12px; }
+    .testimonial-card { padding: 20px; }
+
+    .social-card { padding: 16px 20px; }
+    .social-icon-circle { width: 48px !important; height: 48px !important; font-size: 1.4rem !important; }
+
+    .excursions-header .btn-primary { width: 100%; text-align: center; }
+
+    footer { padding: 20px 4%; }
+    .footer-copy { font-size: 0.6rem; }
+    .trust-grid { grid-template-columns: 1fr; }
+    .wa-sticky {
+      left: 10px;
+      right: 10px;
+      bottom: 10px;
+      text-align: center;
+      border-radius: 10px;
+    }
+  }
+
+  /* ============================================
+     TOUCH DEVICES — remove hover effects
+  ============================================ */
+  @media (hover: none) {
+    .excursion-card:hover { transform: none; box-shadow: none; }
+    .social-card:hover { transform: none; box-shadow: none; }
+    .btn-primary:hover { transform: none; }
+    .btn-secondary:hover { border-color: rgba(255,255,255,0.25); color: white; }
+    .form-submit:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Mauritius <span>Tour Guide</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#excursions">Excursions</a></li>
+    <li><a href="#temoignages">Avis</a></li>
+    <li><a href="#contact" class="nav-cta">Réserver</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMenu()">À propos</a>
+  <a href="#excursions" onclick="closeMenu()">Excursions</a>
+  <a href="#temoignages" onclick="closeMenu()">Avis clients</a>
+  <a href="#contact" class="mobile-cta" onclick="closeMenu()">Réserver</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-media" aria-hidden="true">
+    <picture>
+      <source srcset="assets/photos/guide-instagram.webp" type="image/webp">
+      <img src="assets/photos/guide-instagram.jpg" alt="" loading="eager" decoding="async">
+    </picture>
+    <div class="hero-media-tag">Logo officiel</div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Mauritius Tour Guide — Saizad · Guide Local Certifié</div>
+    <h1>Découvrez <em>l'âme</em><br>de l'île Maurice</h1>
+    <p>Des expériences authentiques loin des sentiers battus. Votre guide local vous ouvre les portes d'une île secrète, vivante et passionnée.</p>
+    <div class="hero-btns">
+      <a href="#excursions" class="btn-primary">Explorer les excursions</a>
+      <a href="#contact" class="btn-secondary">Contacter le guide</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Défiler
+  </div>
+  <div class="wave-decoration">
+    <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 C180,140 360,20 540,80 C720,140 900,20 1080,80 C1260,140 1440,40 1440,80 L1440,160 L0,160 Z" fill="rgba(64,201,193,0.08)"/>
+      <path d="M0,100 C200,60 400,140 600,100 C800,60 1000,140 1200,100 C1320,80 1380,110 1440,100 L1440,160 L0,160 Z" fill="rgba(64,201,193,0.05)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item">
+    <span class="stat-number">368</span>
+    <span class="stat-label">Followers Instagram</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">331</span>
+    <span class="stat-label">Avis vérifiés</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">100%</span>
+    <span class="stat-label">Recommandé</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number">519</span>
+    <span class="stat-label">Publications Instagram</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="about-img-frame">
+      <div class="about-img-frame-inner">
+        <picture>
+          <source srcset="assets/photos/excursion-1.webp" type="image/webp">
+          <img src="assets/photos/excursion-1.jpg" alt="Vue lagon turquoise pendant une excursion guidee a l'ile Maurice" class="about-main-photo" loading="lazy" decoding="async">
+        </picture>
+        <div class="guide-avatar" aria-hidden="true"></div>
+        <div class="guide-name-tag">
+          <strong>Saizad</strong>
+          <span>Mauritius Tour Guide Officiel</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-badge">
+      <strong>331</strong>
+      avis 100% positifs
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="section-tag">Votre guide</div>
+    <h2>Saizad, votre guide<br>mauricien de cœur</h2>
+    <p>Bonjour, je m'appelle <strong>Saizad</strong> et je veux vous faire découvrir les merveilles de l'île Maurice. Je vous emmènerai dans les sites les plus incroyables de cette île paradisiaque — des plages cachées aux paysages volcaniques, en passant par sa culture vibrante et sa gastronomie unique.</p>
+    <p>Avec <strong>plus de 36 000 abonnés</strong> sur les réseaux sociaux et <strong>331 avis tous à 100% positifs</strong>, ma réputation repose sur une seule promesse : vous offrir une expérience authentique et inoubliable, loin des circuits touristiques classiques.</p>
+    <div class="about-highlights">
+      <div class="highlight-item">
+        <div class="highlight-icon">🌴</div>
+        <strong>Guide certifié</strong>
+        <span>Accrédité par le tourisme mauricien</span>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🗣️</div>
+        <strong>Multilingue</strong>
+        <span>Français, Anglais, Créole</span>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">🚗</div>
+        <strong>Transport inclus</strong>
+        <span>Véhicule climatisé confortable</span>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-icon">📸</div>
+        <strong>Photos incluses</strong>
+        <span>Souvenirs inoubliables garantis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXCURSIONS -->
+<section class="excursions" id="excursions">
+  <div class="excursions-header">
+    <div>
+      <div class="section-tag">Catalogue</div>
+      <h2>Nos excursions<br>signatures</h2>
+    </div>
+    <a href="#contact" class="btn-primary">Demander sur mesure</a>
+  </div>
+  <div class="excursions-grid">
+
+    <div class="excursion-card">
+      <div class="card-thumb">
+        <picture class="card-thumb-media">
+          <source srcset="assets/photos/excursion-1.webp" type="image/webp">
+          <img src="assets/photos/excursion-1.jpg" alt="Sortie dauphins et ile aux Cerfs a Maurice" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-badge">Populaire</div>
+        <div class="card-location">Benitier</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span>⏱ Journée</span><span>👥 Groupe</span></div>
+        <div class="card-title">Nage avec les dauphins & Île aux Cerfs</div>
+        <div class="card-desc">Une matinée magique en pleine mer avec les dauphins sauvages, suivie d'une journée sur la plus belle île lagonaire de Maurice.</div>
+        <div class="card-footer">
+          <div class="card-price">Dès Rs 2 500 <small>/ pers.</small></div>
+          <a href="#contact" class="card-link js-reserve" data-excursion="Nage avec les dauphins & Île aux Cerfs">Réserver →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="excursion-card">
+      <div class="card-thumb">
+        <picture class="card-thumb-media">
+          <source srcset="assets/photos/excursion-2.webp" type="image/webp">
+          <img src="assets/photos/excursion-2.jpg" alt="Point de vue nature a Black River Gorges" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-badge">Nature</div>
+        <div class="card-location">Black River</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span>⏱ Demi-journée</span><span>👥 Petit groupe</span></div>
+        <div class="card-title">Black River Gorges, jungle & cascades</div>
+        <div class="card-desc">Exploration des points de vue du parc de Black River Gorges, immersion dans la jungle tropicale et découverte des cascades du sud.</div>
+        <div class="card-footer">
+          <div class="card-price">Dès Rs 1 900 <small>/ pers.</small></div>
+          <a href="#contact" class="card-link js-reserve" data-excursion="Black River Gorges, jungle & cascades">Réserver →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="excursion-card">
+      <div class="card-thumb">
+        <picture class="card-thumb-media">
+          <source srcset="assets/photos/excursion-3.webp" type="image/webp">
+          <img src="assets/photos/excursion-3.jpg" alt="Ambiance urbaine et culturelle de Port-Louis" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-badge">Culture</div>
+        <div class="card-location">Port-Louis</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span>⏱ Journée</span><span>👥 Famille</span></div>
+        <div class="card-title">Port-Louis & les trésors culturels</div>
+        <div class="card-desc">Plongez dans l'histoire coloniale de Port-Louis, visitez le marché central, la Chinatown, et découvrez la diversité culturelle mauricienne.</div>
+        <div class="card-footer">
+          <div class="card-price">Dès Rs 1 800 <small>/ pers.</small></div>
+          <a href="#contact" class="card-link js-reserve" data-excursion="Port-Louis & les trésors culturels">Réserver →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="excursion-card">
+      <div class="card-thumb">
+        <picture class="card-thumb-media">
+          <source srcset="assets/photos/excursion-4.webp" type="image/webp">
+          <img src="assets/photos/excursion-4.jpg" alt="Lumiere de fin de journee sur la cote Est de Maurice" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-badge">Romantique</div>
+        <div class="card-location">Côte Est</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span>⏱ Soirée</span><span>👥 Duo</span></div>
+        <div class="card-title">East Coast au coucher du soleil</div>
+        <div class="card-desc">Un itinéraire romantique sur la côte est vers les plus beaux points de vue de l'île pour admirer le coucher de soleil, suivi d'un dîner local authentique.</div>
+        <div class="card-footer">
+          <div class="card-price">Dès Rs 2 200 <small>/ pers.</small></div>
+          <a href="#contact" class="card-link js-reserve" data-excursion="East Coast au coucher du soleil">Réserver →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="excursion-card">
+      <div class="card-thumb">
+        <picture class="card-thumb-media">
+          <source srcset="assets/photos/excursion-5.webp" type="image/webp">
+          <img src="assets/photos/excursion-5.jpg" alt="Snorkeling dans un lagon turquoise a l'ile Maurice" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-badge">Aventure</div>
+        <div class="card-location">Crystal Rock</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span>⏱ Demi-journée</span><span>👥 Groupe</span></div>
+        <div class="card-title">Snorkeling & spots secrets du lagon</div>
+        <div class="card-desc">Explorez les récifs coralliens préservés et les spots secrets connus uniquement des locaux, avec masques et tubas fournis.</div>
+        <div class="card-footer">
+          <div class="card-price">Dès Rs 2 000 <small>/ pers.</small></div>
+          <a href="#contact" class="card-link js-reserve" data-excursion="Snorkeling & spots secrets du lagon">Réserver →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="excursion-card">
+      <div class="card-thumb">
+        <picture class="card-thumb-media">
+          <source srcset="assets/photos/excursion-6.webp" type="image/webp">
+          <img src="assets/photos/excursion-6.jpg" alt="Rue animee de Port-Louis pendant le food tour" loading="lazy" decoding="async">
+        </picture>
+        <div class="card-badge">Gastronomie</div>
+        <div class="card-location">Central Market</div>
+      </div>
+      <div class="card-body">
+        <div class="card-meta"><span>⏱ Demi-journée</span><span>👥 Tout public</span></div>
+        <div class="card-title">Port-Louis street food tour</div>
+        <div class="card-desc">Découvrez l'âme culinaire de Port-Louis — dholl puri, rougailles, samossas, bouillon — autour du marché central et des spots street food locaux.</div>
+        <div class="card-footer">
+          <div class="card-price">Dès Rs 1 700 <small>/ pers.</small></div>
+          <a href="#contact" class="card-link js-reserve" data-excursion="Port-Louis street food tour">Réserver →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="temoignages">
+  <div class="section-tag">Succès Stories</div>
+  <h2 style="color:white;">Ce que disent<br>nos voyageurs</h2>
+  <div class="testimonials-grid">
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Une journée absolument inoubliable. Notre guide nous a emmenés dans des endroits que jamais un touriste ne découvrirait seul. Merci pour cette authenticité !"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">🇫🇷</div>
+        <div>
+          <div class="author-name">Sophie & Marc D.</div>
+          <div class="author-origin">Paris, France • Île aux Cerfs</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Best tour experience of our lives! He knew every hidden gem, every local story. We felt like we were exploring with a friend, not a tourist guide. Highly recommend!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">🇬🇧</div>
+        <div>
+          <div class="author-name">James & Emma T.</div>
+          <div class="author-origin">London, UK • Nature Tour</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Nous revenons chaque année à l'île Maurice et chaque fois nous réservons avec lui. C'est le seul guide qui connaît vraiment l'île dans ses moindres secrets."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">🇨🇭</div>
+        <div>
+          <div class="author-name">Christine M.</div>
+          <div class="author-origin">Genève, Suisse • Fidèle depuis 3 ans</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Incroyable expérience avec les dauphins ! Mon fils de 8 ans en parle encore. Le guide est d'une patience et d'une gentillesse remarquables. Une famille comblée !"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">🇧🇪</div>
+        <div>
+          <div class="author-name">Famille Laurent</div>
+          <div class="author-origin">Bruxelles, Belgique • Tour Famille</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"The food tour was a revelation! We ate the most amazing street food we've ever tasted. He took us places no tourist would ever find. Absolutely brilliant!"</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">🇦🇺</div>
+        <div>
+          <div class="author-name">Tom & Sarah K.</div>
+          <div class="author-origin">Sydney, Australia • Food Tour</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="stars">★★★★★</div>
+      <div class="testimonial-text">"Un coucher de soleil magique sur les hauteurs de l'île avec ma femme, suivi d'un dîner local fabuleux. Une soirée romantique parfaite que nous n'oublierons jamais."</div>
+      <div class="testimonial-author">
+        <div class="author-avatar">🇩🇪</div>
+        <div>
+          <div class="author-name">Klaus & Ingrid H.</div>
+          <div class="author-origin">Hamburg, Allemagne • Sunset Tour</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PROOF GALLERY -->
+<section class="proof-gallery" id="galerie">
+  <div class="section-tag">Photos réelles</div>
+  <h2>Moments capturés<br>avec nos voyageurs</h2>
+  <p style="max-width:680px; color:#61727a; font-size:0.95rem; line-height:1.8;">Aucune banque d'images: uniquement des photos publiées sur les pages officielles Instagram et Facebook.</p>
+  <div class="proof-grid">
+    <figure class="proof-item">
+      <picture>
+        <source srcset="assets/photos/excursion-1.webp" type="image/webp">
+        <img src="assets/photos/excursion-1.jpg" alt="Sortie en mer avec dauphins a l'ile Maurice" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="proof-source">Instagram</figcaption>
+    </figure>
+    <figure class="proof-item">
+      <picture>
+        <source srcset="assets/photos/excursion-2.webp" type="image/webp">
+        <img src="assets/photos/excursion-2.jpg" alt="Panorama nature dans le sud de Maurice" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="proof-source">Instagram</figcaption>
+    </figure>
+    <figure class="proof-item">
+      <picture>
+        <source srcset="assets/photos/excursion-3.webp" type="image/webp">
+        <img src="assets/photos/excursion-3.jpg" alt="Scene de la region de Port-Louis" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="proof-source">Instagram</figcaption>
+    </figure>
+    <figure class="proof-item">
+      <picture>
+        <source srcset="assets/photos/excursion-4.webp" type="image/webp">
+        <img src="assets/photos/excursion-4.jpg" alt="Cote Est de Maurice au coucher du soleil" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="proof-source">Instagram</figcaption>
+    </figure>
+    <figure class="proof-item">
+      <picture>
+        <source srcset="assets/photos/excursion-5.webp" type="image/webp">
+        <img src="assets/photos/excursion-5.jpg" alt="Snorkeling dans un lagon transparent" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="proof-source">Instagram</figcaption>
+    </figure>
+    <figure class="proof-item">
+      <picture>
+        <source srcset="assets/photos/excursion-6.webp" type="image/webp">
+        <img src="assets/photos/excursion-6.jpg" alt="Balade urbaine a Port-Louis" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="proof-source">Instagram</figcaption>
+    </figure>
+    <figure class="proof-item">
+      <picture>
+        <source srcset="assets/photos/guide-facebook.webp" type="image/webp">
+        <img src="assets/photos/guide-facebook.jpg" alt="Photo officielle de la page Facebook Mauritius Tour Guide" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="proof-source">Facebook</figcaption>
+    </figure>
+    <figure class="proof-item">
+      <picture>
+        <source srcset="assets/photos/guide-instagram.webp" type="image/webp">
+        <img src="assets/photos/guide-instagram.jpg" alt="Photo profil officielle du compte Instagram Mauritius Tour Guide" loading="lazy" decoding="async">
+      </picture>
+      <figcaption class="proof-source">Instagram</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social-section">
+  <div class="section-tag" style="justify-content: center;">Réseaux sociaux</div>
+  <h2>Suivez nos aventures</h2>
+  <p style="color:#6a7a82; max-width:480px; margin:12px auto 0; font-size:0.95rem; line-height:1.8; font-weight:300;">Des photos, des vidéos, des histoires du quotidien — rejoignez notre communauté et laissez-vous inspirer par la beauté de l'île Maurice.</p>
+  <div class="social-links">
+    <a href="https://www.facebook.com/localmauritius" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la page Facebook Mauritius Tour Guide" class="social-card fb-card">
+      <div class="social-icon-circle">f</div>
+      <div class="social-name">Facebook</div>
+      <div class="social-handle">@localmauritius · 35 748 J'aime</div>
+    </a>
+    <a href="https://www.instagram.com/mauritiustourguide/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la page Instagram Mauritius Tour Guide" class="social-card ig-card">
+      <div class="social-icon-circle">📷</div>
+      <div class="social-name">Instagram</div>
+      <div class="social-handle">@mauritiustourguide · 368 followers · 519 posts</div>
+    </a>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-strip">
+  <div class="section-tag">Informations pratiques</div>
+  <h2>Réserver avec<br>des conditions claires</h2>
+  <div class="trust-grid">
+    <div class="trust-item">
+      <strong>Zone de départ</strong>
+      <span>Prise en charge sur toute l'île Maurice selon votre hébergement.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Langues parlées</strong>
+      <span>Français, anglais et créole mauricien.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Délai de réponse</strong>
+      <span>Réponse sur WhatsApp en général sous 30 minutes en journée.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Modes de paiement</strong>
+      <span>Espèces (MUR/EUR), virement local et transfert mobile selon disponibilité.</span>
+    </div>
+    <div class="trust-item">
+      <strong>Annulation flexible</strong>
+      <span>Annulation ou report sans frais jusqu'à 24h avant le départ.</span>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <div class="section-tag">Contact</div>
+    <h2>Planifions votre aventure ensemble</h2>
+    <p style="margin-top:16px;">Que ce soit pour une excursion du catalogue ou une expérience entièrement personnalisée, écrivez-nous et nous créerons l'itinéraire de vos rêves.</p>
+    <div style="margin-top:36px; display:flex; flex-direction:column; gap:16px;">
+      <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem;">
+        <span style="color:var(--turquoise); font-size:1.2rem;">📱</span>
+        WhatsApp : <a href="https://wa.me/23057652767" style="color:var(--turquoise); text-decoration:none;">+230 5765 2767</a>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem;">
+        <span style="color:var(--turquoise); font-size:1.2rem;">📞</span>
+        Tel : <a href="tel:+23057652767" style="color:var(--turquoise); text-decoration:none;">+230 5765 2767</a>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem;">
+        <span style="color:var(--turquoise); font-size:1.2rem;">📍</span>
+        Royal Road, Chemin Grenier, Mauritius 60408
+      </div>
+      <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem;">
+        <span style="color:var(--turquoise); font-size:1.2rem;">🕐</span>
+        Disponible 7j/7 — Toujours ouvert
+      </div>
+    </div>
+  </div>
+  <form class="contact-form" id="bookingForm">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="firstName">Prénom</label>
+        <input id="firstName" name="firstName" type="text" placeholder="Votre prénom" required>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Nom</label>
+        <input id="lastName" name="lastName" type="text" placeholder="Votre nom" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" placeholder="votre@email.com">
+    </div>
+    <div class="form-group">
+      <label for="excursionSelect">Excursion souhaitée</label>
+      <select id="excursionSelect" name="excursion" required>
+        <option value="">Choisir une excursion...</option>
+        <option>Nage avec les dauphins & Île aux Cerfs</option>
+        <option>Black River Gorges, jungle & cascades</option>
+        <option>Port-Louis & les trésors culturels</option>
+        <option>East Coast au coucher du soleil</option>
+        <option>Snorkeling & spots secrets du lagon</option>
+        <option>Port-Louis street food tour</option>
+        <option>Excursion sur mesure</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="message">Votre message</label>
+      <textarea id="message" name="message" placeholder="Dates souhaitées, nombre de personnes, demandes spéciales..."></textarea>
+    </div>
+    <button type="submit" class="form-submit">Envoyer sur WhatsApp →</button>
+  </form>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Mauritius <span>Tour Guide</span></div>
+  <div class="footer-copy">© 2026 Mauritius Tour Guide — Saizad · Royal Road, Chemin Grenier, Mauritius · +230 5765 2767</div>
+</footer>
+
+<a class="wa-sticky" href="https://wa.me/23057652767?text=Bonjour%20Saizad%2C%20je%20souhaite%20r%C3%A9server%20une%20excursion%20%C3%A0%20l%27%C3%AEle%20Maurice." aria-label="Contacter sur WhatsApp" target="_blank" rel="noopener noreferrer">WhatsApp • Réserver</a>
+
+<script>
+  function toggleMenu() {
+    const h = document.getElementById('hamburger');
+    const m = document.getElementById('mobileMenu');
+    h.classList.toggle('open');
+    m.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+  }
+  function closeMenu() {
+    document.getElementById('hamburger').classList.remove('open');
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // Close menu on escape key
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+  const excursionSelect = document.getElementById('excursionSelect');
+  document.querySelectorAll('.js-reserve').forEach(link => {
+    link.addEventListener('click', () => {
+      const choice = link.getAttribute('data-excursion');
+      if (choice && excursionSelect) excursionSelect.value = choice;
+    });
+  });
+
+  const bookingForm = document.getElementById('bookingForm');
+  bookingForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const excursion = document.getElementById('excursionSelect').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const lines = [
+      'Bonjour Saizad, je souhaite reserver une excursion a Maurice.',
+      `Nom: ${firstName} ${lastName}`.trim(),
+      `Excursion: ${excursion || 'A definir'}`,
+      `Email: ${email || 'Non renseigne'}`,
+      `Message: ${message || 'Aucun message supplementaire.'}`
+    ];
+    const text = encodeURIComponent(lines.join('\n'));
+    window.open(`https://wa.me/23057652767?text=${text}`, '_blank', 'noopener');
+  });
+</script>
+</body>
+</html>
