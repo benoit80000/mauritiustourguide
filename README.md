@@ -9,7 +9,7 @@ Site web officiel de **Saizad**, guide touristique local à l'île Maurice.
 
 ## 📋 Contenu du site
 - Hero avec appel à l'action
-- Statistiques (35K followers, 331 avis 100% positifs)
+- Statistiques (368 followers Instagram, 35 748 J'aime Facebook, 331 avis 100% positifs)
 - Présentation du guide Saizad
 - Catalogue des 6 excursions
 - Témoignages clients
