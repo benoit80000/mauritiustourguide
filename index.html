@@ -3,13 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mauritius Tour Guide — Saizad, Guide Local Officiel</title>
-<meta name="description" content="Guide local francophone à l'île Maurice: excursions privées, snorkeling, dauphins, Port-Louis street food et circuits sur mesure avec Saizad.">
-<link rel="canonical" href="https://www.mauritiustourguide.com/">
-<meta property="og:title" content="Mauritius Tour Guide — Saizad, Guide Local Officiel">
-<meta property="og:description" content="Excursions authentiques à l'île Maurice avec guide local certifié. Réservation rapide sur WhatsApp.">
+<title id="metaTitle">Mauritius Tour Guide — Saizad, Guide Local Officiel</title>
+<meta id="metaDescription" name="description" content="Guide local francophone à l'île Maurice: excursions privées, snorkeling, dauphins, Port-Louis street food et circuits sur mesure avec Saizad.">
+<link id="canonicalLink" rel="canonical" href="https://www.mauritiustourguide.com/">
+<link rel="alternate" hreflang="fr" href="https://www.mauritiustourguide.com/?lang=fr">
+<link rel="alternate" hreflang="en" href="https://www.mauritiustourguide.com/?lang=en">
+<link rel="alternate" hreflang="de" href="https://www.mauritiustourguide.com/?lang=de">
+<link rel="alternate" hreflang="mfe" href="https://www.mauritiustourguide.com/?lang=mf">
+<link rel="alternate" hreflang="nl" href="https://www.mauritiustourguide.com/?lang=nl">
+<link rel="alternate" hreflang="x-default" href="https://www.mauritiustourguide.com/">
+<meta id="ogTitle" property="og:title" content="Mauritius Tour Guide — Saizad, Guide Local Officiel">
+<meta id="ogDescription" property="og:description" content="Excursions authentiques à l'île Maurice avec guide local certifié. Réservation rapide sur WhatsApp.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.mauritiustourguide.com/">
+<meta id="ogUrl" property="og:url" content="https://www.mauritiustourguide.com/">
 <meta property="og:image" content="https://www.mauritiustourguide.com/assets/photos/excursion-1.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
@@ -32,8 +38,7 @@
     "https://www.facebook.com/localmauritius"
   ],
   "areaServed": "Mauritius",
-  "availableLanguage": ["fr", "en", "mfe"],
-  "priceRange": "$$"
+  "availableLanguage": ["fr", "en", "de", "mfe", "nl"]
 }
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -116,6 +121,59 @@
     padding: 10px 22px;
     border-radius: 2px;
     opacity: 1 !important;
+  }
+
+  .nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .lang-select {
+    background: rgba(255,255,255,0.08);
+    color: var(--white);
+    border: 1px solid rgba(255,255,255,0.26);
+    padding: 8px 10px;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  .lang-select option {
+    color: var(--dark);
+    background: var(--white);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .skip-link {
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    z-index: 220;
+    background: var(--white);
+    color: var(--ocean);
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(10, 61, 78, 0.25);
+    transform: translateY(-140%);
+    transition: transform 0.2s ease;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
   }
 
   /* HERO */
@@ -582,6 +640,56 @@
     gap: 28px;
   }
 
+  .excursions-tools {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px;
+    align-items: end;
+    margin: -24px 0 28px;
+  }
+
+  .excursions-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .excursions-filters select {
+    background: white;
+    border: 1px solid rgba(10,61,78,0.18);
+    border-radius: 3px;
+    color: var(--ocean);
+    padding: 10px 12px;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .compare-panel {
+    background: rgba(10,61,78,0.05);
+    border: 1px solid rgba(10,61,78,0.12);
+    border-radius: 4px;
+    padding: 11px 14px;
+    min-width: 310px;
+    max-width: 100%;
+  }
+
+  .compare-panel strong {
+    font-size: 0.74rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--ocean);
+  }
+
+  .compare-list {
+    margin-top: 7px;
+    color: #5f727b;
+    font-size: 0.8rem;
+    line-height: 1.45;
+    min-height: 1.2em;
+  }
+
   .excursion-card {
     background: var(--white);
     border-radius: 4px;
@@ -657,6 +765,26 @@
     margin-bottom: 12px;
   }
 
+  .card-budget {
+    margin-bottom: 10px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5f727b;
+  }
+
+  .card-availability {
+    margin-top: 2px;
+    display: inline-block;
+    font-size: 0.67rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--lagoon);
+    border: 1px solid rgba(26,143,160,0.3);
+    border-radius: 99px;
+    padding: 4px 9px;
+  }
+
   .card-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.5rem;
@@ -682,16 +810,70 @@
     border-top: 1px solid rgba(0,0,0,0.06);
   }
 
-  .card-price {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
+  .compare-toggle {
+    font-size: 0.72rem;
+    color: #5f727b;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .compare-toggle input { accent-color: var(--lagoon); }
+
+  .excursion-card.is-hidden {
+    display: none;
+  }
+
+  .planner-section {
+    margin-top: 34px;
+    background: #f8f8f4;
+    border: 1px solid rgba(10,61,78,0.1);
+    border-radius: 6px;
+    padding: 22px;
+  }
+
+  .planner-title {
+    font-size: 1rem;
+    color: var(--ocean);
+    margin-bottom: 10px;
+    letter-spacing: 0.03em;
+  }
+
+  .planner-controls {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    align-items: end;
+  }
+
+  .planner-controls select,
+  .planner-controls button {
+    padding: 11px 12px;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+  }
+
+  .planner-controls select {
+    border: 1px solid rgba(10,61,78,0.2);
+    background: white;
     color: var(--ocean);
   }
 
-  .card-price small {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.7rem;
-    color: #9aabb2;
+  .planner-controls button {
+    border: none;
+    background: var(--ocean);
+    color: white;
+    cursor: pointer;
+  }
+
+  .planner-result {
+    margin-top: 12px;
+    color: #4f646d;
+    line-height: 1.7;
+    font-size: 0.9rem;
+    min-height: 1.3em;
   }
 
   .card-link {
@@ -735,6 +917,14 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     margin-top: 50px;
+  }
+
+  .author-meta {
+    margin-top: 4px;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.52);
   }
 
   /* PROOF GALLERY */
@@ -999,6 +1189,31 @@
 
   .form-group textarea { resize: vertical; min-height: 100px; }
 
+  .form-hint {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.42);
+  }
+
+  .form-error {
+    font-size: 0.74rem;
+    color: #ffb4b4;
+    min-height: 1.1em;
+  }
+
+  .form-group input[aria-invalid="true"],
+  .form-group select[aria-invalid="true"],
+  .form-group textarea[aria-invalid="true"] {
+    border-color: #ff8e8e;
+  }
+
+  .form-status {
+    font-size: 0.78rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--turquoise);
+    min-height: 1.2em;
+  }
+
   .form-submit {
     background: var(--coral);
     color: white;
@@ -1015,6 +1230,38 @@
   }
 
   .form-submit:hover { background: #d4604a; transform: translateY(-2px); }
+
+  .faq-section {
+    background: linear-gradient(180deg, #f8f3ea 0%, #fffaf2 100%);
+  }
+
+  .faq-grid {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .faq-item {
+    background: white;
+    border: 1px solid rgba(10,61,78,0.08);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+
+  .faq-item h3 {
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ocean);
+    margin-bottom: 10px;
+  }
+
+  .faq-item p {
+    color: #60717a;
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
 
   /* FOOTER */
   footer {
@@ -1062,6 +1309,8 @@
   ============================================ */
   .hamburger {
     display: none;
+    border: none;
+    background: transparent;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
@@ -1150,6 +1399,7 @@
     nav { padding: 16px 28px; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
+    .lang-select { padding: 7px 9px; font-size: 0.7rem; }
 
     section { padding: 80px 5%; }
     .hero-content { padding: 0 6%; max-width: 100%; }
@@ -1179,7 +1429,9 @@
     .about-highlights { grid-template-columns: repeat(2, 1fr); }
 
     .excursions-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .excursions-tools { grid-template-columns: 1fr; }
     .excursions-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .planner-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .proof-grid { grid-template-columns: repeat(3, 1fr); }
     .trust-grid { grid-template-columns: repeat(3, 1fr); }
 
@@ -1236,10 +1488,14 @@
     .highlight-item span { font-size: 0.72rem; }
 
     .excursions-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .excursions-tools { grid-template-columns: 1fr; margin-top: -8px; }
+    .excursions-filters { flex-direction: column; align-items: stretch; }
     .excursions-grid { grid-template-columns: 1fr; gap: 20px; }
     .card-thumb { height: 180px; }
     .card-body { padding: 20px; }
     .card-title { font-size: 1.3rem; }
+    .planner-controls { grid-template-columns: 1fr; }
+    .compare-panel { min-width: 0; }
 
     .testimonials-grid { grid-template-columns: 1fr; gap: 16px; }
     .testimonial-card { padding: 24px; }
@@ -1251,6 +1507,7 @@
 
     .proof-grid { grid-template-columns: repeat(2, 1fr); }
     .trust-grid { grid-template-columns: 1fr 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
 
     .contact { grid-template-columns: 1fr; gap: 40px; padding: 64px 5%; }
     .form-row { grid-template-columns: 1fr; }
@@ -1282,6 +1539,7 @@
     .card-thumb { height: 160px; }
     .card-title { font-size: 1.2rem; }
     .card-desc { font-size: 0.82rem; }
+    .card-footer { flex-direction: column; align-items: flex-start; gap: 8px; }
 
     .testimonials-grid { gap: 12px; }
     .testimonial-card { padding: 20px; }
@@ -1316,30 +1574,43 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#mainContent" data-i18n="skip_content">Aller au contenu</a>
+<div id="languageStatus" class="sr-only" role="status" aria-live="polite"></div>
 
 <!-- NAV -->
 <nav>
   <div class="nav-logo">Mauritius <span>Tour Guide</span></div>
   <ul class="nav-links">
-    <li><a href="#about">À propos</a></li>
-    <li><a href="#excursions">Excursions</a></li>
-    <li><a href="#temoignages">Avis</a></li>
-    <li><a href="#contact" class="nav-cta">Réserver</a></li>
+    <li><a href="#about" data-i18n="nav_about">À propos</a></li>
+    <li><a href="#excursions" data-i18n="nav_excursions">Excursions</a></li>
+    <li><a href="#temoignages" data-i18n="nav_reviews">Avis</a></li>
+    <li><a href="#contact" class="nav-cta" data-i18n="nav_book">Réserver</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
+  <div class="nav-tools">
+    <label for="languageSelect" class="sr-only" data-i18n="lang_label">Langue</label>
+    <select id="languageSelect" class="lang-select" aria-label="Choisir la langue" data-i18n-aria="lang_select_aria">
+      <option value="fr">FR</option>
+      <option value="en">EN</option>
+      <option value="de">DE</option>
+      <option value="mf">KREOL</option>
+      <option value="nl">NL</option>
+    </select>
+    <button class="hamburger" id="hamburger" type="button" onclick="toggleMenu()" aria-label="Ouvrir le menu" data-i18n-aria="menu_toggle_aria" aria-controls="mobileMenu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMenu()">À propos</a>
-  <a href="#excursions" onclick="closeMenu()">Excursions</a>
-  <a href="#temoignages" onclick="closeMenu()">Avis clients</a>
-  <a href="#contact" class="mobile-cta" onclick="closeMenu()">Réserver</a>
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menu mobile">
+  <a href="#about" onclick="closeMenu()" data-i18n="nav_about">À propos</a>
+  <a href="#excursions" onclick="closeMenu()" data-i18n="nav_excursions">Excursions</a>
+  <a href="#temoignages" onclick="closeMenu()" data-i18n="nav_reviews_mobile">Avis clients</a>
+  <a href="#contact" class="mobile-cta" onclick="closeMenu()" data-i18n="nav_book">Réserver</a>
 </div>
 
 <!-- HERO -->
+<main id="mainContent">
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
@@ -1348,20 +1619,20 @@
       <source srcset="assets/photos/guide-instagram.webp" type="image/webp">
       <img src="assets/photos/guide-instagram.jpg" alt="" loading="eager" decoding="async">
     </picture>
-    <div class="hero-media-tag">Logo officiel</div>
+    <div class="hero-media-tag" data-i18n="hero_logo">Logo officiel</div>
   </div>
   <div class="hero-content">
-    <div class="hero-eyebrow">Mauritius Tour Guide — Saizad · Guide Local Certifié</div>
-    <h1>Découvrez <em>l'âme</em><br>de l'île Maurice</h1>
-    <p>Des expériences authentiques loin des sentiers battus. Votre guide local vous ouvre les portes d'une île secrète, vivante et passionnée.</p>
+    <div class="hero-eyebrow" data-i18n="hero_eyebrow">Mauritius Tour Guide — Saizad · Guide Local Certifié</div>
+    <h1 data-i18n-html="hero_title">Découvrez <em>l'âme</em><br>de l'île Maurice</h1>
+    <p data-i18n="hero_desc">Des expériences authentiques loin des sentiers battus. Votre guide local vous ouvre les portes d'une île secrète, vivante et passionnée.</p>
     <div class="hero-btns">
-      <a href="#excursions" class="btn-primary">Explorer les excursions</a>
-      <a href="#contact" class="btn-secondary">Contacter le guide</a>
+      <a href="#excursions" class="btn-primary" data-i18n="hero_explore">Explorer les excursions</a>
+      <a href="#contact" class="btn-secondary" data-i18n="hero_contact">Contacter le guide</a>
     </div>
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
-    Défiler
+    <span data-i18n="hero_scroll">Défiler</span>
   </div>
   <div class="wave-decoration">
     <svg viewBox="0 0 1440 160" xmlns="http://www.w3.org/2000/svg">
@@ -1374,20 +1645,20 @@
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stat-item">
-    <span class="stat-number">368</span>
-    <span class="stat-label">Followers Instagram</span>
+    <span class="stat-number" data-social-proof="instagram_followers">368</span>
+    <span class="stat-label" data-i18n="stat_ig_followers">Followers Instagram</span>
   </div>
   <div class="stat-item">
-    <span class="stat-number">331</span>
-    <span class="stat-label">Avis vérifiés</span>
+    <span class="stat-number" data-social-proof="verified_reviews">331</span>
+    <span class="stat-label" data-i18n="stat_reviews">Avis vérifiés</span>
   </div>
   <div class="stat-item">
-    <span class="stat-number">100%</span>
-    <span class="stat-label">Recommandé</span>
+    <span class="stat-number" data-social-proof="recommended_rate">100%</span>
+    <span class="stat-label" data-i18n="stat_recommended">Recommandé</span>
   </div>
   <div class="stat-item">
-    <span class="stat-number">519</span>
-    <span class="stat-label">Publications Instagram</span>
+    <span class="stat-number" data-social-proof="instagram_posts">519</span>
+    <span class="stat-label" data-i18n="stat_ig_posts">Publications Instagram</span>
   </div>
 </div>
 
@@ -1402,41 +1673,41 @@
         </picture>
         <div class="guide-avatar" aria-hidden="true"></div>
         <div class="guide-name-tag">
-          <strong>Saizad</strong>
-          <span>Mauritius Tour Guide Officiel</span>
+          <strong data-i18n="about_guide_name">Saizad</strong>
+          <span data-i18n="about_guide_role">Mauritius Tour Guide Officiel</span>
         </div>
       </div>
     </div>
     <div class="about-badge">
       <strong>331</strong>
-      avis 100% positifs
+      <span data-i18n="about_badge">avis 100% positifs</span>
     </div>
   </div>
   <div class="about-text">
-    <div class="section-tag">Votre guide</div>
-    <h2>Saizad, votre guide<br>mauricien de cœur</h2>
-    <p>Bonjour, je m'appelle <strong>Saizad</strong> et je veux vous faire découvrir les merveilles de l'île Maurice. Je vous emmènerai dans les sites les plus incroyables de cette île paradisiaque — des plages cachées aux paysages volcaniques, en passant par sa culture vibrante et sa gastronomie unique.</p>
-    <p>Avec <strong>plus de 36 000 abonnés</strong> sur les réseaux sociaux et <strong>331 avis tous à 100% positifs</strong>, ma réputation repose sur une seule promesse : vous offrir une expérience authentique et inoubliable, loin des circuits touristiques classiques.</p>
+    <div class="section-tag" data-i18n="tag_guide">Votre guide</div>
+    <h2 data-i18n-html="about_title">Saizad, votre guide<br>mauricien de cœur</h2>
+    <p data-i18n-html="about_p1">Bonjour, je m'appelle <strong>Saizad</strong> et je veux vous faire découvrir les merveilles de l'île Maurice. Je vous emmènerai dans les sites les plus incroyables de cette île paradisiaque — des plages cachées aux paysages volcaniques, en passant par sa culture vibrante et sa gastronomie unique.</p>
+    <p data-i18n-html="about_p2">Avec <strong>plus de 36 000 abonnés</strong> sur les réseaux sociaux et <strong>331 avis tous à 100% positifs</strong>, ma réputation repose sur une seule promesse : vous offrir une expérience authentique et inoubliable, loin des circuits touristiques classiques.</p>
     <div class="about-highlights">
       <div class="highlight-item">
         <div class="highlight-icon">🌴</div>
-        <strong>Guide certifié</strong>
-        <span>Accrédité par le tourisme mauricien</span>
+        <strong data-i18n="about_h1_title">Guide certifié</strong>
+        <span data-i18n="about_h1_desc">Accrédité par le tourisme mauricien</span>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🗣️</div>
-        <strong>Multilingue</strong>
-        <span>Français, Anglais, Créole</span>
+        <strong data-i18n="about_h2_title">Multilingue</strong>
+        <span data-i18n="about_h2_desc">Français, Anglais, Créole</span>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">🚗</div>
-        <strong>Transport inclus</strong>
-        <span>Véhicule climatisé confortable</span>
+        <strong data-i18n="about_h3_title">Transport inclus</strong>
+        <span data-i18n="about_h3_desc">Véhicule climatisé confortable</span>
       </div>
       <div class="highlight-item">
         <div class="highlight-icon">📸</div>
-        <strong>Photos incluses</strong>
-        <span>Souvenirs inoubliables garantis</span>
+        <strong data-i18n="about_h4_title">Photos incluses</strong>
+        <span data-i18n="about_h4_desc">Souvenirs inoubliables garantis</span>
       </div>
     </div>
   </div>
@@ -1446,210 +1717,283 @@
 <section class="excursions" id="excursions">
   <div class="excursions-header">
     <div>
-      <div class="section-tag">Catalogue</div>
-      <h2>Nos excursions<br>signatures</h2>
+      <div class="section-tag" data-i18n="tag_catalog">Catalogue</div>
+      <h2 data-i18n-html="h2_excursions">Nos excursions<br>signatures</h2>
     </div>
-    <a href="#contact" class="btn-primary">Demander sur mesure</a>
+    <a href="#contact" class="btn-primary" data-i18n="exc_custom_btn">Demander sur mesure</a>
+  </div>
+  <div class="excursions-tools">
+    <div class="excursions-filters">
+      <select id="filterDuration" aria-label="Filtrer par durée">
+        <option value="all" data-i18n="filter_duration_all">Durée: toutes</option>
+        <option value="full" data-i18n="filter_duration_full">Durée: journée</option>
+        <option value="half" data-i18n="filter_duration_half">Durée: demi-journée</option>
+        <option value="evening" data-i18n="filter_duration_evening">Durée: soirée</option>
+      </select>
+      <select id="filterStyle" aria-label="Filtrer par style">
+        <option value="all" data-i18n="filter_style_all">Style: tous</option>
+        <option value="nature" data-i18n="filter_style_nature">Style: nature</option>
+        <option value="culture" data-i18n="filter_style_culture">Style: culture</option>
+        <option value="romantic" data-i18n="filter_style_romantic">Style: romantique</option>
+        <option value="adventure" data-i18n="filter_style_adventure">Style: aventure</option>
+        <option value="food" data-i18n="filter_style_food">Style: gastronomie</option>
+      </select>
+      <select id="filterAudience" aria-label="Filtrer par profil">
+        <option value="all" data-i18n="filter_audience_all">Profil: tous</option>
+        <option value="group" data-i18n="filter_audience_group">Profil: groupe</option>
+        <option value="family" data-i18n="filter_audience_family">Profil: famille</option>
+        <option value="couple" data-i18n="filter_audience_couple">Profil: couple</option>
+      </select>
+    </div>
+    <aside class="compare-panel" aria-live="polite">
+      <strong data-i18n="compare_title">Comparateur (max 3)</strong>
+      <div class="compare-list" id="compareList" data-i18n="compare_empty">Aucune excursion sélectionnée.</div>
+    </aside>
   </div>
   <div class="excursions-grid">
 
-    <div class="excursion-card">
+    <div class="excursion-card" data-duration="full" data-style="nature" data-audience="group" data-excursion-id="exc1">
       <div class="card-thumb">
         <picture class="card-thumb-media">
           <source srcset="assets/photos/excursion-1.webp" type="image/webp">
           <img src="assets/photos/excursion-1.jpg" alt="Sortie dauphins et ile aux Cerfs a Maurice" loading="lazy" decoding="async">
         </picture>
-        <div class="card-badge">Populaire</div>
+        <div class="card-badge" data-i18n="exc1_badge">Populaire</div>
         <div class="card-location">Benitier</div>
       </div>
       <div class="card-body">
-        <div class="card-meta"><span>⏱ Journée</span><span>👥 Groupe</span></div>
-        <div class="card-title">Nage avec les dauphins & Île aux Cerfs</div>
-        <div class="card-desc">Une matinée magique en pleine mer avec les dauphins sauvages, suivie d'une journée sur la plus belle île lagonaire de Maurice.</div>
+        <div class="card-meta"><span data-i18n="exc1_meta_1">⏱ Journée</span><span data-i18n="exc1_meta_2">👥 Groupe</span></div>
+        <div class="card-budget" data-i18n="exc1_budget">Budget indicatif: Confort (sur devis)</div>
+        <span class="card-availability" data-i18n="exc1_availability">Disponibilité: Matin</span>
+        <div class="card-title" data-i18n="exc1_title">Nage avec les dauphins & Île aux Cerfs</div>
+        <div class="card-desc" data-i18n="exc1_desc">Une matinée magique en pleine mer avec les dauphins sauvages, suivie d'une journée sur la plus belle île lagonaire de Maurice.</div>
         <div class="card-footer">
-          <div class="card-price">Dès Rs 2 500 <small>/ pers.</small></div>
-          <a href="#contact" class="card-link js-reserve" data-excursion="Nage avec les dauphins & Île aux Cerfs">Réserver →</a>
+          <label class="compare-toggle"><input type="checkbox" class="compare-checkbox" data-excursion-key="exc1_title"><span data-i18n="compare_select">Comparer</span></label>
+          <a href="#contact" class="card-link js-reserve" data-excursion-key="option_exc1">Réserver →</a>
         </div>
       </div>
     </div>
 
-    <div class="excursion-card">
+    <div class="excursion-card" data-duration="half" data-style="nature" data-audience="group" data-excursion-id="exc2">
       <div class="card-thumb">
         <picture class="card-thumb-media">
           <source srcset="assets/photos/excursion-2.webp" type="image/webp">
           <img src="assets/photos/excursion-2.jpg" alt="Point de vue nature a Black River Gorges" loading="lazy" decoding="async">
         </picture>
-        <div class="card-badge">Nature</div>
+        <div class="card-badge" data-i18n="exc2_badge">Nature</div>
         <div class="card-location">Black River</div>
       </div>
       <div class="card-body">
-        <div class="card-meta"><span>⏱ Demi-journée</span><span>👥 Petit groupe</span></div>
-        <div class="card-title">Black River Gorges, jungle & cascades</div>
-        <div class="card-desc">Exploration des points de vue du parc de Black River Gorges, immersion dans la jungle tropicale et découverte des cascades du sud.</div>
+        <div class="card-meta"><span data-i18n="exc2_meta_1">⏱ Demi-journée</span><span data-i18n="exc2_meta_2">👥 Petit groupe</span></div>
+        <div class="card-budget" data-i18n="exc2_budget">Budget indicatif: Éco (sur devis)</div>
+        <span class="card-availability" data-i18n="exc2_availability">Disponibilité: Matin & Après-midi</span>
+        <div class="card-title" data-i18n="exc2_title">Black River Gorges, jungle & cascades</div>
+        <div class="card-desc" data-i18n="exc2_desc">Exploration des points de vue du parc de Black River Gorges, immersion dans la jungle tropicale et découverte des cascades du sud.</div>
         <div class="card-footer">
-          <div class="card-price">Dès Rs 1 900 <small>/ pers.</small></div>
-          <a href="#contact" class="card-link js-reserve" data-excursion="Black River Gorges, jungle & cascades">Réserver →</a>
+          <label class="compare-toggle"><input type="checkbox" class="compare-checkbox" data-excursion-key="exc2_title"><span data-i18n="compare_select">Comparer</span></label>
+          <a href="#contact" class="card-link js-reserve" data-excursion-key="option_exc2">Réserver →</a>
         </div>
       </div>
     </div>
 
-    <div class="excursion-card">
+    <div class="excursion-card" data-duration="full" data-style="culture" data-audience="family" data-excursion-id="exc3">
       <div class="card-thumb">
         <picture class="card-thumb-media">
           <source srcset="assets/photos/excursion-3.webp" type="image/webp">
           <img src="assets/photos/excursion-3.jpg" alt="Ambiance urbaine et culturelle de Port-Louis" loading="lazy" decoding="async">
         </picture>
-        <div class="card-badge">Culture</div>
+        <div class="card-badge" data-i18n="exc3_badge">Culture</div>
         <div class="card-location">Port-Louis</div>
       </div>
       <div class="card-body">
-        <div class="card-meta"><span>⏱ Journée</span><span>👥 Famille</span></div>
-        <div class="card-title">Port-Louis & les trésors culturels</div>
-        <div class="card-desc">Plongez dans l'histoire coloniale de Port-Louis, visitez le marché central, la Chinatown, et découvrez la diversité culturelle mauricienne.</div>
+        <div class="card-meta"><span data-i18n="exc3_meta_1">⏱ Journée</span><span data-i18n="exc3_meta_2">👥 Famille</span></div>
+        <div class="card-budget" data-i18n="exc3_budget">Budget indicatif: Éco (sur devis)</div>
+        <span class="card-availability" data-i18n="exc3_availability">Disponibilité: Après-midi</span>
+        <div class="card-title" data-i18n="exc3_title">Port-Louis & les trésors culturels</div>
+        <div class="card-desc" data-i18n="exc3_desc">Plongez dans l'histoire coloniale de Port-Louis, visitez le marché central, la Chinatown, et découvrez la diversité culturelle mauricienne.</div>
         <div class="card-footer">
-          <div class="card-price">Dès Rs 1 800 <small>/ pers.</small></div>
-          <a href="#contact" class="card-link js-reserve" data-excursion="Port-Louis & les trésors culturels">Réserver →</a>
+          <label class="compare-toggle"><input type="checkbox" class="compare-checkbox" data-excursion-key="exc3_title"><span data-i18n="compare_select">Comparer</span></label>
+          <a href="#contact" class="card-link js-reserve" data-excursion-key="option_exc3">Réserver →</a>
         </div>
       </div>
     </div>
 
-    <div class="excursion-card">
+    <div class="excursion-card" data-duration="evening" data-style="romantic" data-audience="couple" data-excursion-id="exc4">
       <div class="card-thumb">
         <picture class="card-thumb-media">
           <source srcset="assets/photos/excursion-4.webp" type="image/webp">
           <img src="assets/photos/excursion-4.jpg" alt="Lumiere de fin de journee sur la cote Est de Maurice" loading="lazy" decoding="async">
         </picture>
-        <div class="card-badge">Romantique</div>
+        <div class="card-badge" data-i18n="exc4_badge">Romantique</div>
         <div class="card-location">Côte Est</div>
       </div>
       <div class="card-body">
-        <div class="card-meta"><span>⏱ Soirée</span><span>👥 Duo</span></div>
-        <div class="card-title">East Coast au coucher du soleil</div>
-        <div class="card-desc">Un itinéraire romantique sur la côte est vers les plus beaux points de vue de l'île pour admirer le coucher de soleil, suivi d'un dîner local authentique.</div>
+        <div class="card-meta"><span data-i18n="exc4_meta_1">⏱ Soirée</span><span data-i18n="exc4_meta_2">👥 Duo</span></div>
+        <div class="card-budget" data-i18n="exc4_budget">Budget indicatif: Signature (sur devis)</div>
+        <span class="card-availability" data-i18n="exc4_availability">Disponibilité: Soirée</span>
+        <div class="card-title" data-i18n="exc4_title">East Coast au coucher du soleil</div>
+        <div class="card-desc" data-i18n="exc4_desc">Un itinéraire romantique sur la côte est vers les plus beaux points de vue de l'île pour admirer le coucher de soleil, suivi d'un dîner local authentique.</div>
         <div class="card-footer">
-          <div class="card-price">Dès Rs 2 200 <small>/ pers.</small></div>
-          <a href="#contact" class="card-link js-reserve" data-excursion="East Coast au coucher du soleil">Réserver →</a>
+          <label class="compare-toggle"><input type="checkbox" class="compare-checkbox" data-excursion-key="exc4_title"><span data-i18n="compare_select">Comparer</span></label>
+          <a href="#contact" class="card-link js-reserve" data-excursion-key="option_exc4">Réserver →</a>
         </div>
       </div>
     </div>
 
-    <div class="excursion-card">
+    <div class="excursion-card" data-duration="half" data-style="adventure" data-audience="group" data-excursion-id="exc5">
       <div class="card-thumb">
         <picture class="card-thumb-media">
           <source srcset="assets/photos/excursion-5.webp" type="image/webp">
           <img src="assets/photos/excursion-5.jpg" alt="Snorkeling dans un lagon turquoise a l'ile Maurice" loading="lazy" decoding="async">
         </picture>
-        <div class="card-badge">Aventure</div>
+        <div class="card-badge" data-i18n="exc5_badge">Aventure</div>
         <div class="card-location">Crystal Rock</div>
       </div>
       <div class="card-body">
-        <div class="card-meta"><span>⏱ Demi-journée</span><span>👥 Groupe</span></div>
-        <div class="card-title">Snorkeling & spots secrets du lagon</div>
-        <div class="card-desc">Explorez les récifs coralliens préservés et les spots secrets connus uniquement des locaux, avec masques et tubas fournis.</div>
+        <div class="card-meta"><span data-i18n="exc5_meta_1">⏱ Demi-journée</span><span data-i18n="exc5_meta_2">👥 Groupe</span></div>
+        <div class="card-budget" data-i18n="exc5_budget">Budget indicatif: Confort (sur devis)</div>
+        <span class="card-availability" data-i18n="exc5_availability">Disponibilité: Matin</span>
+        <div class="card-title" data-i18n="exc5_title">Snorkeling & spots secrets du lagon</div>
+        <div class="card-desc" data-i18n="exc5_desc">Explorez les récifs coralliens préservés et les spots secrets connus uniquement des locaux, avec masques et tubas fournis.</div>
         <div class="card-footer">
-          <div class="card-price">Dès Rs 2 000 <small>/ pers.</small></div>
-          <a href="#contact" class="card-link js-reserve" data-excursion="Snorkeling & spots secrets du lagon">Réserver →</a>
+          <label class="compare-toggle"><input type="checkbox" class="compare-checkbox" data-excursion-key="exc5_title"><span data-i18n="compare_select">Comparer</span></label>
+          <a href="#contact" class="card-link js-reserve" data-excursion-key="option_exc5">Réserver →</a>
         </div>
       </div>
     </div>
 
-    <div class="excursion-card">
+    <div class="excursion-card" data-duration="half" data-style="food" data-audience="group" data-excursion-id="exc6">
       <div class="card-thumb">
         <picture class="card-thumb-media">
           <source srcset="assets/photos/excursion-6.webp" type="image/webp">
           <img src="assets/photos/excursion-6.jpg" alt="Rue animee de Port-Louis pendant le food tour" loading="lazy" decoding="async">
         </picture>
-        <div class="card-badge">Gastronomie</div>
+        <div class="card-badge" data-i18n="exc6_badge">Gastronomie</div>
         <div class="card-location">Central Market</div>
       </div>
       <div class="card-body">
-        <div class="card-meta"><span>⏱ Demi-journée</span><span>👥 Tout public</span></div>
-        <div class="card-title">Port-Louis street food tour</div>
-        <div class="card-desc">Découvrez l'âme culinaire de Port-Louis — dholl puri, rougailles, samossas, bouillon — autour du marché central et des spots street food locaux.</div>
+        <div class="card-meta"><span data-i18n="exc6_meta_1">⏱ Demi-journée</span><span data-i18n="exc6_meta_2">👥 Tout public</span></div>
+        <div class="card-budget" data-i18n="exc6_budget">Budget indicatif: Éco (sur devis)</div>
+        <span class="card-availability" data-i18n="exc6_availability">Disponibilité: Après-midi</span>
+        <div class="card-title" data-i18n="exc6_title">Port-Louis street food tour</div>
+        <div class="card-desc" data-i18n="exc6_desc">Découvrez l'âme culinaire de Port-Louis — dholl puri, rougailles, samossas, bouillon — autour du marché central et des spots street food locaux.</div>
         <div class="card-footer">
-          <div class="card-price">Dès Rs 1 700 <small>/ pers.</small></div>
-          <a href="#contact" class="card-link js-reserve" data-excursion="Port-Louis street food tour">Réserver →</a>
+          <label class="compare-toggle"><input type="checkbox" class="compare-checkbox" data-excursion-key="exc6_title"><span data-i18n="compare_select">Comparer</span></label>
+          <a href="#contact" class="card-link js-reserve" data-excursion-key="option_exc6">Réserver →</a>
         </div>
       </div>
     </div>
 
   </div>
+  <div class="planner-section" aria-live="polite">
+    <div class="planner-title" data-i18n="planner_title">Planificateur rapide: quelle excursion pour vous ?</div>
+    <div class="planner-controls">
+      <select id="plannerDuration">
+        <option value="all" data-i18n="planner_duration_any">Durée: indifférent</option>
+        <option value="full" data-i18n="planner_duration_full">Durée: journée</option>
+        <option value="half" data-i18n="planner_duration_half">Durée: demi-journée</option>
+        <option value="evening" data-i18n="planner_duration_evening">Durée: soirée</option>
+      </select>
+      <select id="plannerStyle">
+        <option value="all" data-i18n="planner_style_any">Style: indifférent</option>
+        <option value="nature" data-i18n="filter_style_nature">Style: nature</option>
+        <option value="culture" data-i18n="filter_style_culture">Style: culture</option>
+        <option value="romantic" data-i18n="filter_style_romantic">Style: romantique</option>
+        <option value="adventure" data-i18n="filter_style_adventure">Style: aventure</option>
+        <option value="food" data-i18n="filter_style_food">Style: gastronomie</option>
+      </select>
+      <select id="plannerAudience">
+        <option value="all" data-i18n="planner_audience_any">Profil: indifférent</option>
+        <option value="group" data-i18n="filter_audience_group">Profil: groupe</option>
+        <option value="family" data-i18n="filter_audience_family">Profil: famille</option>
+        <option value="couple" data-i18n="filter_audience_couple">Profil: couple</option>
+      </select>
+      <button id="plannerSuggestBtn" type="button" data-i18n="planner_cta">Suggérer</button>
+    </div>
+    <div class="planner-result" id="plannerResult" data-i18n="planner_placeholder">Choisissez vos critères puis cliquez sur “Suggérer”.</div>
+  </div>
 </section>
 
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="temoignages">
-  <div class="section-tag">Succès Stories</div>
-  <h2 style="color:white;">Ce que disent<br>nos voyageurs</h2>
+  <div class="section-tag" data-i18n="tag_testimonials">Succès Stories</div>
+  <h2 style="color:white;" data-i18n-html="h2_testimonials">Ce que disent<br>nos voyageurs</h2>
   <div class="testimonials-grid">
 
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"Une journée absolument inoubliable. Notre guide nous a emmenés dans des endroits que jamais un touriste ne découvrirait seul. Merci pour cette authenticité !"</div>
+      <div class="testimonial-text" data-i18n="t1_text">"Une journée absolument inoubliable. Notre guide nous a emmenés dans des endroits que jamais un touriste ne découvrirait seul. Merci pour cette authenticité !"</div>
       <div class="testimonial-author">
         <div class="author-avatar">🇫🇷</div>
         <div>
           <div class="author-name">Sophie & Marc D.</div>
-          <div class="author-origin">Paris, France • Île aux Cerfs</div>
+          <div class="author-origin" data-i18n="t1_origin">Paris, France • Île aux Cerfs</div>
+          <div class="author-meta" data-i18n="t1_meta">Avis vérifié · Jan 2026 · FR · Couple</div>
         </div>
       </div>
     </div>
 
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"Best tour experience of our lives! He knew every hidden gem, every local story. We felt like we were exploring with a friend, not a tourist guide. Highly recommend!"</div>
+      <div class="testimonial-text" data-i18n="t2_text">"Best tour experience of our lives! He knew every hidden gem, every local story. We felt like we were exploring with a friend, not a tourist guide. Highly recommend!"</div>
       <div class="testimonial-author">
         <div class="author-avatar">🇬🇧</div>
         <div>
           <div class="author-name">James & Emma T.</div>
-          <div class="author-origin">London, UK • Nature Tour</div>
+          <div class="author-origin" data-i18n="t2_origin">London, UK • Nature Tour</div>
+          <div class="author-meta" data-i18n="t2_meta">Verified review · Jan 2026 · EN · Couple</div>
         </div>
       </div>
     </div>
 
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"Nous revenons chaque année à l'île Maurice et chaque fois nous réservons avec lui. C'est le seul guide qui connaît vraiment l'île dans ses moindres secrets."</div>
+      <div class="testimonial-text" data-i18n="t3_text">"Nous revenons chaque année à l'île Maurice et chaque fois nous réservons avec lui. C'est le seul guide qui connaît vraiment l'île dans ses moindres secrets."</div>
       <div class="testimonial-author">
         <div class="author-avatar">🇨🇭</div>
         <div>
           <div class="author-name">Christine M.</div>
-          <div class="author-origin">Genève, Suisse • Fidèle depuis 3 ans</div>
+          <div class="author-origin" data-i18n="t3_origin">Genève, Suisse • Fidèle depuis 3 ans</div>
+          <div class="author-meta" data-i18n="t3_meta">Avis vérifié · Déc 2025 · FR · Solo</div>
         </div>
       </div>
     </div>
 
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"Incroyable expérience avec les dauphins ! Mon fils de 8 ans en parle encore. Le guide est d'une patience et d'une gentillesse remarquables. Une famille comblée !"</div>
+      <div class="testimonial-text" data-i18n="t4_text">"Incroyable expérience avec les dauphins ! Mon fils de 8 ans en parle encore. Le guide est d'une patience et d'une gentillesse remarquables. Une famille comblée !"</div>
       <div class="testimonial-author">
         <div class="author-avatar">🇧🇪</div>
         <div>
           <div class="author-name">Famille Laurent</div>
-          <div class="author-origin">Bruxelles, Belgique • Tour Famille</div>
+          <div class="author-origin" data-i18n="t4_origin">Bruxelles, Belgique • Tour Famille</div>
+          <div class="author-meta" data-i18n="t4_meta">Avis vérifié · Jan 2026 · FR · Famille</div>
         </div>
       </div>
     </div>
 
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"The food tour was a revelation! We ate the most amazing street food we've ever tasted. He took us places no tourist would ever find. Absolutely brilliant!"</div>
+      <div class="testimonial-text" data-i18n="t5_text">"The food tour was a revelation! We ate the most amazing street food we've ever tasted. He took us places no tourist would ever find. Absolutely brilliant!"</div>
       <div class="testimonial-author">
         <div class="author-avatar">🇦🇺</div>
         <div>
           <div class="author-name">Tom & Sarah K.</div>
-          <div class="author-origin">Sydney, Australia • Food Tour</div>
+          <div class="author-origin" data-i18n="t5_origin">Sydney, Australia • Food Tour</div>
+          <div class="author-meta" data-i18n="t5_meta">Verified review · Nov 2025 · EN · Couple</div>
         </div>
       </div>
     </div>
 
     <div class="testimonial-card">
       <div class="stars">★★★★★</div>
-      <div class="testimonial-text">"Un coucher de soleil magique sur les hauteurs de l'île avec ma femme, suivi d'un dîner local fabuleux. Une soirée romantique parfaite que nous n'oublierons jamais."</div>
+      <div class="testimonial-text" data-i18n="t6_text">"Un coucher de soleil magique sur les hauteurs de l'île avec ma femme, suivi d'un dîner local fabuleux. Une soirée romantique parfaite que nous n'oublierons jamais."</div>
       <div class="testimonial-author">
         <div class="author-avatar">🇩🇪</div>
         <div>
           <div class="author-name">Klaus & Ingrid H.</div>
-          <div class="author-origin">Hamburg, Allemagne • Sunset Tour</div>
+          <div class="author-origin" data-i18n="t6_origin">Hamburg, Allemagne • Sunset Tour</div>
+          <div class="author-meta" data-i18n="t6_meta">Bewertung verifiziert · Jan 2026 · DE · Couple</div>
         </div>
       </div>
     </div>
@@ -1659,9 +2003,9 @@
 
 <!-- PROOF GALLERY -->
 <section class="proof-gallery" id="galerie">
-  <div class="section-tag">Photos réelles</div>
-  <h2>Moments capturés<br>avec nos voyageurs</h2>
-  <p style="max-width:680px; color:#61727a; font-size:0.95rem; line-height:1.8;">Aucune banque d'images: uniquement des photos publiées sur les pages officielles Instagram et Facebook.</p>
+  <div class="section-tag" data-i18n="tag_photos">Photos réelles</div>
+  <h2 data-i18n-html="h2_gallery">Moments capturés<br>avec nos voyageurs</h2>
+  <p style="max-width:680px; color:#61727a; font-size:0.95rem; line-height:1.8;" data-i18n="gallery_desc">Aucune banque d'images: uniquement des photos publiées sur les pages officielles Instagram et Facebook.</p>
   <div class="proof-grid">
     <figure class="proof-item">
       <picture>
@@ -1724,65 +2068,90 @@
 
 <!-- SOCIAL -->
 <section class="social-section">
-  <div class="section-tag" style="justify-content: center;">Réseaux sociaux</div>
-  <h2>Suivez nos aventures</h2>
-  <p style="color:#6a7a82; max-width:480px; margin:12px auto 0; font-size:0.95rem; line-height:1.8; font-weight:300;">Des photos, des vidéos, des histoires du quotidien — rejoignez notre communauté et laissez-vous inspirer par la beauté de l'île Maurice.</p>
+  <div class="section-tag" style="justify-content: center;" data-i18n="tag_social">Réseaux sociaux</div>
+  <h2 data-i18n="h2_social">Suivez nos aventures</h2>
+  <p style="color:#6a7a82; max-width:480px; margin:12px auto 0; font-size:0.95rem; line-height:1.8; font-weight:300;" data-i18n="social_desc">Des photos, des vidéos, des histoires du quotidien — rejoignez notre communauté et laissez-vous inspirer par la beauté de l'île Maurice.</p>
+  <p style="color:#7a8a91; margin-top:10px; font-size:0.78rem;" data-i18n="social_last_updated">Mise à jour des chiffres: vérifiée manuellement.</p>
   <div class="social-links">
     <a href="https://www.facebook.com/localmauritius" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la page Facebook Mauritius Tour Guide" class="social-card fb-card">
       <div class="social-icon-circle">f</div>
       <div class="social-name">Facebook</div>
-      <div class="social-handle">@localmauritius · 35 748 J'aime</div>
+      <div class="social-handle" data-i18n="social_fb_handle" data-social-proof-handle="facebook">@localmauritius · 35 748 J'aime</div>
     </a>
     <a href="https://www.instagram.com/mauritiustourguide/" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la page Instagram Mauritius Tour Guide" class="social-card ig-card">
       <div class="social-icon-circle">📷</div>
       <div class="social-name">Instagram</div>
-      <div class="social-handle">@mauritiustourguide · 368 followers · 519 posts</div>
+      <div class="social-handle" data-i18n="social_ig_handle" data-social-proof-handle="instagram">@mauritiustourguide · 368 followers · 519 posts</div>
     </a>
   </div>
 </section>
 
 <!-- TRUST -->
 <section class="trust-strip">
-  <div class="section-tag">Informations pratiques</div>
-  <h2>Réserver avec<br>des conditions claires</h2>
+  <div class="section-tag" data-i18n="tag_practical">Informations pratiques</div>
+  <h2 data-i18n-html="trust_h2">Réserver avec<br>des conditions claires</h2>
   <div class="trust-grid">
     <div class="trust-item">
-      <strong>Zone de départ</strong>
-      <span>Prise en charge sur toute l'île Maurice selon votre hébergement.</span>
+      <strong data-i18n="trust_pickup_title">Zone de départ</strong>
+      <span data-i18n="trust_pickup_desc">Prise en charge sur toute l'île Maurice selon votre hébergement.</span>
     </div>
     <div class="trust-item">
-      <strong>Langues parlées</strong>
-      <span>Français, anglais et créole mauricien.</span>
+      <strong data-i18n="trust_languages_title">Langues parlées</strong>
+      <span data-i18n="trust_languages_value">Français, anglais, allemand et créole mauricien.</span>
     </div>
     <div class="trust-item">
-      <strong>Délai de réponse</strong>
-      <span>Réponse sur WhatsApp en général sous 30 minutes en journée.</span>
+      <strong data-i18n="trust_response_title">Délai de réponse</strong>
+      <span data-i18n="trust_response_desc">Réponse sur WhatsApp en général sous 30 minutes en journée.</span>
     </div>
     <div class="trust-item">
-      <strong>Modes de paiement</strong>
-      <span>Espèces (MUR/EUR), virement local et transfert mobile selon disponibilité.</span>
+      <strong data-i18n="trust_payment_title">Modes de paiement</strong>
+      <span data-i18n="trust_payment_desc">Espèces (MUR/EUR), virement local et transfert mobile selon disponibilité.</span>
     </div>
     <div class="trust-item">
-      <strong>Annulation flexible</strong>
-      <span>Annulation ou report sans frais jusqu'à 24h avant le départ.</span>
+      <strong data-i18n="trust_cancel_title">Annulation flexible</strong>
+      <span data-i18n="trust_cancel_desc">Annulation ou report sans frais jusqu'à 24h avant le départ.</span>
     </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="section-tag" data-i18n="faq_tag">FAQ</div>
+  <h2 data-i18n-html="faq_h2">Questions fréquentes<br>avant de réserver</h2>
+  <div class="faq-grid">
+    <article class="faq-item">
+      <h3 data-i18n="faq_q1">Prix</h3>
+      <p data-i18n="faq_a1">Les tarifs dépendent de votre date, du nombre de personnes et du parcours. Contactez-nous sur WhatsApp pour un devis rapide.</p>
+    </article>
+    <article class="faq-item">
+      <h3 data-i18n="faq_q2">Annulation</h3>
+      <p data-i18n="faq_a2">Annulation ou report sans frais jusqu'à 24 heures avant le départ.</p>
+    </article>
+    <article class="faq-item">
+      <h3 data-i18n="faq_q3">Prise en charge</h3>
+      <p data-i18n="faq_a3">Nous organisons la prise en charge partout à l'île Maurice selon votre hébergement.</p>
+    </article>
+    <article class="faq-item">
+      <h3 data-i18n="faq_q4">Réponse</h3>
+      <p data-i18n="faq_a4">Nous répondons généralement en moins de 30 minutes en journée.</p>
+    </article>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div>
-    <div class="section-tag">Contact</div>
-    <h2>Planifions votre aventure ensemble</h2>
-    <p style="margin-top:16px;">Que ce soit pour une excursion du catalogue ou une expérience entièrement personnalisée, écrivez-nous et nous créerons l'itinéraire de vos rêves.</p>
+    <div class="section-tag" data-i18n="tag_contact">Contact</div>
+    <h2 data-i18n="h2_contact">Planifions votre aventure ensemble</h2>
+    <p style="margin-top:16px;" data-i18n="contact_intro">Que ce soit pour une excursion du catalogue ou une expérience entièrement personnalisée, écrivez-nous et nous créerons l'itinéraire de vos rêves.</p>
     <div style="margin-top:36px; display:flex; flex-direction:column; gap:16px;">
       <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem;">
         <span style="color:var(--turquoise); font-size:1.2rem;">📱</span>
-        WhatsApp : <a href="https://wa.me/23057652767" style="color:var(--turquoise); text-decoration:none;">+230 5765 2767</a>
+        <span data-i18n="contact_whatsapp_label">WhatsApp :</span> <a href="https://wa.me/23057652767" style="color:var(--turquoise); text-decoration:none;">+230 5765 2767</a>
       </div>
       <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem;">
         <span style="color:var(--turquoise); font-size:1.2rem;">📞</span>
-        Tel : <a href="tel:+23057652767" style="color:var(--turquoise); text-decoration:none;">+230 5765 2767</a>
+        <span data-i18n="contact_tel_label">Tel :</span> <a href="tel:+23057652767" style="color:var(--turquoise); text-decoration:none;">+230 5765 2767</a>
       </div>
       <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem;">
         <span style="color:var(--turquoise); font-size:1.2rem;">📍</span>
@@ -1790,43 +2159,49 @@
       </div>
       <div style="display:flex; align-items:center; gap:12px; color:rgba(255,255,255,0.6); font-size:0.9rem;">
         <span style="color:var(--turquoise); font-size:1.2rem;">🕐</span>
-        Disponible 7j/7 — Toujours ouvert
+        <span data-i18n="contact_hours">Disponible 7j/7 — Toujours ouvert</span>
       </div>
     </div>
   </div>
-  <form class="contact-form" id="bookingForm">
+  <form class="contact-form" id="bookingForm" novalidate>
     <div class="form-row">
       <div class="form-group">
-        <label for="firstName">Prénom</label>
-        <input id="firstName" name="firstName" type="text" placeholder="Votre prénom" required>
+        <label for="firstName" data-i18n="label_firstname">Prénom</label>
+      <input id="firstName" name="firstName" type="text" placeholder="Votre prénom" data-i18n-placeholder="placeholder_firstname" required>
+      <p class="form-error" id="firstNameError" aria-live="polite"></p>
       </div>
       <div class="form-group">
-        <label for="lastName">Nom</label>
-        <input id="lastName" name="lastName" type="text" placeholder="Votre nom" required>
+        <label for="lastName" data-i18n="label_lastname">Nom</label>
+        <input id="lastName" name="lastName" type="text" placeholder="Votre nom" data-i18n-placeholder="placeholder_lastname" required>
+        <p class="form-error" id="lastNameError" aria-live="polite"></p>
       </div>
     </div>
     <div class="form-group">
-      <label for="email">Email</label>
-      <input id="email" name="email" type="email" placeholder="votre@email.com">
+      <label for="email" data-i18n="label_email">Email</label>
+      <input id="email" name="email" type="email" placeholder="votre@email.com" data-i18n-placeholder="placeholder_email" aria-describedby="emailHint emailError" required>
+      <p class="form-hint" id="emailHint" data-i18n="email_hint">Nous utilisons votre email uniquement pour confirmer votre excursion.</p>
+      <p class="form-error" id="emailError" aria-live="polite"></p>
     </div>
     <div class="form-group">
-      <label for="excursionSelect">Excursion souhaitée</label>
+      <label for="excursionSelect" data-i18n="label_excursion">Excursion souhaitée</label>
       <select id="excursionSelect" name="excursion" required>
-        <option value="">Choisir une excursion...</option>
-        <option>Nage avec les dauphins & Île aux Cerfs</option>
-        <option>Black River Gorges, jungle & cascades</option>
-        <option>Port-Louis & les trésors culturels</option>
-        <option>East Coast au coucher du soleil</option>
-        <option>Snorkeling & spots secrets du lagon</option>
-        <option>Port-Louis street food tour</option>
-        <option>Excursion sur mesure</option>
+        <option value="" data-i18n="option_choose_excursion">Choisir une excursion...</option>
+        <option data-i18n="option_exc1">Nage avec les dauphins & Île aux Cerfs</option>
+        <option data-i18n="option_exc2">Black River Gorges, jungle & cascades</option>
+        <option data-i18n="option_exc3">Port-Louis & les trésors culturels</option>
+        <option data-i18n="option_exc4">East Coast au coucher du soleil</option>
+        <option data-i18n="option_exc5">Snorkeling & spots secrets du lagon</option>
+        <option data-i18n="option_exc6">Port-Louis street food tour</option>
+        <option data-i18n="option_exc_custom">Excursion sur mesure</option>
       </select>
+      <p class="form-error" id="excursionError" aria-live="polite"></p>
     </div>
     <div class="form-group">
-      <label for="message">Votre message</label>
-      <textarea id="message" name="message" placeholder="Dates souhaitées, nombre de personnes, demandes spéciales..."></textarea>
+      <label for="message" data-i18n="label_message">Votre message</label>
+      <textarea id="message" name="message" placeholder="Dates souhaitées, nombre de personnes, demandes spéciales..." data-i18n-placeholder="placeholder_message"></textarea>
     </div>
-    <button type="submit" class="form-submit">Envoyer sur WhatsApp →</button>
+    <p class="form-status" id="formStatus" aria-live="polite"></p>
+    <button type="submit" class="form-submit" data-i18n="btn_submit">Envoyer sur WhatsApp →</button>
   </form>
 </section>
 
@@ -1835,36 +2210,1274 @@
   <div class="footer-logo">Mauritius <span>Tour Guide</span></div>
   <div class="footer-copy">© 2026 Mauritius Tour Guide — Saizad · Royal Road, Chemin Grenier, Mauritius · +230 5765 2767</div>
 </footer>
+</main>
 
-<a class="wa-sticky" href="https://wa.me/23057652767?text=Bonjour%20Saizad%2C%20je%20souhaite%20r%C3%A9server%20une%20excursion%20%C3%A0%20l%27%C3%AEle%20Maurice." aria-label="Contacter sur WhatsApp" target="_blank" rel="noopener noreferrer">WhatsApp • Réserver</a>
+<a class="wa-sticky" id="waSticky" href="https://wa.me/23057652767?text=Bonjour%20Saizad%2C%20je%20souhaite%20r%C3%A9server%20une%20excursion%20%C3%A0%20l%27%C3%AEle%20Maurice." aria-label="Contacter sur WhatsApp" data-i18n="wa_sticky" data-i18n-aria="wa_sticky_aria" target="_blank" rel="noopener noreferrer">WhatsApp • Réserver</a>
 
 <script>
+  const hamburgerButton = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
   function toggleMenu() {
-    const h = document.getElementById('hamburger');
-    const m = document.getElementById('mobileMenu');
-    h.classList.toggle('open');
-    m.classList.toggle('open');
-    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
+    if (!hamburgerButton || !mobileMenu) return;
+    hamburgerButton.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    const isOpen = mobileMenu.classList.contains('open');
+    hamburgerButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   }
   function closeMenu() {
-    document.getElementById('hamburger').classList.remove('open');
-    document.getElementById('mobileMenu').classList.remove('open');
+    if (!hamburgerButton || !mobileMenu) return;
+    hamburgerButton.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    hamburgerButton.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   }
   // Close menu on escape key
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
+  const I18N = {
+    fr: {
+      lang_label: 'Langue',
+      lang_select_aria: 'Choisir la langue',
+      menu_toggle_aria: 'Ouvrir le menu',
+      skip_content: 'Aller au contenu',
+      nav_about: 'À propos',
+      nav_excursions: 'Excursions',
+      nav_reviews: 'Avis',
+      nav_reviews_mobile: 'Avis clients',
+      nav_book: 'Réserver',
+      hero_logo: 'Logo officiel',
+      hero_eyebrow: 'Mauritius Tour Guide — Saizad · Guide Local Certifié',
+      hero_title: "Découvrez <em>l'âme</em><br>de l'île Maurice",
+      hero_desc: "Des expériences authentiques loin des sentiers battus. Votre guide local vous ouvre les portes d'une île secrète, vivante et passionnée.",
+      hero_explore: 'Explorer les excursions',
+      hero_contact: 'Contacter le guide',
+      hero_scroll: 'Défiler',
+      tag_guide: 'Votre guide',
+      tag_catalog: 'Catalogue',
+      h2_excursions: 'Nos excursions<br>signatures',
+      tag_testimonials: 'Succès Stories',
+      h2_testimonials: 'Ce que disent<br>nos voyageurs',
+      tag_photos: 'Photos réelles',
+      h2_gallery: 'Moments capturés<br>avec nos voyageurs',
+      tag_social: 'Réseaux sociaux',
+      h2_social: 'Suivez nos aventures',
+      tag_practical: 'Informations pratiques',
+      trust_languages_title: 'Langues parlées',
+      trust_languages_value: 'Français, anglais, allemand, créole mauricien et néerlandais.',
+      tag_contact: 'Contact',
+      h2_contact: 'Planifions votre aventure ensemble',
+      label_firstname: 'Prénom',
+      placeholder_firstname: 'Votre prénom',
+      label_lastname: 'Nom',
+      placeholder_lastname: 'Votre nom',
+      label_email: 'Email',
+      label_excursion: 'Excursion souhaitée',
+      option_choose_excursion: 'Choisir une excursion...',
+      label_message: 'Votre message',
+      placeholder_message: 'Dates souhaitées, nombre de personnes, demandes spéciales...',
+      btn_submit: 'Envoyer sur WhatsApp →',
+      reserve_btn: 'Réserver →',
+      wa_sticky: 'WhatsApp • Réserver',
+      wa_sticky_aria: 'Contacter sur WhatsApp',
+      wa_prefill: 'Bonjour Saizad, je souhaite réserver une excursion à l\'île Maurice.',
+      form_intro: 'Bonjour Saizad, je souhaite reserver une excursion a Maurice.',
+      form_name: 'Nom',
+      form_excursion: 'Excursion',
+      form_email: 'Email',
+      form_message: 'Message',
+      form_undefined: 'A definir',
+      form_no_email: 'Non renseigne',
+      form_no_message: 'Aucun message supplementaire.',
+      stat_ig_followers: 'Followers Instagram',
+      stat_reviews: 'Avis vérifiés',
+      stat_recommended: 'Recommandé',
+      stat_ig_posts: 'Publications Instagram',
+      about_guide_name: 'Saizad',
+      about_guide_role: 'Mauritius Tour Guide Officiel',
+      about_badge: 'avis 100% positifs',
+      about_title: 'Saizad, votre guide<br>mauricien de cœur',
+      about_p1: "Bonjour, je m'appelle <strong>Saizad</strong> et je veux vous faire découvrir les merveilles de l'île Maurice. Je vous emmènerai dans les sites les plus incroyables de cette île paradisiaque — des plages cachées aux paysages volcaniques, en passant par sa culture vibrante et sa gastronomie unique.",
+      about_p2: 'Avec <strong>plus de 36 000 abonnés</strong> sur les réseaux sociaux et <strong>331 avis tous à 100% positifs</strong>, ma réputation repose sur une seule promesse : vous offrir une expérience authentique et inoubliable, loin des circuits touristiques classiques.',
+      about_h1_title: 'Guide certifié',
+      about_h1_desc: 'Accrédité par le tourisme mauricien',
+      about_h2_title: 'Multilingue',
+      about_h2_desc: 'Français, Anglais, Allemand, Créole, Néerlandais',
+      about_h3_title: 'Transport inclus',
+      about_h3_desc: 'Véhicule climatisé confortable',
+      about_h4_title: 'Photos incluses',
+      about_h4_desc: 'Souvenirs inoubliables garantis',
+      exc_custom_btn: 'Demander sur mesure',
+      exc1_badge: 'Populaire',
+      exc1_meta_1: '⏱ Journée',
+      exc1_meta_2: '👥 Groupe',
+      exc1_title: 'Nage avec les dauphins & Île aux Cerfs',
+      exc1_desc: "Une matinée magique en pleine mer avec les dauphins sauvages, suivie d'une journée sur la plus belle île lagonaire de Maurice.",
+      exc2_badge: 'Nature',
+      exc2_meta_1: '⏱ Demi-journée',
+      exc2_meta_2: '👥 Petit groupe',
+      exc2_title: 'Black River Gorges, jungle & cascades',
+      exc2_desc: 'Exploration des points de vue du parc de Black River Gorges, immersion dans la jungle tropicale et découverte des cascades du sud.',
+      exc3_badge: 'Culture',
+      exc3_meta_1: '⏱ Journée',
+      exc3_meta_2: '👥 Famille',
+      exc3_title: 'Port-Louis & les trésors culturels',
+      exc3_desc: "Plongez dans l'histoire coloniale de Port-Louis, visitez le marché central, la Chinatown, et découvrez la diversité culturelle mauricienne.",
+      exc4_badge: 'Romantique',
+      exc4_meta_1: '⏱ Soirée',
+      exc4_meta_2: '👥 Duo',
+      exc4_title: 'East Coast au coucher du soleil',
+      exc4_desc: "Un itinéraire romantique sur la côte est vers les plus beaux points de vue de l'île pour admirer le coucher de soleil, suivi d'un dîner local authentique.",
+      exc5_badge: 'Aventure',
+      exc5_meta_1: '⏱ Demi-journée',
+      exc5_meta_2: '👥 Groupe',
+      exc5_title: 'Snorkeling & spots secrets du lagon',
+      exc5_desc: 'Explorez les récifs coralliens préservés et les spots secrets connus uniquement des locaux, avec masques et tubas fournis.',
+      exc6_badge: 'Gastronomie',
+      exc6_meta_1: '⏱ Demi-journée',
+      exc6_meta_2: '👥 Tout public',
+      exc6_title: 'Port-Louis street food tour',
+      exc6_desc: "Découvrez l'âme culinaire de Port-Louis — dholl puri, rougailles, samossas, bouillon — autour du marché central et des spots street food locaux.",
+      t1_text: '"Une journée absolument inoubliable. Notre guide nous a emmenés dans des endroits que jamais un touriste ne découvrirait seul. Merci pour cette authenticité !"',
+      t1_origin: 'Paris, France • Île aux Cerfs',
+      t2_text: '"Best tour experience of our lives! He knew every hidden gem, every local story. We felt like we were exploring with a friend, not a tourist guide. Highly recommend!"',
+      t2_origin: 'London, UK • Nature Tour',
+      t3_text: '"Nous revenons chaque année à l\'île Maurice et chaque fois nous réservons avec lui. C\'est le seul guide qui connaît vraiment l\'île dans ses moindres secrets."',
+      t3_origin: 'Genève, Suisse • Fidèle depuis 3 ans',
+      t4_text: '"Incroyable expérience avec les dauphins ! Mon fils de 8 ans en parle encore. Le guide est d\'une patience et d\'une gentillesse remarquables. Une famille comblée !"',
+      t4_origin: 'Bruxelles, Belgique • Tour Famille',
+      t5_text: '"The food tour was a revelation! We ate the most amazing street food we\'ve ever tasted. He took us places no tourist would ever find. Absolutely brilliant!"',
+      t5_origin: 'Sydney, Australia • Food Tour',
+      t6_text: '"Un coucher de soleil magique sur les hauteurs de l\'île avec ma femme, suivi d\'un dîner local fabuleux. Une soirée romantique parfaite que nous n\'oublierons jamais."',
+      t6_origin: 'Hamburg, Allemagne • Sunset Tour',
+      gallery_desc: "Aucune banque d'images: uniquement des photos publiées sur les pages officielles Instagram et Facebook.",
+      social_desc: "Des photos, des vidéos, des histoires du quotidien — rejoignez notre communauté et laissez-vous inspirer par la beauté de l'île Maurice.",
+      social_last_updated: 'Mise à jour des chiffres: vérifiée manuellement.',
+      social_fb_handle: "@localmauritius · 35 748 J'aime",
+      social_ig_handle: '@mauritiustourguide · 368 followers · 519 posts',
+      trust_h2: 'Réserver avec<br>des conditions claires',
+      trust_pickup_title: 'Zone de départ',
+      trust_pickup_desc: "Prise en charge sur toute l'île Maurice selon votre hébergement.",
+      trust_response_title: 'Délai de réponse',
+      trust_response_desc: 'Réponse sur WhatsApp en général sous 30 minutes en journée.',
+      trust_payment_title: 'Modes de paiement',
+      trust_payment_desc: 'Espèces (MUR/EUR), virement local et transfert mobile selon disponibilité.',
+      trust_cancel_title: 'Annulation flexible',
+      trust_cancel_desc: "Annulation ou report sans frais jusqu'à 24h avant le départ.",
+      contact_intro: "Que ce soit pour une excursion du catalogue ou une expérience entièrement personnalisée, écrivez-nous et nous créerons l'itinéraire de vos rêves.",
+      contact_whatsapp_label: 'WhatsApp :',
+      contact_tel_label: 'Tel :',
+      contact_hours: 'Disponible 7j/7 — Toujours ouvert',
+      email_hint: 'Nous utilisons votre email uniquement pour confirmer votre excursion.',
+      faq_tag: 'FAQ',
+      faq_h2: 'Questions fréquentes<br>avant de réserver',
+      faq_q1: 'Prix',
+      faq_a1: 'Les tarifs dépendent de votre date, du nombre de personnes et du parcours. Contactez-nous sur WhatsApp pour un devis rapide.',
+      faq_q2: 'Annulation',
+      faq_a2: "Annulation ou report sans frais jusqu'à 24 heures avant le départ.",
+      faq_q3: 'Prise en charge',
+      faq_a3: "Nous organisons la prise en charge partout à l'île Maurice selon votre hébergement.",
+      faq_q4: 'Réponse',
+      faq_a4: 'Nous répondons généralement en moins de 30 minutes en journée.',
+      form_error_required: 'Champ obligatoire.',
+      form_error_email: 'Adresse email invalide.',
+      form_confirm_title: 'Confirmer l’envoi',
+      form_confirm_message: 'Nous allons ouvrir WhatsApp avec votre demande. Continuer ?',
+      form_sent: 'Ouverture de WhatsApp... vérifiez la fenêtre qui vient de s’ouvrir.',
+      placeholder_email: 'votre@email.com',
+      option_exc1: 'Nage avec les dauphins & Île aux Cerfs',
+      option_exc2: 'Black River Gorges, jungle & cascades',
+      option_exc3: 'Port-Louis & les trésors culturels',
+      option_exc4: 'East Coast au coucher du soleil',
+      option_exc5: 'Snorkeling & spots secrets du lagon',
+      option_exc6: 'Port-Louis street food tour',
+      option_exc_custom: 'Excursion sur mesure',
+      exc1_budget: 'Budget indicatif: Confort (sur devis)',
+      exc2_budget: 'Budget indicatif: Éco (sur devis)',
+      exc3_budget: 'Budget indicatif: Éco (sur devis)',
+      exc4_budget: 'Budget indicatif: Signature (sur devis)',
+      exc5_budget: 'Budget indicatif: Confort (sur devis)',
+      exc6_budget: 'Budget indicatif: Éco (sur devis)',
+      exc1_availability: 'Disponibilité: Matin',
+      exc2_availability: 'Disponibilité: Matin & Après-midi',
+      exc3_availability: 'Disponibilité: Après-midi',
+      exc4_availability: 'Disponibilité: Soirée',
+      exc5_availability: 'Disponibilité: Matin',
+      exc6_availability: 'Disponibilité: Après-midi',
+      filter_duration_all: 'Durée: toutes',
+      filter_duration_full: 'Durée: journée',
+      filter_duration_half: 'Durée: demi-journée',
+      filter_duration_evening: 'Durée: soirée',
+      filter_style_all: 'Style: tous',
+      filter_style_nature: 'Style: nature',
+      filter_style_culture: 'Style: culture',
+      filter_style_romantic: 'Style: romantique',
+      filter_style_adventure: 'Style: aventure',
+      filter_style_food: 'Style: gastronomie',
+      filter_audience_all: 'Profil: tous',
+      filter_audience_group: 'Profil: groupe',
+      filter_audience_family: 'Profil: famille',
+      filter_audience_couple: 'Profil: couple',
+      compare_title: 'Comparateur (max 3)',
+      compare_empty: 'Aucune excursion sélectionnée.',
+      compare_select: 'Comparer',
+      compare_limit: 'Maximum 3 excursions comparables.',
+      planner_title: 'Planificateur rapide: quelle excursion pour vous ?',
+      planner_duration_any: 'Durée: indifférent',
+      planner_duration_full: 'Durée: journée',
+      planner_duration_half: 'Durée: demi-journée',
+      planner_duration_evening: 'Durée: soirée',
+      planner_style_any: 'Style: indifférent',
+      planner_audience_any: 'Profil: indifférent',
+      planner_cta: 'Suggérer',
+      planner_placeholder: 'Choisissez vos critères puis cliquez sur “Suggérer”.',
+      planner_none: 'Aucune excursion ne correspond exactement. Essayez des critères plus larges.',
+      planner_result_prefix: 'Suggestions:',
+      t1_meta: 'Avis vérifié · Jan 2026 · FR · Couple',
+      t2_meta: 'Verified review · Jan 2026 · EN · Couple',
+      t3_meta: 'Avis vérifié · Déc 2025 · FR · Solo',
+      t4_meta: 'Avis vérifié · Jan 2026 · FR · Famille',
+      t5_meta: 'Verified review · Nov 2025 · EN · Couple',
+      t6_meta: 'Bewertung verifiziert · Jan 2026 · DE · Couple'
+    },
+    en: {
+      lang_label: 'Language',
+      lang_select_aria: 'Choose language',
+      menu_toggle_aria: 'Open menu',
+      skip_content: 'Skip to content',
+      nav_about: 'About',
+      nav_excursions: 'Tours',
+      nav_reviews: 'Reviews',
+      nav_reviews_mobile: 'Customer reviews',
+      nav_book: 'Book now',
+      hero_logo: 'Official logo',
+      hero_eyebrow: 'Mauritius Tour Guide — Saizad · Certified Local Guide',
+      hero_title: "Discover <em>the soul</em><br>of Mauritius",
+      hero_desc: 'Authentic experiences away from crowded routes. Your local guide opens the doors to a secret, vibrant island.',
+      hero_explore: 'Explore tours',
+      hero_contact: 'Contact the guide',
+      hero_scroll: 'Scroll',
+      tag_guide: 'Your guide',
+      tag_catalog: 'Catalog',
+      h2_excursions: 'Our signature<br>tours',
+      tag_testimonials: 'Success stories',
+      h2_testimonials: 'What our<br>travelers say',
+      tag_photos: 'Real photos',
+      h2_gallery: 'Captured moments<br>with our travelers',
+      tag_social: 'Social media',
+      h2_social: 'Follow our adventures',
+      tag_practical: 'Practical info',
+      trust_languages_title: 'Spoken languages',
+      trust_languages_value: 'French, English, German, Mauritian Creole and Dutch.',
+      tag_contact: 'Contact',
+      h2_contact: 'Let’s plan your adventure together',
+      label_firstname: 'First name',
+      placeholder_firstname: 'Your first name',
+      label_lastname: 'Last name',
+      placeholder_lastname: 'Your last name',
+      label_email: 'Email',
+      label_excursion: 'Preferred tour',
+      option_choose_excursion: 'Choose a tour...',
+      label_message: 'Your message',
+      placeholder_message: 'Preferred dates, number of people, special requests...',
+      btn_submit: 'Send on WhatsApp →',
+      reserve_btn: 'Book now →',
+      wa_sticky: 'WhatsApp • Book now',
+      wa_sticky_aria: 'Contact on WhatsApp',
+      wa_prefill: 'Hello Saizad, I would like to book a tour in Mauritius.',
+      form_intro: 'Hello Saizad, I would like to book a tour in Mauritius.',
+      form_name: 'Name',
+      form_excursion: 'Tour',
+      form_email: 'Email',
+      form_message: 'Message',
+      form_undefined: 'To be defined',
+      form_no_email: 'Not provided',
+      form_no_message: 'No additional message.',
+      stat_ig_followers: 'Instagram followers',
+      stat_reviews: 'Verified reviews',
+      stat_recommended: 'Recommended',
+      stat_ig_posts: 'Instagram posts',
+      about_guide_name: 'Saizad',
+      about_guide_role: 'Official Mauritius Tour Guide',
+      about_badge: '100% positive reviews',
+      about_title: 'Saizad, your guide<br>from the heart of Mauritius',
+      about_p1: "Hi, I'm <strong>Saizad</strong>, and I want to show you the wonders of Mauritius. I will take you to the island's most incredible places — from hidden beaches to volcanic landscapes, with vibrant culture and unique cuisine.",
+      about_p2: 'With <strong>more than 36,000 followers</strong> on social media and <strong>331 reviews with 100% positive feedback</strong>, my reputation is built on one promise: to give you an authentic and unforgettable experience far from standard tourist routes.',
+      about_h1_title: 'Certified guide',
+      about_h1_desc: 'Accredited by Mauritian tourism authorities',
+      about_h2_title: 'Multilingual',
+      about_h2_desc: 'French, English, German, Creole, Dutch',
+      about_h3_title: 'Transport included',
+      about_h3_desc: 'Comfortable air-conditioned vehicle',
+      about_h4_title: 'Photos included',
+      about_h4_desc: 'Unforgettable memories guaranteed',
+      exc_custom_btn: 'Request a custom tour',
+      exc1_badge: 'Popular',
+      exc1_meta_1: '⏱ Full day',
+      exc1_meta_2: '👥 Group',
+      exc1_title: 'Swim with dolphins & Ile aux Cerfs',
+      exc1_desc: "A magical morning at sea with wild dolphins, followed by a full day on one of Mauritius's most beautiful lagoon islands.",
+      exc2_badge: 'Nature',
+      exc2_meta_1: '⏱ Half day',
+      exc2_meta_2: '👥 Small group',
+      exc2_title: 'Black River Gorges, jungle & waterfalls',
+      exc2_desc: 'Explore viewpoints in Black River Gorges National Park, walk through tropical jungle, and discover southern waterfalls.',
+      exc3_badge: 'Culture',
+      exc3_meta_1: '⏱ Full day',
+      exc3_meta_2: '👥 Family',
+      exc3_title: 'Port Louis & cultural treasures',
+      exc3_desc: 'Dive into Port Louis colonial history, visit the central market and Chinatown, and discover Mauritian cultural diversity.',
+      exc4_badge: 'Romantic',
+      exc4_meta_1: '⏱ Evening',
+      exc4_meta_2: '👥 Couple',
+      exc4_title: 'East Coast sunset tour',
+      exc4_desc: "A romantic East Coast route to the island's most beautiful viewpoints at sunset, followed by an authentic local dinner.",
+      exc5_badge: 'Adventure',
+      exc5_meta_1: '⏱ Half day',
+      exc5_meta_2: '👥 Group',
+      exc5_title: 'Snorkeling & secret lagoon spots',
+      exc5_desc: 'Explore preserved coral reefs and secret local spots with mask and snorkel included.',
+      exc6_badge: 'Food',
+      exc6_meta_1: '⏱ Half day',
+      exc6_meta_2: '👥 All ages',
+      exc6_title: 'Port Louis street food tour',
+      exc6_desc: "Discover the culinary soul of Port Louis — dholl puri, rougailles, samosas, broth — around the central market and local street-food spots.",
+      t1_text: '"An absolutely unforgettable day. Our guide took us to places no tourist would ever discover alone. Thank you for such authenticity!"',
+      t1_origin: 'Paris, France • Ile aux Cerfs',
+      t2_text: '"Best tour experience of our lives! He knew every hidden gem, every local story. We felt like we were exploring with a friend, not a tourist guide. Highly recommend!"',
+      t2_origin: 'London, UK • Nature Tour',
+      t3_text: '"We return to Mauritius every year, and every time we book with him. He is the only guide who truly knows every hidden side of the island."',
+      t3_origin: 'Geneva, Switzerland • Loyal for 3 years',
+      t4_text: '"Incredible dolphin experience! My 8-year-old son still talks about it. The guide is patient and genuinely kind. Our whole family loved it!"',
+      t4_origin: 'Brussels, Belgium • Family Tour',
+      t5_text: '"The food tour was a revelation! We ate the most amazing street food we\'ve ever tasted. He took us places no tourist would ever find. Absolutely brilliant!"',
+      t5_origin: 'Sydney, Australia • Food Tour',
+      t6_text: '"A magical sunset in the island heights with my wife, followed by a fabulous local dinner. A perfect romantic evening we will never forget."',
+      t6_origin: 'Hamburg, Germany • Sunset Tour',
+      gallery_desc: 'No stock photos: only real photos published on our official Instagram and Facebook pages.',
+      social_desc: "Photos, videos, and daily stories — join our community and get inspired by the beauty of Mauritius.",
+      social_last_updated: 'Stats update: manually verified.',
+      social_fb_handle: '@localmauritius · 35,748 likes',
+      social_ig_handle: '@mauritiustourguide · 368 followers · 519 posts',
+      trust_h2: 'Book with<br>clear conditions',
+      trust_pickup_title: 'Pickup area',
+      trust_pickup_desc: 'Pickup available anywhere in Mauritius based on your accommodation.',
+      trust_response_title: 'Response time',
+      trust_response_desc: 'Usually replies on WhatsApp within 30 minutes during daytime.',
+      trust_payment_title: 'Payment methods',
+      trust_payment_desc: 'Cash (MUR/EUR), local transfer, and mobile transfer depending on availability.',
+      trust_cancel_title: 'Flexible cancellation',
+      trust_cancel_desc: 'Free cancellation or reschedule up to 24h before departure.',
+      contact_intro: 'Whether you want a catalog tour or a fully custom experience, write to us and we will design your dream itinerary.',
+      contact_whatsapp_label: 'WhatsApp:',
+      contact_tel_label: 'Phone:',
+      contact_hours: 'Available 7 days a week — Always open',
+      email_hint: 'We use your email only to confirm your excursion.',
+      faq_tag: 'FAQ',
+      faq_h2: 'Frequently asked<br>questions before booking',
+      faq_q1: 'Price',
+      faq_a1: 'Pricing depends on your date, group size, and route. Contact us on WhatsApp for a quick quote.',
+      faq_q2: 'Cancellation',
+      faq_a2: 'Free cancellation or reschedule up to 24 hours before departure.',
+      faq_q3: 'Pickup',
+      faq_a3: 'We organize pickup anywhere in Mauritius based on your accommodation.',
+      faq_q4: 'Response time',
+      faq_a4: 'We usually reply in under 30 minutes during daytime.',
+      form_error_required: 'Required field.',
+      form_error_email: 'Invalid email address.',
+      form_confirm_title: 'Confirm sending',
+      form_confirm_message: 'We are about to open WhatsApp with your request. Continue?',
+      form_sent: 'Opening WhatsApp... check the new window.',
+      placeholder_email: 'your@email.com',
+      option_exc1: 'Swim with dolphins & Ile aux Cerfs',
+      option_exc2: 'Black River Gorges, jungle & waterfalls',
+      option_exc3: 'Port Louis & cultural treasures',
+      option_exc4: 'East Coast sunset tour',
+      option_exc5: 'Snorkeling & secret lagoon spots',
+      option_exc6: 'Port Louis street food tour',
+      option_exc_custom: 'Custom tour',
+      exc1_budget: 'Budget guidance: Comfort (quote on request)',
+      exc2_budget: 'Budget guidance: Eco (quote on request)',
+      exc3_budget: 'Budget guidance: Eco (quote on request)',
+      exc4_budget: 'Budget guidance: Signature (quote on request)',
+      exc5_budget: 'Budget guidance: Comfort (quote on request)',
+      exc6_budget: 'Budget guidance: Eco (quote on request)',
+      exc1_availability: 'Availability: Morning',
+      exc2_availability: 'Availability: Morning & Afternoon',
+      exc3_availability: 'Availability: Afternoon',
+      exc4_availability: 'Availability: Evening',
+      exc5_availability: 'Availability: Morning',
+      exc6_availability: 'Availability: Afternoon',
+      filter_duration_all: 'Duration: all',
+      filter_duration_full: 'Duration: full day',
+      filter_duration_half: 'Duration: half day',
+      filter_duration_evening: 'Duration: evening',
+      filter_style_all: 'Style: all',
+      filter_style_nature: 'Style: nature',
+      filter_style_culture: 'Style: culture',
+      filter_style_romantic: 'Style: romantic',
+      filter_style_adventure: 'Style: adventure',
+      filter_style_food: 'Style: food',
+      filter_audience_all: 'Profile: all',
+      filter_audience_group: 'Profile: group',
+      filter_audience_family: 'Profile: family',
+      filter_audience_couple: 'Profile: couple',
+      compare_title: 'Compare tours (max 3)',
+      compare_empty: 'No tour selected yet.',
+      compare_select: 'Compare',
+      compare_limit: 'Maximum 3 tours can be compared.',
+      planner_title: 'Quick planner: which tour fits you?',
+      planner_duration_any: 'Duration: any',
+      planner_duration_full: 'Duration: full day',
+      planner_duration_half: 'Duration: half day',
+      planner_duration_evening: 'Duration: evening',
+      planner_style_any: 'Style: any',
+      planner_audience_any: 'Profile: any',
+      planner_cta: 'Suggest',
+      planner_placeholder: 'Choose your criteria then click “Suggest”.',
+      planner_none: 'No exact match found. Try broader criteria.',
+      planner_result_prefix: 'Suggestions:',
+      t1_meta: 'Verified review · Jan 2026 · FR · Couple',
+      t2_meta: 'Verified review · Jan 2026 · EN · Couple',
+      t3_meta: 'Verified review · Dec 2025 · FR · Solo',
+      t4_meta: 'Verified review · Jan 2026 · FR · Family',
+      t5_meta: 'Verified review · Nov 2025 · EN · Couple',
+      t6_meta: 'Verified review · Jan 2026 · DE · Couple'
+    },
+    de: {
+      lang_label: 'Sprache',
+      lang_select_aria: 'Sprache wählen',
+      menu_toggle_aria: 'Menü öffnen',
+      skip_content: 'Zum Inhalt springen',
+      nav_about: 'Über uns',
+      nav_excursions: 'Ausflüge',
+      nav_reviews: 'Bewertungen',
+      nav_reviews_mobile: 'Kundenbewertungen',
+      nav_book: 'Buchen',
+      hero_logo: 'Offizielles Logo',
+      hero_eyebrow: 'Mauritius Tour Guide — Saizad · Zertifizierter lokaler Guide',
+      hero_title: 'Entdecken Sie <em>die Seele</em><br>von Mauritius',
+      hero_desc: 'Authentische Erlebnisse abseits der üblichen Wege. Ihr lokaler Guide zeigt Ihnen eine geheime und lebendige Insel.',
+      hero_explore: 'Ausflüge entdecken',
+      hero_contact: 'Guide kontaktieren',
+      hero_scroll: 'Scrollen',
+      tag_guide: 'Ihr Guide',
+      tag_catalog: 'Katalog',
+      h2_excursions: 'Unsere Signature-<br>Ausflüge',
+      tag_testimonials: 'Erfolgsgeschichten',
+      h2_testimonials: 'Was unsere<br>Reisenden sagen',
+      tag_photos: 'Echte Fotos',
+      h2_gallery: 'Eingefangene Momente<br>mit unseren Reisenden',
+      tag_social: 'Soziale Netzwerke',
+      h2_social: 'Folgen Sie unseren Abenteuern',
+      tag_practical: 'Praktische Informationen',
+      trust_languages_title: 'Gesprochene Sprachen',
+      trust_languages_value: 'Franzoesisch, Englisch, Deutsch, mauritisches Kreol und Niederlaendisch.',
+      tag_contact: 'Kontakt',
+      h2_contact: 'Planen wir Ihr Abenteuer gemeinsam',
+      label_firstname: 'Vorname',
+      placeholder_firstname: 'Ihr Vorname',
+      label_lastname: 'Nachname',
+      placeholder_lastname: 'Ihr Nachname',
+      label_email: 'E-Mail',
+      label_excursion: 'Gewünschter Ausflug',
+      option_choose_excursion: 'Ausflug auswählen...',
+      label_message: 'Ihre Nachricht',
+      placeholder_message: 'Gewünschte Daten, Personenzahl, besondere Wünsche...',
+      btn_submit: 'Per WhatsApp senden →',
+      reserve_btn: 'Buchen →',
+      wa_sticky: 'WhatsApp • Buchen',
+      wa_sticky_aria: 'Kontakt über WhatsApp',
+      wa_prefill: 'Hallo Saizad, ich möchte einen Ausflug auf Mauritius buchen.',
+      form_intro: 'Hallo Saizad, ich moechte einen Ausflug auf Mauritius buchen.',
+      form_name: 'Name',
+      form_excursion: 'Ausflug',
+      form_email: 'E-Mail',
+      form_message: 'Nachricht',
+      form_undefined: 'Noch offen',
+      form_no_email: 'Nicht angegeben',
+      form_no_message: 'Keine zusaetzliche Nachricht.',
+      stat_ig_followers: 'Instagram-Follower',
+      stat_reviews: 'Verifizierte Bewertungen',
+      stat_recommended: 'Empfohlen',
+      stat_ig_posts: 'Instagram-Posts',
+      about_guide_name: 'Saizad',
+      about_guide_role: 'Offizieller Mauritius Tour Guide',
+      about_badge: '100% positive Bewertungen',
+      about_title: 'Saizad, Ihr Guide<br>mit Herz fuer Mauritius',
+      about_p1: "Hallo, ich bin <strong>Saizad</strong> und ich moechte Ihnen die Wunder von Mauritius zeigen. Ich bringe Sie zu den beeindruckendsten Orten der Insel — von versteckten Straenden bis zu vulkanischen Landschaften, mit lebendiger Kultur und einzigartiger Kuche.",
+      about_p2: 'Mit <strong>mehr als 36.000 Followern</strong> in sozialen Netzwerken und <strong>331 Bewertungen mit 100% positiver Rueckmeldung</strong> basiert mein Ruf auf einem Versprechen: Ihnen ein authentisches und unvergessliches Erlebnis abseits klassischer Touristenrouten zu bieten.',
+      about_h1_title: 'Zertifizierter Guide',
+      about_h1_desc: 'Anerkannt vom mauritischen Tourismus',
+      about_h2_title: 'Mehrsprachig',
+      about_h2_desc: 'Franzoesisch, Englisch, Deutsch, Kreol, Niederlaendisch',
+      about_h3_title: 'Transport inklusive',
+      about_h3_desc: 'Komfortables, klimatisiertes Fahrzeug',
+      about_h4_title: 'Fotos inklusive',
+      about_h4_desc: 'Unvergessliche Erinnerungen garantiert',
+      exc_custom_btn: 'Massgeschneiderte Tour anfragen',
+      exc1_badge: 'Beliebt',
+      exc1_meta_1: '⏱ Ganztag',
+      exc1_meta_2: '👥 Gruppe',
+      exc1_title: 'Mit Delfinen schwimmen & Ile aux Cerfs',
+      exc1_desc: 'Ein magischer Morgen auf dem Meer mit wilden Delfinen, gefolgt von einem Tag auf einer der schoensten Laguneninseln von Mauritius.',
+      exc2_badge: 'Natur',
+      exc2_meta_1: '⏱ Halbtag',
+      exc2_meta_2: '👥 Kleine Gruppe',
+      exc2_title: 'Black River Gorges, Dschungel & Wasserfaelle',
+      exc2_desc: 'Entdecken Sie Aussichtspunkte im Black River Gorges Nationalpark, tropischen Dschungel und Wasserfaelle im Sueden.',
+      exc3_badge: 'Kultur',
+      exc3_meta_1: '⏱ Ganztag',
+      exc3_meta_2: '👥 Familie',
+      exc3_title: 'Port Louis & kulturelle Schaetze',
+      exc3_desc: 'Tauchen Sie in die koloniale Geschichte von Port Louis ein, besuchen Sie den Zentralmarkt und Chinatown und entdecken Sie die kulturelle Vielfalt von Mauritius.',
+      exc4_badge: 'Romantik',
+      exc4_meta_1: '⏱ Abend',
+      exc4_meta_2: '👥 Duo',
+      exc4_title: 'East Coast bei Sonnenuntergang',
+      exc4_desc: 'Eine romantische Route an der Ostkueste zu den schoensten Aussichtspunkten der Insel bei Sonnenuntergang, gefolgt von einem authentischen lokalen Dinner.',
+      exc5_badge: 'Abenteuer',
+      exc5_meta_1: '⏱ Halbtag',
+      exc5_meta_2: '👥 Gruppe',
+      exc5_title: 'Schnorcheln & geheime Lagunen-Spots',
+      exc5_desc: 'Entdecken Sie geschuetzte Korallenriffe und geheime lokale Spots, inklusive Maske und Schnorchel.',
+      exc6_badge: 'Gastronomie',
+      exc6_meta_1: '⏱ Halbtag',
+      exc6_meta_2: '👥 Alle',
+      exc6_title: 'Port Louis Street-Food-Tour',
+      exc6_desc: 'Entdecken Sie die kulinarische Seele von Port Louis — Dholl Puri, Rougailles, Samosas, Bouillon — rund um den Zentralmarkt und lokale Street-Food-Spots.',
+      t1_text: '"Ein absolut unvergesslicher Tag. Unser Guide hat uns an Orte gebracht, die kein Tourist allein finden wuerde. Danke fuer diese Authentizitaet!"',
+      t1_origin: 'Paris, Frankreich • Ile aux Cerfs',
+      t2_text: '"Die beste Tour unseres Lebens! Er kannte jedes versteckte Juwel und jede lokale Geschichte. Es fuehlte sich an wie mit einem Freund unterwegs zu sein. Sehr empfehlenswert!"',
+      t2_origin: 'London, UK • Naturtour',
+      t3_text: '"Wir kommen jedes Jahr nach Mauritius zurueck und buchen jedes Mal bei ihm. Er ist der einzige Guide, der die Insel wirklich in all ihren Geheimnissen kennt."',
+      t3_origin: 'Genf, Schweiz • Seit 3 Jahren treu',
+      t4_text: '"Unglaubliches Delfin-Erlebnis! Mein 8-jaehriger Sohn spricht immer noch davon. Der Guide ist geduldig und sehr freundlich. Eine glueckliche Familie!"',
+      t4_origin: 'Bruessel, Belgien • Familientour',
+      t5_text: '"Die Food-Tour war eine Offenbarung! Wir haben das beste Street Food unseres Lebens gegessen. Er zeigte uns Orte, die kein Tourist je finden wuerde. Absolut grossartig!"',
+      t5_origin: 'Sydney, Australien • Food-Tour',
+      t6_text: '"Ein magischer Sonnenuntergang in den Hoehen der Insel mit meiner Frau, danach ein fabelhaftes lokales Dinner. Ein perfekter romantischer Abend, den wir nie vergessen werden."',
+      t6_origin: 'Hamburg, Deutschland • Sunset-Tour',
+      gallery_desc: 'Keine Stockfotos: nur echte Fotos von unseren offiziellen Instagram- und Facebook-Seiten.',
+      social_desc: 'Fotos, Videos und Alltagsgeschichten — treten Sie unserer Community bei und lassen Sie sich von der Schoenheit von Mauritius inspirieren.',
+      social_last_updated: 'Zahlen-Update: manuell geprüft.',
+      social_fb_handle: '@localmauritius · 35.748 Likes',
+      social_ig_handle: '@mauritiustourguide · 368 Follower · 519 Posts',
+      trust_h2: 'Buchen mit<br>klaren Bedingungen',
+      trust_pickup_title: 'Abholbereich',
+      trust_pickup_desc: 'Abholung auf ganz Mauritius je nach Ihrer Unterkunft.',
+      trust_response_title: 'Antwortzeit',
+      trust_response_desc: 'Antwort auf WhatsApp tagsueber in der Regel innerhalb von 30 Minuten.',
+      trust_payment_title: 'Zahlungsmethoden',
+      trust_payment_desc: 'Bar (MUR/EUR), lokale Ueberweisung und mobiler Transfer je nach Verfuegbarkeit.',
+      trust_cancel_title: 'Flexible Stornierung',
+      trust_cancel_desc: 'Kostenlose Stornierung oder Umbuchung bis 24 Stunden vor Abfahrt.',
+      contact_intro: 'Ob Katalog-Ausflug oder komplett massgeschneiderte Erfahrung: Schreiben Sie uns, und wir planen Ihre Wunschroute.',
+      contact_whatsapp_label: 'WhatsApp:',
+      contact_tel_label: 'Telefon:',
+      contact_hours: '7 Tage die Woche verfuegbar — Immer offen',
+      email_hint: 'Wir verwenden Ihre E-Mail nur zur Bestätigung Ihrer Tour.',
+      faq_tag: 'FAQ',
+      faq_h2: 'Häufige Fragen<br>vor der Buchung',
+      faq_q1: 'Preis',
+      faq_a1: 'Der Preis hängt von Datum, Personenzahl und Route ab. Kontaktieren Sie uns auf WhatsApp für ein schnelles Angebot.',
+      faq_q2: 'Stornierung',
+      faq_a2: 'Kostenlose Stornierung oder Umbuchung bis 24 Stunden vor Abfahrt.',
+      faq_q3: 'Abholung',
+      faq_a3: 'Wir organisieren die Abholung auf ganz Mauritius je nach Ihrer Unterkunft.',
+      faq_q4: 'Antwortzeit',
+      faq_a4: 'Wir antworten tagsüber meist in weniger als 30 Minuten.',
+      form_error_required: 'Pflichtfeld.',
+      form_error_email: 'Ungültige E-Mail-Adresse.',
+      form_confirm_title: 'Senden bestätigen',
+      form_confirm_message: 'Wir öffnen jetzt WhatsApp mit Ihrer Anfrage. Fortfahren?',
+      form_sent: 'WhatsApp wird geöffnet... bitte prüfen Sie das neue Fenster.',
+      placeholder_email: 'ihre@email.com',
+      option_exc1: 'Mit Delfinen schwimmen & Ile aux Cerfs',
+      option_exc2: 'Black River Gorges, Dschungel & Wasserfaelle',
+      option_exc3: 'Port Louis & kulturelle Schaetze',
+      option_exc4: 'East Coast bei Sonnenuntergang',
+      option_exc5: 'Schnorcheln & geheime Lagunen-Spots',
+      option_exc6: 'Port Louis Street-Food-Tour',
+      option_exc_custom: 'Massgeschneiderter Ausflug',
+      exc1_budget: 'Budget-Hinweis: Komfort (Angebot auf Anfrage)',
+      exc2_budget: 'Budget-Hinweis: Eco (Angebot auf Anfrage)',
+      exc3_budget: 'Budget-Hinweis: Eco (Angebot auf Anfrage)',
+      exc4_budget: 'Budget-Hinweis: Signature (Angebot auf Anfrage)',
+      exc5_budget: 'Budget-Hinweis: Komfort (Angebot auf Anfrage)',
+      exc6_budget: 'Budget-Hinweis: Eco (Angebot auf Anfrage)',
+      exc1_availability: 'Verfügbarkeit: Morgen',
+      exc2_availability: 'Verfügbarkeit: Morgen & Nachmittag',
+      exc3_availability: 'Verfügbarkeit: Nachmittag',
+      exc4_availability: 'Verfügbarkeit: Abend',
+      exc5_availability: 'Verfügbarkeit: Morgen',
+      exc6_availability: 'Verfügbarkeit: Nachmittag',
+      filter_duration_all: 'Dauer: alle',
+      filter_duration_full: 'Dauer: ganztag',
+      filter_duration_half: 'Dauer: halbtag',
+      filter_duration_evening: 'Dauer: abend',
+      filter_style_all: 'Stil: alle',
+      filter_style_nature: 'Stil: natur',
+      filter_style_culture: 'Stil: kultur',
+      filter_style_romantic: 'Stil: romantik',
+      filter_style_adventure: 'Stil: abenteuer',
+      filter_style_food: 'Stil: gastronomie',
+      filter_audience_all: 'Profil: alle',
+      filter_audience_group: 'Profil: gruppe',
+      filter_audience_family: 'Profil: familie',
+      filter_audience_couple: 'Profil: paar',
+      compare_title: 'Vergleich (max. 3)',
+      compare_empty: 'Noch keine Ausflüge ausgewählt.',
+      compare_select: 'Vergleichen',
+      compare_limit: 'Maximal 3 Ausflüge können verglichen werden.',
+      planner_title: 'Schnellplaner: welcher Ausflug passt zu Ihnen?',
+      planner_duration_any: 'Dauer: egal',
+      planner_duration_full: 'Dauer: ganztag',
+      planner_duration_half: 'Dauer: halbtag',
+      planner_duration_evening: 'Dauer: abend',
+      planner_style_any: 'Stil: egal',
+      planner_audience_any: 'Profil: egal',
+      planner_cta: 'Vorschlagen',
+      planner_placeholder: 'Kriterien wählen und auf „Vorschlagen“ klicken.',
+      planner_none: 'Kein exakter Treffer. Bitte Kriterien erweitern.',
+      planner_result_prefix: 'Vorschläge:',
+      t1_meta: 'Bewertung verifiziert · Jan 2026 · FR · Paar',
+      t2_meta: 'Bewertung verifiziert · Jan 2026 · EN · Paar',
+      t3_meta: 'Bewertung verifiziert · Dez 2025 · FR · Solo',
+      t4_meta: 'Bewertung verifiziert · Jan 2026 · FR · Familie',
+      t5_meta: 'Bewertung verifiziert · Nov 2025 · EN · Paar',
+      t6_meta: 'Bewertung verifiziert · Jan 2026 · DE · Paar'
+    }
+  };
+
+  I18N.mf = {
+    ...I18N.fr,
+    lang_label: 'Langaz',
+    lang_select_aria: 'Swazir langaz',
+    nav_about: 'Apropo',
+    nav_excursions: 'Sorti',
+    nav_reviews: 'Temwagnaz',
+    nav_reviews_mobile: 'Avis kliyan',
+    nav_book: 'Rezerv',
+    hero_logo: 'Logo ofisiel',
+    hero_eyebrow: 'Mauritius Tour Guide — Saizad · Gid Lokal Sertifie',
+    hero_title: "Dekouver <em>lam</em><br>Moris",
+    hero_desc: 'Lexperyans otantik lwin ar sime touristik. Ou gid lokal ouver laport enn lil sekre ek vivan.',
+    hero_explore: 'Get sorti',
+    hero_contact: 'Kontak gid',
+    hero_scroll: 'Desann',
+    tag_guide: 'Ou gid',
+    tag_catalog: 'Katalog',
+    h2_excursions: 'Nou bann sorti<br>signatir',
+    tag_testimonials: 'Lexperyans kliyan',
+    h2_testimonials: 'Se ki nou bann<br>voyazer dir',
+    tag_photos: 'Foto reel',
+    h2_gallery: 'Bann moman nou finn<br>kapte ar voyazer',
+    tag_social: 'Rezo sosyal',
+    h2_social: 'Swiv nou lavantir',
+    tag_practical: 'Info pratik',
+    tag_contact: 'Kontak',
+    h2_contact: 'Anou planifye ou lavantir ansam',
+    trust_languages_title: 'Langaz koze',
+    trust_languages_value: 'Franse, Angle, Alman, Kreol Morisien ek Olande.',
+    stat_ig_followers: 'Abone Instagram',
+    stat_reviews: 'Avis verifye',
+    stat_recommended: 'Rekomande',
+    stat_ig_posts: 'Post Instagram',
+    about_guide_name: 'Saizad',
+    about_guide_role: 'Mauritius Tour Guide Ofisiel',
+    about_badge: 'avis 100% pozitif',
+    about_title: 'Saizad, ou gid<br>morisien avek leker',
+    about_p1: "Bonzur, mo apel <strong>Saizad</strong> ek mo anvi fer ou dekouver bann mervey Moris. Mo pou amenn ou dan bann plas pli inkrwayab lor sa lil paradi la — depi laplaz kase ziska peyizaz volkanik, san bliye so kiltir vivan ek so manze tipik.",
+    about_p2: 'Avek <strong>plis ki 36 000 abone</strong> lor rezo sosyal ek <strong>331 avis 100% pozitif</strong>, mo reputasion baze lor enn sel promes: ofer ou enn lexperyans otantik ek inoubliyab, lwin ar bann sirkwi touristik klasik.',
+    about_h1_title: 'Gid sertifie',
+    about_h1_desc: 'Akrete par lotorite touristik Moris',
+    about_h2_title: 'Miltiling',
+    about_h2_desc: 'Franse, Angle, Alman, Kreol, Olande',
+    about_h3_title: 'Transpor inkli',
+    about_h3_desc: 'Veyikil klimatize bien konfortab',
+    about_h4_title: 'Foto inkli',
+    about_h4_desc: 'Souvenir inoubliyab garanti',
+    exc_custom_btn: 'Demann enn sorti lor mezir',
+    exc1_badge: 'Popiler',
+    exc1_meta_1: '⏱ Lazourne',
+    exc1_meta_2: '👥 Group',
+    exc1_title: 'Naze ar daufin & Ile aux Cerfs',
+    exc1_desc: 'Enn gran bomaten magik dan lamer ar bann daufin sovaz, apre enn zourne lor enn parmi bann pli zoli lil lagon dan Moris.',
+    exc2_badge: 'Lanatir',
+    exc2_meta_1: '⏱ Demi-zourne',
+    exc2_meta_2: '👥 Ti group',
+    exc2_title: 'Black River Gorges, lafore & kaskad',
+    exc2_desc: 'Dekouver bann viewpoint dan park Black River Gorges, rant dan lafore tropikal ek vizit bann kaskad dan lesid.',
+    exc3_badge: 'Kiltir',
+    exc3_meta_1: '⏱ Lazourne',
+    exc3_meta_2: '👥 Famiy',
+    exc3_title: 'Port-Louis & trezor kiltirel',
+    exc3_desc: 'Plonz dan listwar kolonyal Port-Louis, vizit marse santral ek Chinatown, ek dekouver diversite kiltirel Moris.',
+    exc4_badge: 'Romantik',
+    exc4_meta_1: '⏱ Aswar',
+    exc4_meta_2: '👥 Koup',
+    exc4_title: 'East Coast o kouse soley',
+    exc4_desc: 'Enn parcours romantik lor lakot les ziska bann pli zoli viewpoint pou admir kouse soley, apre enn dine lokal otantik.',
+    exc5_badge: 'Laventir',
+    exc5_meta_1: '⏱ Demi-zourne',
+    exc5_meta_2: '👥 Group',
+    exc5_title: 'Snorkeling & spot sekre dan lagon',
+    exc5_desc: 'Explore bann resif koray prezerv ek bann spot sekre ki bann lokal kone, avek mask ek tuba fourni.',
+    exc6_badge: 'Gastronomi',
+    exc6_meta_1: '⏱ Demi-zourne',
+    exc6_meta_2: '👥 Tou piblik',
+    exc6_title: 'Port-Louis tour manze lari',
+    exc6_desc: 'Dekouver lam kuliner Port-Louis — dholl puri, rougay, samousa, bouyon — otour marse santral ek bann spot manze lokal.',
+    t1_text: '"Enn zourne vreman inoubliyab. Nou gid finn amenn nou dan bann landrwa ki okenn touris pa ti pou trouv tousel. Mersi pou sa lotantisite la!"',
+    t1_origin: 'Paris, Lafrans • Ile aux Cerfs',
+    t2_text: '"Meyer tour nou lavi! Li ti konn sak ti plas sekre, sak zistwar lokal. Nou ti krwar nou pe dekouver lil avek enn kamarad, pa zis enn gid. Bien rekmande!"',
+    t2_origin: 'London, UK • Tour Lanatir',
+    t3_text: '"Nou retourn Moris sak lane, ek sak fwa nou rezerv avek li. Se sel gid ki vremem konn lil la dan tou so sekre."',
+    t3_origin: 'Genev, Swis • Fidel depi 3 an',
+    t4_text: '"Lexperyans avek daufin ti inkrwayab! Mo garson 8 an ankor koz lor la. Gid la ena bokou pasians ek bien zantiy. Nou famiy ranpli lazwa!"',
+    t4_origin: 'Brisel, Belzik • Tour Famiy',
+    t5_text: '"Food tour la ti enn revelasion! Nou finn manz meyer street food nou lavi. Li finn amenn nou dan bann plas ki okenn touris pa ti pou trouve. Vreman exelan!"',
+    t5_origin: 'Sydney, Ostrali • Food Tour',
+    t6_text: '"Enn kouse soley magik lor oter lil avek mo fam, apre enn dine lokal formidab. Enn aswar romantik parfe ki nou pa pou bliye."',
+    t6_origin: 'Hamburg, Lalmayn • Sunset Tour',
+    gallery_desc: 'Pa ena bank zimaz: zis bann vre foto pibliye lor nou paz ofisiel Instagram ek Facebook.',
+    social_desc: 'Foto, video ek zistwar toulezour — vinn dan nou kominote ek les twa inspire par bote Moris.',
+    social_fb_handle: '@localmauritius · 35 748 likes',
+    social_ig_handle: '@mauritiustourguide · 368 abone · 519 post',
+    trust_h2: 'Rezerv ar<br>kondision kler',
+    trust_pickup_title: 'Zonn pran an sarz',
+    trust_pickup_desc: 'Nou kapav pran ou partou dan Moris dapre kot ou lozman ete.',
+    trust_response_title: 'Delai repons',
+    trust_response_desc: 'An zeneral, repons lor WhatsApp anndan 30 minit pandan lazourne.',
+    trust_payment_title: 'Fason peyman',
+    trust_payment_desc: 'Kash (MUR/EUR), virman lokal ek transfer mobil dapre disponiblite.',
+    trust_cancel_title: 'Anilasion fleksib',
+    trust_cancel_desc: 'Anilasion ouswa repor san fre ziska 24h avan depa.',
+    contact_intro: 'Ki swa enn sorti depi katalog ouswa enn lexperyans totalman personnalize, ekrir nou ek nou pou kree litinerer ou rev.',
+    contact_whatsapp_label: 'WhatsApp kontak :',
+    contact_tel_label: 'Telefon :',
+    contact_hours: 'Disponib 7z/7 — Toultan ouver',
+    label_firstname: 'Prenom',
+    label_lastname: 'Non',
+    label_email: 'Ladres email',
+    option_choose_excursion: 'Swazir enn sorti...',
+    label_excursion: 'Sorti ou anvi',
+    label_message: 'Ou mesaz',
+    placeholder_firstname: 'Ou prenom',
+    placeholder_lastname: 'Ou nom',
+    placeholder_email: 'ou@email.com',
+    placeholder_message: 'Dat, kantite dimounn, demand spesial...',
+    option_exc1: 'Naze ar daufin & Ile aux Cerfs',
+    option_exc2: 'Black River Gorges, lafore & kaskad',
+    option_exc3: 'Port-Louis & trezor kiltirel',
+    option_exc4: 'East Coast o kouse soley',
+    option_exc5: 'Snorkeling & spot sekre dan lagon',
+    option_exc6: 'Port-Louis tour manze lari',
+    option_exc_custom: 'Sorti lor mezir',
+    btn_submit: 'Avoy lor WhatsApp →',
+    reserve_btn: 'Rezerv →',
+    wa_sticky: 'WhatsApp • Rezerv',
+    wa_sticky_aria: 'Kontak lor WhatsApp',
+    wa_prefill: 'Bonzur Saizad, mo anvi rezerv enn sorti Moris.',
+    form_intro: 'Bonzur Saizad, mo anvi rezerv enn sorti Moris.',
+    form_name: 'Nom konple',
+    form_excursion: 'Sorti',
+    form_email: 'Ladres email',
+    form_message: 'Mesaz',
+    form_undefined: 'Pou definir',
+    form_no_email: 'Pa finn ransegn',
+    form_no_message: 'Pa ena lezot mesaz.'
+  };
+  I18N.mfe = I18N.mf;
+
+  I18N.nl = {
+    ...I18N.en,
+    lang_label: 'Taal',
+    lang_select_aria: 'Kies taal',
+    nav_about: 'Over ons',
+    nav_excursions: 'Excursies',
+    nav_reviews: 'Beoordelingen',
+    nav_reviews_mobile: 'Klantreviews',
+    nav_book: 'Boeken',
+    hero_logo: 'Officieel logo',
+    hero_eyebrow: 'Mauritius Tour Guide — Saizad · Gecertificeerde lokale gids',
+    hero_title: 'Ontdek <em>de ziel</em><br>van Mauritius',
+    hero_desc: 'Authentieke ervaringen weg van de drukte. Je lokale gids laat je het echte Mauritius zien.',
+    hero_explore: 'Bekijk excursies',
+    hero_contact: 'Contacteer de gids',
+    hero_scroll: 'Scroll naar beneden',
+    tag_guide: 'Jouw gids',
+    tag_catalog: 'Catalogus',
+    h2_excursions: 'Onze kenmerkende<br>excursies',
+    tag_testimonials: 'Succesverhalen',
+    h2_testimonials: 'Wat onze<br>reizigers zeggen',
+    tag_photos: 'Echte foto\'s',
+    h2_gallery: 'Vastgelegde momenten<br>met onze reizigers',
+    tag_social: 'Sociale media',
+    h2_social: 'Volg onze avonturen',
+    tag_practical: 'Praktische info',
+    tag_contact: 'Contact opnemen',
+    trust_languages_title: 'Gesproken talen',
+    trust_languages_value: 'Frans, Engels, Duits, Mauritiaans Creools en Nederlands.',
+    stat_ig_followers: 'Instagram-volgers',
+    stat_reviews: 'Geverifieerde reviews',
+    stat_recommended: 'Aanbevolen',
+    stat_ig_posts: 'Instagram-berichten',
+    about_guide_name: 'Saizad',
+    about_guide_role: 'Officiële Mauritius Tour Guide',
+    about_badge: '100% positieve reviews',
+    about_title: 'Saizad, jouw gids<br>met hart voor Mauritius',
+    about_p1: 'Hallo, ik ben <strong>Saizad</strong> en ik wil je de wonderen van Mauritius laten ontdekken. Ik neem je mee naar de meest indrukwekkende plekken van het eiland — van verborgen stranden tot vulkanische landschappen, met een levendige cultuur en unieke keuken.',
+    about_p2: 'Met <strong>meer dan 36.000 volgers</strong> op sociale media en <strong>331 reviews die 100% positief zijn</strong>, rust mijn reputatie op één belofte: jou een authentieke en onvergetelijke ervaring bieden, ver weg van klassieke toeristische routes.',
+    about_h1_title: 'Gecertificeerde gids',
+    about_h1_desc: 'Erkend door het Mauritiaanse toerisme',
+    about_h2_title: 'Meertalig',
+    about_h2_desc: 'Frans, Engels, Duits, Creools, Nederlands',
+    about_h3_title: 'Vervoer inbegrepen',
+    about_h3_desc: 'Comfortabele wagen met airco',
+    about_h4_title: 'Foto\'s inbegrepen',
+    about_h4_desc: 'Onvergetelijke herinneringen gegarandeerd',
+    exc_custom_btn: 'Vraag een excursie op maat',
+    exc1_badge: 'Populair',
+    exc1_meta_1: '⏱ Hele dag',
+    exc1_meta_2: '👥 Groep',
+    exc1_title: 'Zwemmen met dolfijnen & Ile aux Cerfs',
+    exc1_desc: 'Een magische ochtend op zee met wilde dolfijnen, gevolgd door een dag op een van de mooiste lagune-eilanden van Mauritius.',
+    exc2_badge: 'Natuur',
+    exc2_meta_1: '⏱ Halve dag',
+    exc2_meta_2: '👥 Kleine groep',
+    exc2_title: 'Black River Gorges, jungle & watervallen',
+    exc2_desc: 'Ontdek uitzichtpunten in Black River Gorges National Park, trek door tropische jungle en bezoek watervallen in het zuiden.',
+    exc3_badge: 'Cultuur',
+    exc3_meta_1: '⏱ Hele dag',
+    exc3_meta_2: '👥 Familie',
+    exc3_title: 'Port Louis & culturele schatten',
+    exc3_desc: 'Duik in de koloniale geschiedenis van Port Louis, bezoek de centrale markt en Chinatown, en ontdek de culturele diversiteit van Mauritius.',
+    exc4_badge: 'Romantisch',
+    exc4_meta_1: '⏱ Avond',
+    exc4_meta_2: '👥 Duo',
+    exc4_title: 'East Coast bij zonsondergang',
+    exc4_desc: 'Een romantische route langs de oostkust naar de mooiste uitzichtpunten van het eiland bij zonsondergang, gevolgd door een authentiek lokaal diner.',
+    exc5_badge: 'Avontuur',
+    exc5_meta_1: '⏱ Halve dag',
+    exc5_meta_2: '👥 Groep',
+    exc5_title: 'Snorkelen & geheime laguneplekken',
+    exc5_desc: 'Verken beschermde koraalriffen en geheime lokale spots, met masker en snorkel inbegrepen.',
+    exc6_badge: 'Gastronomie',
+    exc6_meta_1: '⏱ Halve dag',
+    exc6_meta_2: '👥 Iedereen',
+    exc6_title: 'Port Louis streetfoodtour',
+    exc6_desc: 'Ontdek de culinaire ziel van Port Louis — dholl puri, rougailles, samosa\'s, bouillon — rond de centrale markt en lokale streetfoodspots.',
+    t1_text: '"Een absoluut onvergetelijke dag. Onze gids bracht ons naar plekken die je als toerist nooit alleen zou vinden. Dank voor deze authenticiteit!"',
+    t1_origin: 'Parijs, Frankrijk • Ile aux Cerfs',
+    t2_text: '"De beste tour van ons leven! Hij kende elk verborgen pareltje en elk lokaal verhaal. Het voelde alsof we met een vriend op pad waren. Echt een aanrader!"',
+    t2_origin: 'Londen, VK • Natuurtour',
+    t3_text: '"Wij komen elk jaar terug naar Mauritius en boeken telkens bij hem. Hij is de enige gids die het eiland echt door en door kent."',
+    t3_origin: 'Genève, Zwitserland • Al 3 jaar trouw',
+    t4_text: '"Ongelooflijke ervaring met dolfijnen! Mijn zoon van 8 praat er nog steeds over. De gids is geduldig en bijzonder vriendelijk. Een heel blije familie!"',
+    t4_origin: 'Brussel, België • Familietour',
+    t5_text: '"De foodtour was een openbaring! We aten het beste streetfood ooit. Hij bracht ons naar plekken die geen toerist zou vinden. Absoluut geweldig!"',
+    t5_origin: 'Sydney, Australië • Foodtour',
+    t6_text: '"Een magische zonsondergang op de hoogten van het eiland met mijn vrouw, gevolgd door een fantastisch lokaal diner. Een perfecte romantische avond die we nooit vergeten."',
+    t6_origin: 'Hamburg, Duitsland • Sunset Tour',
+    gallery_desc: 'Geen stockfoto\'s: alleen echte foto\'s van onze officiële Instagram- en Facebookpagina\'s.',
+    social_desc: 'Foto\'s, video\'s en verhalen uit het dagelijks leven — sluit je aan bij onze community en laat je inspireren door de schoonheid van Mauritius.',
+    social_fb_handle: '@localmauritius · 35.748 vind-ik-leuks',
+    social_ig_handle: '@mauritiustourguide · 368 volgers · 519 posts',
+    trust_h2: 'Boek met<br>duidelijke voorwaarden',
+    trust_pickup_title: 'Ophaalzone',
+    trust_pickup_desc: 'Ophaling mogelijk overal op Mauritius, afhankelijk van je verblijf.',
+    trust_response_title: 'Responstijd',
+    trust_response_desc: 'Meestal antwoord op WhatsApp binnen 30 minuten overdag.',
+    trust_payment_title: 'Betaalmethoden',
+    trust_payment_desc: 'Contant (MUR/EUR), lokale overschrijving en mobiele transfer volgens beschikbaarheid.',
+    trust_cancel_title: 'Flexibele annulering',
+    trust_cancel_desc: 'Gratis annuleren of verplaatsen tot 24 uur voor vertrek.',
+    contact_intro: 'Of je nu een excursie uit de catalogus wilt of een volledig gepersonaliseerde ervaring: schrijf ons en wij maken je droomroute.',
+    contact_whatsapp_label: 'WhatsApp-contact:',
+    contact_tel_label: 'Telefoon:',
+    contact_hours: 'Beschikbaar 7/7 — Altijd open',
+    h2_contact: 'Laten we samen je avontuur plannen',
+    label_firstname: 'Voornaam',
+    label_lastname: 'Achternaam',
+    label_email: 'E-mail',
+    option_choose_excursion: 'Kies een excursie...',
+    label_excursion: 'Gewenste excursie',
+    label_message: 'Je bericht',
+    placeholder_firstname: 'Je voornaam',
+    placeholder_lastname: 'Je achternaam',
+    placeholder_email: 'jij@email.com',
+    placeholder_message: 'Gewenste data, aantal personen, speciale wensen...',
+    option_exc1: 'Zwemmen met dolfijnen & Ile aux Cerfs',
+    option_exc2: 'Black River Gorges, jungle & watervallen',
+    option_exc3: 'Port Louis & culturele schatten',
+    option_exc4: 'East Coast bij zonsondergang',
+    option_exc5: 'Snorkelen & geheime laguneplekken',
+    option_exc6: 'Port Louis streetfoodtour',
+    option_exc_custom: 'Excursie op maat',
+    btn_submit: 'Verstuur via WhatsApp →',
+    reserve_btn: 'Boek nu →',
+    wa_sticky: 'WhatsApp • Boek nu',
+    wa_sticky_aria: 'Contact via WhatsApp',
+    wa_prefill: 'Hallo Saizad, ik wil graag een excursie boeken op Mauritius.',
+    form_intro: 'Hallo Saizad, ik wil graag een excursie boeken op Mauritius.',
+    form_name: 'Naam',
+    form_excursion: 'Excursie',
+    form_email: 'E-mail',
+    form_message: 'Bericht',
+    form_undefined: 'Nog te bepalen',
+    form_no_email: 'Niet ingevuld',
+    form_no_message: 'Geen extra bericht.'
+  };
+
+  let currentLang = 'fr';
+  const languageSelect = document.getElementById('languageSelect');
+  const languageStatus = document.getElementById('languageStatus');
+  const metaTitle = document.getElementById('metaTitle');
+  const metaDescription = document.getElementById('metaDescription');
+  const ogTitle = document.getElementById('ogTitle');
+  const ogDescription = document.getElementById('ogDescription');
+  const ogUrl = document.getElementById('ogUrl');
+  const canonicalLink = document.getElementById('canonicalLink');
+  const excursionCards = Array.from(document.querySelectorAll('.excursion-card'));
+  const filterDuration = document.getElementById('filterDuration');
+  const filterStyle = document.getElementById('filterStyle');
+  const filterAudience = document.getElementById('filterAudience');
+  const compareList = document.getElementById('compareList');
+  const compareCheckboxes = Array.from(document.querySelectorAll('.compare-checkbox'));
+  const plannerDuration = document.getElementById('plannerDuration');
+  const plannerStyle = document.getElementById('plannerStyle');
+  const plannerAudience = document.getElementById('plannerAudience');
+  const plannerSuggestBtn = document.getElementById('plannerSuggestBtn');
+  const plannerResult = document.getElementById('plannerResult');
+  const selectedCompare = new Set();
+
+  const SEO_META = {
+    fr: {
+      title: 'Mauritius Tour Guide — Saizad, Guide Local Officiel',
+      description: "Guide local francophone à l'île Maurice: excursions privées, snorkeling, dauphins, Port-Louis street food et circuits sur mesure avec Saizad."
+    },
+    en: {
+      title: 'Mauritius Tour Guide — Saizad, Official Local Guide',
+      description: 'Local guide in Mauritius: private tours, snorkeling, dolphin experiences, Port Louis street food, and custom itineraries with Saizad.'
+    },
+    de: {
+      title: 'Mauritius Tour Guide — Saizad, Offizieller lokaler Guide',
+      description: 'Lokaler Guide auf Mauritius: private Ausflüge, Schnorcheln, Delfine, Street Food in Port Louis und maßgeschneiderte Touren mit Saizad.'
+    },
+    mf: {
+      title: 'Mauritius Tour Guide — Saizad, Gid Lokal Ofisiel',
+      description: 'Gid lokal Moris: sorti prive, snorkeling, daufin, street food Port-Louis ek parcours lor mezir avek Saizad.'
+    },
+    nl: {
+      title: 'Mauritius Tour Guide — Saizad, Officiële lokale gids',
+      description: 'Lokale gids op Mauritius: privétours, snorkelen, dolfijnen, streetfood in Port Louis en excursies op maat met Saizad.'
+    }
+  };
+
+  function getTranslation(lang, key) {
+    const langTable = I18N[lang] || I18N.fr;
+    return (langTable && Object.prototype.hasOwnProperty.call(langTable, key))
+      ? langTable[key]
+      : I18N.fr[key];
+  }
+
+  function applyExcursionFilters() {
+    const d = filterDuration ? filterDuration.value : 'all';
+    const s = filterStyle ? filterStyle.value : 'all';
+    const a = filterAudience ? filterAudience.value : 'all';
+    excursionCards.forEach(card => {
+      const okDuration = d === 'all' || card.dataset.duration === d;
+      const okStyle = s === 'all' || card.dataset.style === s;
+      const okAudience = a === 'all' || card.dataset.audience === a;
+      card.classList.toggle('is-hidden', !(okDuration && okStyle && okAudience));
+    });
+  }
+
+  function renderCompareList() {
+    if (!compareList) return;
+    if (selectedCompare.size === 0) {
+      compareList.textContent = getTranslation(currentLang, 'compare_empty');
+      return;
+    }
+    const names = Array.from(selectedCompare).map(key => getTranslation(currentLang, key));
+    compareList.textContent = names.join(' · ');
+  }
+
+  function handleCompareChange(event) {
+    const input = event.target;
+    if (!(input instanceof HTMLInputElement)) return;
+    const excursionKey = input.getAttribute('data-excursion-key');
+    if (!excursionKey) return;
+
+    if (input.checked) {
+      if (selectedCompare.size >= 3) {
+        input.checked = false;
+        window.alert(getTranslation(currentLang, 'compare_limit'));
+        return;
+      }
+      selectedCompare.add(excursionKey);
+    } else {
+      selectedCompare.delete(excursionKey);
+    }
+    renderCompareList();
+  }
+
+  function suggestExcursions() {
+    const d = plannerDuration ? plannerDuration.value : 'all';
+    const s = plannerStyle ? plannerStyle.value : 'all';
+    const a = plannerAudience ? plannerAudience.value : 'all';
+    const matches = excursionCards.filter(card => {
+      const okDuration = d === 'all' || card.dataset.duration === d;
+      const okStyle = s === 'all' || card.dataset.style === s;
+      const okAudience = a === 'all' || card.dataset.audience === a;
+      return okDuration && okStyle && okAudience;
+    });
+
+    if (!plannerResult) return;
+    if (!matches.length) {
+      plannerResult.textContent = getTranslation(currentLang, 'planner_none');
+      return;
+    }
+
+    const labels = matches.slice(0, 3).map(card => {
+      const titleNode = card.querySelector('.card-title');
+      return titleNode ? titleNode.textContent.trim() : '';
+    }).filter(Boolean);
+
+    plannerResult.textContent = `${getTranslation(currentLang, 'planner_result_prefix')} ${labels.join(' · ')}`;
+  }
+
+  function updateSeo(lang) {
+    const safeLang = SEO_META[lang] ? lang : 'fr';
+    const seo = SEO_META[safeLang];
+    const base = 'https://www.mauritiustourguide.com/';
+    const url = safeLang === 'fr' ? base : `${base}?lang=${encodeURIComponent(safeLang)}`;
+    document.title = seo.title;
+    if (metaTitle) metaTitle.textContent = seo.title;
+    if (metaDescription) metaDescription.setAttribute('content', seo.description);
+    if (ogTitle) ogTitle.setAttribute('content', seo.title);
+    if (ogDescription) ogDescription.setAttribute('content', seo.description);
+    if (ogUrl) ogUrl.setAttribute('content', url);
+    if (canonicalLink) canonicalLink.setAttribute('href', url);
+  }
+
+  function applyLanguage(lang) {
+    const safeLang = I18N[lang] ? lang : 'fr';
+    currentLang = safeLang;
+    const tr = I18N[safeLang] || I18N.fr;
+
+    document.documentElement.lang = safeLang;
+    updateSeo(safeLang);
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const value = getTranslation(safeLang, key);
+      if (value) el.textContent = value;
+    });
+
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+      const key = el.getAttribute('data-i18n-html');
+      const value = getTranslation(safeLang, key);
+      if (value) el.innerHTML = value;
+    });
+
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const value = getTranslation(safeLang, key);
+      if (value) el.setAttribute('placeholder', value);
+    });
+
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+      const key = el.getAttribute('data-i18n-aria');
+      const value = getTranslation(safeLang, key);
+      if (value) el.setAttribute('aria-label', value);
+    });
+
+    document.querySelectorAll('.js-reserve').forEach(el => {
+      el.textContent = tr.reserve_btn;
+    });
+
+    const waSticky = document.getElementById('waSticky');
+    if (waSticky) {
+      waSticky.href = `https://wa.me/23057652767?text=${encodeURIComponent(tr.wa_prefill)}`;
+    }
+
+    if (languageStatus) languageStatus.textContent = `${getTranslation(safeLang, 'lang_label')}: ${safeLang.toUpperCase()}`;
+    if (languageSelect) languageSelect.value = safeLang;
+    const nextUrl = safeLang === 'fr' ? `${window.location.pathname}${window.location.hash}` : `?lang=${encodeURIComponent(safeLang)}${window.location.hash}`;
+    window.history.replaceState(null, '', nextUrl);
+    localStorage.setItem('preferredLanguage', safeLang);
+    loadSocialProof();
+    renderCompareList();
+  }
+
+  if (languageSelect) {
+    languageSelect.addEventListener('change', e => applyLanguage(e.target.value));
+  }
+
+  const urlLanguage = new URLSearchParams(window.location.search).get('lang');
+  const savedLanguage = localStorage.getItem('preferredLanguage');
+  const browserLanguageFull = (navigator.language || 'fr').toLowerCase();
+  const browserLanguage = browserLanguageFull.split('-')[0];
+  const browserLanguageShort = browserLanguage.slice(0, 2);
+  const initialLanguage = I18N[urlLanguage]
+    ? urlLanguage
+    : I18N[savedLanguage]
+      ? savedLanguage
+    : I18N[browserLanguage]
+      ? browserLanguage
+      : I18N[browserLanguageShort]
+        ? browserLanguageShort
+        : 'fr';
+  applyLanguage(initialLanguage);
+
+  if (filterDuration) filterDuration.addEventListener('change', applyExcursionFilters);
+  if (filterStyle) filterStyle.addEventListener('change', applyExcursionFilters);
+  if (filterAudience) filterAudience.addEventListener('change', applyExcursionFilters);
+  applyExcursionFilters();
+
+  compareCheckboxes.forEach(input => input.addEventListener('change', handleCompareChange));
+  renderCompareList();
+
+  if (plannerSuggestBtn) plannerSuggestBtn.addEventListener('click', suggestExcursions);
+
+  function formatNumberByLang(value, lang) {
+    const localeMap = { fr: 'fr-FR', en: 'en-US', de: 'de-DE', mf: 'fr-MU', nl: 'nl-NL' };
+    return new Intl.NumberFormat(localeMap[lang] || 'fr-FR').format(value);
+  }
+
+  async function loadSocialProof() {
+    try {
+      const response = await fetch('assets/social-proof.json', { cache: 'no-store' });
+      if (!response.ok) return;
+      const data = await response.json();
+      const lang = currentLang || 'fr';
+      document.querySelectorAll('[data-social-proof]').forEach(node => {
+        const key = node.getAttribute('data-social-proof');
+        const raw = data[key];
+        if (raw === undefined || raw === null) return;
+        if (key === 'recommended_rate') {
+          node.textContent = `${raw}%`;
+          return;
+        }
+        node.textContent = formatNumberByLang(raw, lang);
+      });
+
+      const fbHandle = document.querySelector('[data-social-proof-handle="facebook"]');
+      if (fbHandle && data.facebook_handle && data.facebook_likes) {
+        const likes = formatNumberByLang(data.facebook_likes, lang);
+        if (lang === 'en') fbHandle.textContent = `${data.facebook_handle} · ${likes} likes`;
+        else if (lang === 'de') fbHandle.textContent = `${data.facebook_handle} · ${likes} Likes`;
+        else if (lang === 'nl') fbHandle.textContent = `${data.facebook_handle} · ${likes} vind-ik-leuks`;
+        else fbHandle.textContent = `${data.facebook_handle} · ${likes} J'aime`;
+      }
+
+      const igHandle = document.querySelector('[data-social-proof-handle="instagram"]');
+      if (igHandle && data.instagram_handle && data.instagram_followers && data.instagram_posts) {
+        const followers = formatNumberByLang(data.instagram_followers, lang);
+        const posts = formatNumberByLang(data.instagram_posts, lang);
+        if (lang === 'de') igHandle.textContent = `${data.instagram_handle} · ${followers} Follower · ${posts} Posts`;
+        else if (lang === 'nl') igHandle.textContent = `${data.instagram_handle} · ${followers} volgers · ${posts} posts`;
+        else if (lang === 'mf') igHandle.textContent = `${data.instagram_handle} · ${followers} abone · ${posts} post`;
+        else igHandle.textContent = `${data.instagram_handle} · ${followers} followers · ${posts} posts`;
+      }
+
+      const lastUpdated = document.querySelector('[data-i18n="social_last_updated"]');
+      if (lastUpdated && data.updated_at) {
+        const base = getTranslation(lang, 'social_last_updated') || '';
+        lastUpdated.textContent = `${base} (${data.updated_at})`;
+      }
+    } catch (error) {
+      // Keep static fallback content if the JSON file is unavailable.
+    }
+  }
+
   const excursionSelect = document.getElementById('excursionSelect');
   document.querySelectorAll('.js-reserve').forEach(link => {
     link.addEventListener('click', () => {
-      const choice = link.getAttribute('data-excursion');
+      const excursionKey = link.getAttribute('data-excursion-key');
+      const tr = I18N[currentLang] || I18N.fr;
+      const choice = excursionKey && tr[excursionKey] ? tr[excursionKey] : '';
       if (choice && excursionSelect) excursionSelect.value = choice;
     });
   });
 
   const bookingForm = document.getElementById('bookingForm');
+  const formStatus = document.getElementById('formStatus');
+  const fieldMap = {
+    firstName: document.getElementById('firstName'),
+    lastName: document.getElementById('lastName'),
+    email: document.getElementById('email'),
+    excursion: document.getElementById('excursionSelect')
+  };
+  const errorMap = {
+    firstName: document.getElementById('firstNameError'),
+    lastName: document.getElementById('lastNameError'),
+    email: document.getElementById('emailError'),
+    excursion: document.getElementById('excursionError')
+  };
+
+  function setFieldError(fieldKey, message) {
+    const input = fieldMap[fieldKey];
+    const errorNode = errorMap[fieldKey];
+    if (!input || !errorNode) return;
+    input.setAttribute('aria-invalid', message ? 'true' : 'false');
+    errorNode.textContent = message || '';
+  }
+
+  function validateBookingForm() {
+    const tr = I18N[currentLang] || I18N.fr;
+    const firstName = fieldMap.firstName.value.trim();
+    const lastName = fieldMap.lastName.value.trim();
+    const email = fieldMap.email.value.trim();
+    const excursion = fieldMap.excursion.value.trim();
+    const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    let valid = true;
+
+    if (!firstName) {
+      setFieldError('firstName', tr.form_error_required);
+      valid = false;
+    } else setFieldError('firstName', '');
+
+    if (!lastName) {
+      setFieldError('lastName', tr.form_error_required);
+      valid = false;
+    } else setFieldError('lastName', '');
+
+    if (!email) {
+      setFieldError('email', tr.form_error_required);
+      valid = false;
+    } else if (!emailValid) {
+      setFieldError('email', tr.form_error_email);
+      valid = false;
+    } else setFieldError('email', '');
+
+    if (!excursion) {
+      setFieldError('excursion', tr.form_error_required);
+      valid = false;
+    } else setFieldError('excursion', '');
+
+    return valid;
+  }
+
+  Object.values(fieldMap).forEach(input => {
+    if (!input) return;
+    input.addEventListener('input', () => validateBookingForm());
+    input.addEventListener('blur', () => validateBookingForm());
+  });
+
   bookingForm.addEventListener('submit', e => {
     e.preventDefault();
+    const tr = I18N[currentLang] || I18N.fr;
+    if (formStatus) formStatus.textContent = '';
+    if (!validateBookingForm()) return;
+
+    const accepted = window.confirm(`${tr.form_confirm_title}\n\n${tr.form_confirm_message}`);
+    if (!accepted) return;
+
     const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -1872,13 +3485,14 @@
     const message = document.getElementById('message').value.trim();
 
     const lines = [
-      'Bonjour Saizad, je souhaite reserver une excursion a Maurice.',
-      `Nom: ${firstName} ${lastName}`.trim(),
-      `Excursion: ${excursion || 'A definir'}`,
-      `Email: ${email || 'Non renseigne'}`,
-      `Message: ${message || 'Aucun message supplementaire.'}`
+      tr.form_intro,
+      `${tr.form_name}: ${firstName} ${lastName}`.trim(),
+      `${tr.form_excursion}: ${excursion || tr.form_undefined}`,
+      `${tr.form_email}: ${email || tr.form_no_email}`,
+      `${tr.form_message}: ${message || tr.form_no_message}`
     ];
     const text = encodeURIComponent(lines.join('\n'));
+    if (formStatus) formStatus.textContent = tr.form_sent;
     window.open(`https://wa.me/23057652767?text=${text}`, '_blank', 'noopener');
   });
 </script>
