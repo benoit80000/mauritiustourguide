@@ -729,6 +729,21 @@
     overflow: hidden;
   }
 
+  .card-thumb-placeholder {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(64,201,193,0.15), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(236,120,93,0.16), transparent 42%),
+      linear-gradient(160deg, #102a33 0%, #0b1f27 100%);
+    color: rgba(233, 246, 251, 0.92);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
   .card-thumb-media {
     width: 100%;
     height: 100%;
@@ -2033,10 +2048,7 @@
 
     <div class="excursion-card" data-duration="full" data-style="culture" data-audience="group" data-excursion-id="exc6">
       <div class="card-thumb">
-        <picture class="card-thumb-media">
-          <source srcset="assets/photos/excursion-6.webp" type="image/webp">
-          <img src="assets/photos/excursion-6.jpg" alt="Eglise rouge de Cap Malheureux et circuit nord" loading="lazy" decoding="async">
-        </picture>
+        <div class="card-thumb-placeholder">Photo à venir</div>
         <div class="card-badge" data-i18n="exc6_badge">Découverte</div>
         <div class="card-location">Nord</div>
       </div>
@@ -2073,10 +2085,7 @@
 
     <div class="excursion-card" data-duration="full" data-style="nature" data-audience="group" data-excursion-id="exc7">
       <div class="card-thumb">
-        <picture class="card-thumb-media">
-          <source srcset="assets/photos/excursion-2.webp" type="image/webp">
-          <img src="assets/photos/excursion-2.jpg" alt="Circuit sud 2 a l'ile Maurice" loading="lazy" decoding="async">
-        </picture>
+        <div class="card-thumb-placeholder">Photo à venir</div>
         <div class="card-badge" data-i18n="exc7_badge">Sud</div>
         <div class="card-location">Sud</div>
       </div>
@@ -2113,10 +2122,7 @@
 
     <div class="excursion-card" data-duration="half" data-style="adventure" data-audience="group" data-excursion-id="exc4">
       <div class="card-thumb">
-        <picture class="card-thumb-media">
-          <source srcset="assets/photos/excursion-2.webp" type="image/webp">
-          <img src="assets/photos/excursion-2.jpg" alt="Randonnee au Morne Brabant et vue lagon" loading="lazy" decoding="async">
-        </picture>
+        <div class="card-thumb-placeholder">Photo à venir</div>
         <div class="card-badge" data-i18n="exc4_badge">Aventure</div>
         <div class="card-location">Le Morne</div>
       </div>
@@ -3604,24 +3610,16 @@
   let touchEndX = 0;
 
   const EXCURSION_GALLERIES = {
-    exc6: [
-      { src: 'assets/photos/nord-1.jpg', alt: 'Nord — Cap Malheureux' },
-      { src: 'assets/photos/nord-2.jpg', alt: 'Nord — Pamplemousses' }
-    ],
+    exc6: [],
     exc2: [
       { src: 'assets/photos/sud1-1.jpg', alt: 'Sud 1 — Vallée des Couleurs' },
       { src: 'assets/photos/sud1-2.jpg', alt: 'Sud 1 — Activités & tortues' }
     ],
-    exc7: [
-      { src: 'assets/photos/sud2-1.jpg', alt: 'Sud 2 — Circuit découverte' },
-      { src: 'assets/photos/sud2-2.jpg', alt: 'Sud 2 — Panorama' }
-    ],
+    exc7: [],
     exc8: [
       { src: 'assets/photos/sud3-1.jpg', alt: 'Sud 3 — Circuit panorama' }
     ],
-    exc4: [
-      { src: 'assets/photos/lemorne-1.jpg', alt: 'Le Morne Brabant — randonnée' }
-    ],
+    exc4: [],
     exc1: [
       { src: 'assets/photos/cinqiles-1.jpg', alt: '5 îles — Bénitiers' }
     ],
