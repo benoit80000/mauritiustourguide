@@ -744,6 +744,15 @@
     display: block;
   }
 
+  .excursion-card[data-excursion-id="exc2"] .card-thumb-media {
+    background: #0d1f26;
+  }
+
+  .excursion-card[data-excursion-id="exc2"] .card-thumb-media img {
+    object-fit: contain;
+    object-position: center;
+  }
+
   .excursion-card:hover .card-thumb-media { transform: scale(1.08); }
 
   .card-badge {
@@ -828,6 +837,133 @@
     align-items: center;
     padding-top: 16px;
     border-top: 1px dashed rgba(10,61,78,0.18);
+  }
+
+  .excursion-card {
+    cursor: pointer;
+  }
+
+  .gallery-modal[hidden] {
+    display: none;
+  }
+
+  .gallery-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    background: rgba(7, 16, 20, 0.88);
+    display: grid;
+    place-items: center;
+    padding: 20px;
+  }
+
+  .gallery-modal-dialog {
+    width: min(980px, 96vw);
+    max-height: 92vh;
+    background: #0d1f26;
+    border-radius: 18px;
+    border: 1px solid rgba(255,255,255,0.16);
+    box-shadow: 0 24px 70px rgba(0,0,0,0.45);
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .gallery-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 14px 16px;
+    color: #e8f3f7;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .gallery-modal-title {
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #b5d3de;
+  }
+
+  .gallery-modal-close {
+    border: 1px solid rgba(255,255,255,0.28);
+    background: transparent;
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+
+  .gallery-modal-stage {
+    position: relative;
+    min-height: 280px;
+    background: #081318;
+    display: grid;
+    place-items: center;
+    padding: 10px 56px;
+  }
+
+  .gallery-modal-image {
+    max-width: 100%;
+    max-height: 68vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+  }
+
+  .gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.28);
+    background: rgba(7,16,20,0.58);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1rem;
+  }
+
+  .gallery-nav-prev { left: 12px; }
+  .gallery-nav-next { right: 12px; }
+
+  .gallery-modal-footer {
+    display: grid;
+    gap: 10px;
+    padding: 12px 16px 14px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .gallery-modal-caption {
+    color: #d0e4ec;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    text-align: center;
+  }
+
+  .gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .gallery-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    border: none;
+    background: rgba(255,255,255,0.35);
+    cursor: pointer;
+  }
+
+  .gallery-dot.is-active {
+    background: var(--turquoise);
   }
 
   .compare-toggle {
@@ -1918,7 +2054,7 @@
     <div class="excursion-card" data-duration="full" data-style="nature" data-audience="group" data-excursion-id="exc2">
       <div class="card-thumb">
         <picture class="card-thumb-media">
-          <source srcset="assets/photos/excursion-2.webp" type="image/webp">
+          <source srcset="assets/photos/excursion-2.jpg" type="image/jpeg">
           <img src="assets/photos/excursion-2.jpg" alt="Point de vue nature a Black River Gorges" loading="lazy" decoding="async">
         </picture>
         <div class="card-badge" data-i18n="exc2_badge">Sud</div>
@@ -2342,6 +2478,24 @@
 </main>
 
 <a class="wa-sticky" id="waSticky" href="https://wa.me/23057652767?text=Bonjour%20Saizad%2C%20je%20souhaite%20r%C3%A9server%20une%20excursion%20%C3%A0%20l%27%C3%AEle%20Maurice." aria-label="Contacter sur WhatsApp" data-i18n="wa_sticky" data-i18n-aria="wa_sticky_aria" target="_blank" rel="noopener noreferrer">WhatsApp • Réserver</a>
+
+<div class="gallery-modal" id="excursionGalleryModal" hidden>
+  <div class="gallery-modal-dialog" role="dialog" aria-modal="true" aria-label="Galerie excursion">
+    <div class="gallery-modal-header">
+      <div class="gallery-modal-title" id="galleryModalTitle">Excursion</div>
+      <button class="gallery-modal-close" id="galleryModalClose" type="button" aria-label="Fermer la galerie">✕</button>
+    </div>
+    <div class="gallery-modal-stage" id="galleryModalStage">
+      <button class="gallery-nav gallery-nav-prev" id="galleryPrev" type="button" aria-label="Image précédente">‹</button>
+      <img class="gallery-modal-image" id="galleryModalImage" src="" alt="">
+      <button class="gallery-nav gallery-nav-next" id="galleryNext" type="button" aria-label="Image suivante">›</button>
+    </div>
+    <div class="gallery-modal-footer">
+      <div class="gallery-modal-caption" id="galleryModalCaption"></div>
+      <div class="gallery-dots" id="galleryDots"></div>
+    </div>
+  </div>
+</div>
 
 <script>
   const hamburgerButton = document.getElementById('hamburger');
@@ -3435,6 +3589,47 @@
   const testimonialsPrev = document.getElementById('testimonialsPrev');
   const testimonialsNext = document.getElementById('testimonialsNext');
   const selectedCompare = new Set();
+  const galleryModal = document.getElementById('excursionGalleryModal');
+  const galleryModalTitle = document.getElementById('galleryModalTitle');
+  const galleryModalClose = document.getElementById('galleryModalClose');
+  const galleryModalImage = document.getElementById('galleryModalImage');
+  const galleryModalCaption = document.getElementById('galleryModalCaption');
+  const galleryDots = document.getElementById('galleryDots');
+  const galleryPrev = document.getElementById('galleryPrev');
+  const galleryNext = document.getElementById('galleryNext');
+  const galleryModalStage = document.getElementById('galleryModalStage');
+  let galleryItems = [];
+  let galleryIndex = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  const EXCURSION_GALLERIES = {
+    exc6: [
+      { src: 'assets/photos/nord-1.jpg', alt: 'Nord — Cap Malheureux' },
+      { src: 'assets/photos/nord-2.jpg', alt: 'Nord — Pamplemousses' }
+    ],
+    exc2: [
+      { src: 'assets/photos/sud1-1.jpg', alt: 'Sud 1 — Vallée des Couleurs' },
+      { src: 'assets/photos/sud1-2.jpg', alt: 'Sud 1 — Activités & tortues' }
+    ],
+    exc7: [
+      { src: 'assets/photos/sud2-1.jpg', alt: 'Sud 2 — Circuit découverte' },
+      { src: 'assets/photos/sud2-2.jpg', alt: 'Sud 2 — Panorama' }
+    ],
+    exc8: [
+      { src: 'assets/photos/sud3-1.jpg', alt: 'Sud 3 — Circuit panorama' }
+    ],
+    exc4: [
+      { src: 'assets/photos/lemorne-1.jpg', alt: 'Le Morne Brabant — randonnée' }
+    ],
+    exc1: [
+      { src: 'assets/photos/cinqiles-1.jpg', alt: '5 îles — Bénitiers' }
+    ],
+    exc3: [
+      { src: 'assets/photos/grisgris-1.jpg', alt: 'Gris-Gris — falaises' },
+      { src: 'assets/photos/grisgris-2.jpg', alt: 'Roche-qui-Pleure — côte sud' }
+    ]
+  };
 
   const SEO_META = {
     fr: {
@@ -3476,6 +3671,52 @@
       const okAudience = a === 'all' || card.dataset.audience === a;
       card.classList.toggle('is-hidden', !(okDuration && okStyle && okAudience));
     });
+  }
+
+  function renderGallery() {
+    if (!galleryModalImage || !galleryItems.length) return;
+    const safeIndex = (galleryIndex + galleryItems.length) % galleryItems.length;
+    galleryIndex = safeIndex;
+    const active = galleryItems[safeIndex];
+    galleryModalImage.src = active.src;
+    galleryModalImage.alt = active.alt || '';
+    if (galleryModalCaption) {
+      galleryModalCaption.textContent = `${active.alt || ''} (${safeIndex + 1}/${galleryItems.length})`;
+    }
+    if (!galleryDots) return;
+    galleryDots.innerHTML = '';
+    galleryItems.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = `gallery-dot${i === safeIndex ? ' is-active' : ''}`;
+      dot.setAttribute('aria-label', `Aller à l'image ${i + 1}`);
+      dot.addEventListener('click', () => {
+        galleryIndex = i;
+        renderGallery();
+      });
+      galleryDots.appendChild(dot);
+    });
+  }
+
+  function closeGallery() {
+    if (!galleryModal) return;
+    galleryModal.hidden = true;
+    galleryItems = [];
+    document.body.style.overflow = '';
+  }
+
+  function openGallery(card) {
+    if (!galleryModal || !card) return;
+    const excursionId = card.getAttribute('data-excursion-id') || '';
+    const list = EXCURSION_GALLERIES[excursionId];
+    if (!list || !list.length) return;
+    const titleNode = card.querySelector('.card-title');
+    if (galleryModalTitle) galleryModalTitle.textContent = titleNode ? titleNode.textContent.trim() : 'Excursion';
+    galleryItems = list;
+    galleryIndex = 0;
+    galleryModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    renderGallery();
   }
 
   function renderCompareList() {
@@ -3640,6 +3881,53 @@
   if (filterStyle) filterStyle.addEventListener('change', applyExcursionFilters);
   if (filterAudience) filterAudience.addEventListener('change', applyExcursionFilters);
   applyExcursionFilters();
+
+  excursionCards.forEach(card => {
+    card.addEventListener('click', event => {
+      const target = event.target instanceof Element ? event.target : null;
+      if (target && target.closest('.js-reserve')) return;
+      openGallery(card);
+    });
+  });
+
+  if (galleryModalClose) galleryModalClose.addEventListener('click', closeGallery);
+  if (galleryPrev) galleryPrev.addEventListener('click', () => {
+    galleryIndex -= 1;
+    renderGallery();
+  });
+  if (galleryNext) galleryNext.addEventListener('click', () => {
+    galleryIndex += 1;
+    renderGallery();
+  });
+  if (galleryModal) {
+    galleryModal.addEventListener('click', event => {
+      if (event.target === galleryModal) closeGallery();
+    });
+  }
+  if (galleryModalStage) {
+    galleryModalStage.addEventListener('touchstart', event => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+    galleryModalStage.addEventListener('touchend', event => {
+      touchEndX = event.changedTouches[0].clientX;
+      const delta = touchEndX - touchStartX;
+      if (Math.abs(delta) < 40) return;
+      galleryIndex += delta < 0 ? 1 : -1;
+      renderGallery();
+    }, { passive: true });
+  }
+  document.addEventListener('keydown', event => {
+    if (!galleryModal || galleryModal.hidden) return;
+    if (event.key === 'Escape') closeGallery();
+    if (event.key === 'ArrowRight') {
+      galleryIndex += 1;
+      renderGallery();
+    }
+    if (event.key === 'ArrowLeft') {
+      galleryIndex -= 1;
+      renderGallery();
+    }
+  });
 
   compareCheckboxes.forEach(input => input.addEventListener('change', handleCompareChange));
   renderCompareList();
