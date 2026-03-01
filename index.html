@@ -105,6 +105,25 @@
 
   .nav-logo span { color: var(--turquoise); font-style: italic; }
 
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+  }
+
+  .nav-map-thumb {
+    width: 90px;
+    height: 54px;
+    object-fit: contain;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.95);
+    padding: 4px;
+    border: 1px solid rgba(255,255,255,0.24);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.24);
+    display: block;
+  }
+
   .nav-links {
     display: flex;
     gap: 36px;
@@ -254,6 +273,10 @@
     animation: fadeUp 0.9s 0.75s forwards;
   }
 
+  .hero-media.is-clickable {
+    cursor: zoom-in;
+  }
+
   .hero-media picture,
   .hero-media img {
     width: 100%;
@@ -262,9 +285,9 @@
   }
 
   .hero-media img {
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
-    background: #f3f3f3;
+    transform: scale(1.06);
   }
 
   .hero-media::after {
@@ -757,15 +780,6 @@
     object-fit: cover;
     object-position: center;
     display: block;
-  }
-
-  .excursion-card[data-excursion-id="exc2"] .card-thumb-media {
-    background: #0d1f26;
-  }
-
-  .excursion-card[data-excursion-id="exc2"] .card-thumb-media img {
-    object-fit: contain;
-    object-position: center;
   }
 
   .excursion-card:hover .card-thumb-media { transform: scale(1.08); }
@@ -1677,6 +1691,7 @@
   ============================================ */
   @media (max-width: 1199px) {
     nav { padding: 18px 36px; }
+    .nav-map-thumb { display: none; }
     section { padding: 90px 6%; }
     .hero-content { padding: 0 8%; }
     .excursions-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1877,7 +1892,10 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Mauritius <span>Tour Guide</span></div>
+  <div class="nav-brand">
+    <img class="nav-map-thumb" src="assets/photos/guide-instagram.jpg" alt="Logo Mauritius Tour Guide" loading="lazy" decoding="async">
+    <div class="nav-logo">Mauritius <span>Tour Guide</span></div>
+  </div>
   <ul class="nav-links">
     <li><a href="#about" data-i18n="nav_about">À propos</a></li>
     <li><a href="#excursions" data-i18n="nav_excursions">Excursions</a></li>
@@ -1912,10 +1930,10 @@
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
-  <div class="hero-media" aria-hidden="true">
+  <div class="hero-media is-clickable" id="heroMapTrigger" role="button" tabindex="0" aria-label="Ouvrir la carte en grand">
     <picture>
-      <source srcset="assets/photos/guide-instagram.webp" type="image/webp">
-      <img src="assets/photos/guide-instagram.jpg" alt="" loading="eager" decoding="async">
+      <source srcset="assets/photos/carte-points-interet.jpg" type="image/jpeg">
+      <img src="assets/photos/carte-points-interet.jpg" alt="" loading="eager" decoding="async">
     </picture>
     <div class="hero-media-tag" data-i18n="hero_logo">Logo officiel</div>
   </div>
@@ -1966,8 +1984,8 @@
     <div class="about-img-frame">
       <div class="about-img-frame-inner">
         <picture>
-          <source srcset="assets/photos/excursion-1.webp" type="image/webp">
-          <img src="assets/photos/excursion-1.jpg" alt="Vue lagon turquoise pendant une excursion guidee a l'ile Maurice" class="about-main-photo" loading="lazy" decoding="async">
+          <source srcset="assets/photos/saizad.jpg" type="image/jpeg">
+          <img src="assets/photos/saizad.jpg" alt="Saizad, guide local a Maurice" class="about-main-photo" loading="lazy" decoding="async">
         </picture>
         <div class="guide-avatar" aria-hidden="true"></div>
         <div class="guide-name-tag">
@@ -2066,8 +2084,8 @@
     <div class="excursion-card" data-duration="full" data-style="nature" data-audience="group" data-excursion-id="exc2">
       <div class="card-thumb">
         <picture class="card-thumb-media">
-          <source srcset="assets/photos/excursion-2.jpg" type="image/jpeg">
-          <img src="assets/photos/excursion-2.jpg" alt="Point de vue nature a Black River Gorges" loading="lazy" decoding="async">
+          <source srcset="assets/photos/sud1-1.jpg" type="image/jpeg">
+          <img src="assets/photos/sud1-1.jpg" alt="Sud 1 - Vallée des Couleurs" loading="lazy" decoding="async">
         </picture>
         <div class="card-badge" data-i18n="exc2_badge">Sud</div>
         <div class="card-location">Sud</div>
@@ -3604,6 +3622,7 @@
   const galleryPrev = document.getElementById('galleryPrev');
   const galleryNext = document.getElementById('galleryNext');
   const galleryModalStage = document.getElementById('galleryModalStage');
+  const heroMapTrigger = document.getElementById('heroMapTrigger');
   let galleryItems = [];
   let galleryIndex = 0;
   let touchStartX = 0;
@@ -3613,7 +3632,12 @@
     exc6: [],
     exc2: [
       { src: 'assets/photos/sud1-1.jpg', alt: 'Sud 1 — Vallée des Couleurs' },
-      { src: 'assets/photos/sud1-2.jpg', alt: 'Sud 1 — Activités & tortues' }
+      { src: 'assets/photos/sud1-2.jpg', alt: 'Sud 1 — Photo 2' },
+      { src: 'assets/photos/sud1-3.jpg', alt: 'Sud 1 — Photo 3' },
+      { src: 'assets/photos/sud1-4.jpg', alt: 'Sud 1 — Photo 4' },
+      { src: 'assets/photos/sud1-5.jpg', alt: 'Sud 1 — Photo 5' },
+      { src: 'assets/photos/sud1-6.jpg', alt: 'Sud 1 — Photo 6' },
+      { src: 'assets/photos/sud1-7.jpg', alt: 'Sud 1 — Photo 7' }
     ],
     exc7: [],
     exc8: [
@@ -3703,18 +3727,23 @@
     document.body.style.overflow = '';
   }
 
+  function openGalleryItems(title, items) {
+    if (!galleryModal || !items || !items.length) return;
+    if (galleryModalTitle) galleryModalTitle.textContent = title || 'Galerie';
+    galleryItems = items;
+    galleryIndex = 0;
+    galleryModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    renderGallery();
+  }
+
   function openGallery(card) {
     if (!galleryModal || !card) return;
     const excursionId = card.getAttribute('data-excursion-id') || '';
     const list = EXCURSION_GALLERIES[excursionId];
     if (!list || !list.length) return;
     const titleNode = card.querySelector('.card-title');
-    if (galleryModalTitle) galleryModalTitle.textContent = titleNode ? titleNode.textContent.trim() : 'Excursion';
-    galleryItems = list;
-    galleryIndex = 0;
-    galleryModal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    renderGallery();
+    openGalleryItems(titleNode ? titleNode.textContent.trim() : 'Excursion', list);
   }
 
   function renderCompareList() {
@@ -3887,6 +3916,19 @@
       openGallery(card);
     });
   });
+
+  if (heroMapTrigger) {
+    const openMap = () => openGalleryItems('Carte des points d’intérêt', [
+      { src: 'assets/photos/carte-points-interet.jpg', alt: 'Carte des points d’intérêt de l’île Maurice' }
+    ]);
+    heroMapTrigger.addEventListener('click', openMap);
+    heroMapTrigger.addEventListener('keydown', event => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        openMap();
+      }
+    });
+  }
 
   if (galleryModalClose) galleryModalClose.addEventListener('click', closeGallery);
   if (galleryPrev) galleryPrev.addEventListener('click', () => {
