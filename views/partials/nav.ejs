@@ -1,0 +1,15 @@
+<nav id="main-nav" aria-label="Navigation principale">
+  <a href="/" class="nav-logo" aria-label="Accueil JMD Maçonnerie - Bâtissons ensemble vos projets">
+    <img src="/images/logo_jean_michel_douay_300dpi.png?v=20260306-7" alt="Logo Jean-Michel Douay Maçonnerie" class="nav-logo-img" />
+  </a>
+  <ul class="nav-links" id="nav-menu" role="list">
+    <li><a href="/" class="<%= active === 'home' ? 'active' : '' %>" aria-current="<%= active === 'home' ? 'page' : 'false' %>">Accueil</a></li>
+    <li><a href="/prestations" class="<%= active === 'prestations' ? 'active' : '' %>" aria-current="<%= active === 'prestations' ? 'page' : 'false' %>">Prestations</a></li>
+    <li><a href="/realisations" class="<%= active === 'realisations' ? 'active' : '' %>" aria-current="<%= active === 'realisations' ? 'page' : 'false' %>">Réalisations</a></li>
+    <li><a href="/contact#contact-form" class="<%= active === 'contact' ? 'active' : '' %>" aria-current="<%= active === 'contact' ? 'page' : 'false' %>">Contact</a></li>
+    <li><a href="/contact#contact-form" class="nav-cta">Devis gratuit</a></li>
+  </ul>
+  <button class="hamburger" id="menu-toggle" aria-label="Ouvrir le menu" aria-controls="nav-menu" aria-expanded="false" type="button">
+    <span></span><span></span><span></span>
+  </button>
+</nav>

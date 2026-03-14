@@ -1,32 +1,52 @@
-# 🌴 Mauritius Tour Guide — Site Officiel
+# JMD Maçonnerie - Bâtissons ensemble vos projets - Site Node.js multi-pages
 
-Site web officiel de **Saizad**, guide touristique local à l'île Maurice.
+Application **Node.js + Express + EJS** multi-pages, maintenable et portable sur tout hébergeur Node.
 
-## 🔗 Liens
-- **Instagram** : [@mauritiustourguide](https://www.instagram.com/mauritiustourguide/)
-- **Facebook** : [@localmauritius](https://www.facebook.com/localmauritius)
-- **WhatsApp** : +230 5765 2767
+## Pages
+- `/` accueil
+- `/prestations`
+- `/realisations`
+- `/contact`
+- `/mentions-legales`
+- `/politique-confidentialite`
 
-## 📋 Contenu du site
-- Hero avec appel à l'action
-- Statistiques (368 followers Instagram, 35 748 J'aime Facebook, 331 avis 100% positifs)
-- Présentation du guide Saizad
-- Catalogue des 6 excursions
-- Témoignages clients
-- Liens réseaux sociaux
-- Formulaire de contact
+## Structure
+- `src/server.js` point d'entrée serveur
+- `src/app.js` composition Express (routes + sécurité + SEO technique)
+- `src/config/site.js` configuration globale site
+- `src/config/pages.js` configuration des pages (SEO + breadcrumbs)
+- `views/` templates EJS (partials + pages)
+- `public/css/styles.css` styles globaux
+- `public/js/main.js` front-end (carrousel, galerie, compteurs, RGPD)
+- `public/images/` assets
 
-## 🚀 Déploiement
-Ce site est déployé automatiquement via **Vercel** à chaque push sur la branche `main`.
+## Axes implémentés
+- **SEO avancé**: canonical par page, JSON-LD LocalBusiness + BreadcrumbList, `sitemap.xml`, `robots.txt`
+- **Qualité code**: ESLint + Prettier + config pages centralisée
+- **Performance**: compression gzip, cache static 7 jours
+- **Sécurité**: Helmet (dont CSP), rate limiting, masquage `x-powered-by`
+- **Accessibilité**: skip link, landmarks `main`, `aria-*`, focus visible, reduced motion
 
-## 📁 Structure
+## Démarrage local
+```bash
+npm install
+npm run dev
 ```
-mauritius-tour-guide/
-├── index.html       # Site complet (HTML + CSS + JS)
-├── vercel.json      # Config déploiement Vercel
-└── README.md        # Ce fichier
+
+Puis ouvrir `http://localhost:3000`.
+
+## Commandes utiles
+```bash
+npm start
+npm run dev
 ```
 
-## 📞 Contact
-Royal Road, Chemin Grenier, Mauritius 60408  
-Tel / WhatsApp : +230 5765 2767
+## Déploiement
+Compatible avec toute plateforme supportant Node.js:
+- VPS (Nginx + PM2)
+- Railway / Render / Fly.io
+- Docker/Kubernetes
+- Hébergement mutualisé Node.js
+
+Le port est configurable via `PORT` (par défaut `3000`).
+`SITE_URL` peut être défini pour l’URL canonique/SEO.
