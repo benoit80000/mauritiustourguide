@@ -3,7 +3,7 @@ module.exports = [
     key: 'home',
     path: '/',
     view: 'pages/home',
-    title: 'JMD Maçonnerie - Bâtissons ensemble vos projets – Accueil',
+    title: 'JMD - Bâtissons ensemble vos projets – Accueil',
     description: 'Jean-Michel Douay, maçonnerie générale, rénovation et carrelage à Villers-Bocage (80260).',
     active: 'home',
     breadcrumbs: [{ name: 'Accueil', path: '/' }]
@@ -12,7 +12,7 @@ module.exports = [
     key: 'prestations',
     path: '/prestations',
     view: 'pages/prestations',
-    title: 'Prestations – JMD Maçonnerie - Bâtissons ensemble vos projets',
+    title: 'Prestations – JMD - Bâtissons ensemble vos projets',
     description: 'Toutes les prestations de maçonnerie, rénovation, extension et aménagement.',
     active: 'prestations',
     breadcrumbs: [
@@ -24,8 +24,8 @@ module.exports = [
     key: 'realisations',
     path: '/realisations',
     view: 'pages/realisations',
-    title: 'Réalisations – JMD Maçonnerie - Bâtissons ensemble vos projets',
-    description: 'Découvrez les réalisations de JMD Maçonnerie - Bâtissons ensemble vos projets dans la Somme.',
+    title: 'Réalisations – JMD - Bâtissons ensemble vos projets',
+    description: 'Découvrez les réalisations de JMD - Bâtissons ensemble vos projets dans la Somme.',
     active: 'realisations',
     breadcrumbs: [
       { name: 'Accueil', path: '/' },
@@ -36,8 +36,8 @@ module.exports = [
     key: 'contact',
     path: '/contact',
     view: 'pages/contact',
-    title: 'Contact – JMD Maçonnerie - Bâtissons ensemble vos projets',
-    description: 'Contactez JMD Maçonnerie - Bâtissons ensemble vos projets pour un devis gratuit.',
+    title: 'Contact – JMD - Bâtissons ensemble vos projets',
+    description: 'Contactez JMD - Bâtissons ensemble vos projets pour un devis gratuit.',
     active: 'contact',
     breadcrumbs: [
       { name: 'Accueil', path: '/' },
@@ -48,8 +48,8 @@ module.exports = [
     key: 'mentions-legales',
     path: '/mentions-legales',
     view: 'pages/mentions-legales',
-    title: 'Mentions légales – JMD Maçonnerie - Bâtissons ensemble vos projets',
-    description: 'Mentions légales du site JMD Maçonnerie - Bâtissons ensemble vos projets.',
+    title: 'Mentions légales – JMD - Bâtissons ensemble vos projets',
+    description: 'Mentions légales du site JMD - Bâtissons ensemble vos projets.',
     active: '',
     breadcrumbs: [
       { name: 'Accueil', path: '/' },
@@ -60,7 +60,7 @@ module.exports = [
     key: 'politique-confidentialite',
     path: '/politique-confidentialite',
     view: 'pages/politique-confidentialite',
-    title: 'Politique de confidentialité – JMD Maçonnerie - Bâtissons ensemble vos projets',
+    title: 'Politique de confidentialité – JMD - Bâtissons ensemble vos projets',
     description: 'Politique de confidentialité et cookies.',
     active: '',
     breadcrumbs: [

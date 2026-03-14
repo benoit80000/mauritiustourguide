@@ -1,5 +1,5 @@
 module.exports = {
-  siteName: 'JMD Maçonnerie - Bâtissons ensemble vos projets',
+  siteName: 'JMD - Bâtissons ensemble vos projets',
   baseUrl: process.env.SITE_URL || 'https://jeanmicheldouay.fr',
   defaultDescription:
     'Jean-Michel Douay, maçonnerie générale, rénovation et carrelage à Villers-Bocage (80260).',

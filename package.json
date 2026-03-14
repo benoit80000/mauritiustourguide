@@ -2,7 +2,7 @@
   "name": "jmd-maconnerie-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Site multi-pages Node.js/Express pour JMD Maçonnerie - Bâtissons ensemble vos projets",
+  "description": "Site multi-pages Node.js/Express pour JMD - Bâtissons ensemble vos projets",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

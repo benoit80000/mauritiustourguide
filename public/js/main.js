@@ -187,7 +187,7 @@
     iframe.allowFullscreen = true;
     iframe.loading = 'lazy';
     iframe.referrerPolicy = 'no-referrer-when-downgrade';
-    iframe.title = "Zone d'intervention JMD Maçonnerie - Bâtissons ensemble vos projets";
+    iframe.title = "Zone d'intervention JMD - Bâtissons ensemble vos projets";
     wrap.appendChild(iframe);
   }
 
@@ -209,7 +209,7 @@
       return;
     }
 
-    const subject = encodeURIComponent('Demande de devis - JMD Maçonnerie - Bâtissons ensemble vos projets');
+    const subject = encodeURIComponent('Demande de devis - JMD - Bâtissons ensemble vos projets');
     const body = encodeURIComponent(`Nom: ${name}\nTéléphone: ${tel}\nE-mail: ${email || '-'}\nType de travaux: ${type || '-'}\n\nProjet:\n${msg}`);
     const mailtoUrl = `mailto:jeanmicheldouay2711@gmail.com?subject=${subject}&body=${body}`;
     const success = qs('form-success');

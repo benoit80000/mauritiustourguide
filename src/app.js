@@ -130,7 +130,7 @@ function createApp() {
   app.use((req, res) => {
     res.status(404).render('pages/404', {
       siteName: site.siteName,
-      title: 'Page introuvable – JMD Maçonnerie - Bâtissons ensemble vos projets',
+      title: 'Page introuvable – JMD - Bâtissons ensemble vos projets',
       description: 'La page demandée est introuvable.',
       active: '',
       canonicalUrl: `${site.baseUrl}${req.path}`,
